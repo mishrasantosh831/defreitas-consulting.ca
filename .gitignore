@@ -1,0 +1,58 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+venv/
+backend/venv/
+ENV/
+env/
+
+# Production build outputs
+dist/
+frontend/dist/
+build/
+
+# Python cache & bytecode
+__pycache__/
+backend/app/__pycache__/
+backend/app/routers/__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# SQLite lock and journal files (keep database.db)
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Environment & local secrets
+.env
+backend/.env
+.env.local
+.env.*.local
+
+# Operating System & IDE files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compressed Archives & Backups
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+*.bak
+
