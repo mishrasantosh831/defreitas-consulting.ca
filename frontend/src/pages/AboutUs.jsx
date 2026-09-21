@@ -7,7 +7,7 @@ export default function AboutUs({ onOpenStrategy }) {
     title: "About Us — DeFreitas & Associates",
     hero_title: "Exceeding expectations for over 30 years",
     hero_subtitle: "We are a firm of Chartered Professional Accountants providing a wide array of business consulting and tax advisory services to individuals and business enterprises across Canada.",
-    hero_image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1024&q=80",
+    hero_image: "/images/about-team.jpg",
     philosophy_title: "Professionalism delivered with personal commitment",
     lead_text: "We pride ourselves on the extensive experience our team possesses along with a high level of professionalism extended to all of our clients, delivered at rates that are competitive.",
     body_text: "Whether managing complex corporate restructures, preparing T2 corporate returns, recovering SR&ED research credits, or securing commercial bank loans, our advisors operate with unwavering diligence.",
@@ -41,7 +41,14 @@ export default function AboutUs({ onOpenStrategy }) {
           <div className="split">
             <div className="split-media">
               <div className="frame" style={{ aspectRatio: '4/5' }}>
-                <img src={data.hero_image} alt="DeFreitas Senior Partner Advisory" />
+                <img 
+                  src={data.hero_image || '/images/about-team.jpg'} 
+                  alt="DeFreitas Senior Partner Advisory" 
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/about-team.jpg';
+                  }}
+                />
               </div>
               <div className="tab">
                 <span className="ic">

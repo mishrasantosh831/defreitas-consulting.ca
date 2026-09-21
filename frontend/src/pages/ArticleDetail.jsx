@@ -19,7 +19,7 @@ Early preparation and accurate documentation are essential for ensuring full ded
 
 Contact DeFreitas & Associates today to organize your records and ensure prompt filing with the Canada Revenue Agency.`,
     date: "2026-03-01",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1024&q=80",
+    image: "/images/post-tax-season.jpg",
     slug: "tax-time-approaching-in-canada-key-deadlines-preparation-steps",
     seo_title: "Tax Time Approaching in Canada: Key Deadlines & Preparation Steps",
     seo_description: "Essential CRA tax deadlines and preparation steps for Canadian corporations and individuals for the 2026 tax year.",
@@ -55,7 +55,7 @@ Membership in the Canadian Tax Foundation further reinforces our capacity to del
 
 Through active participation in the CTF, our CPA practitioners maintain real-time access to the latest Canadian tax jurisprudence, landmark tax court decisions, and advanced statutory analysis, ensuring our clients receive the most robust tax strategies available in Canada today.`,
     date: "2025-08-20",
-    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1024&q=80",
+    image: "/images/post-tax-foundation.jpg",
     slug: "defreitas-associates-joins-canadian-tax-foundation",
     seo_title: "DeFreitas & Associates Joins the Canadian Tax Foundation",
     seo_description: "DeFreitas & Associates North American affiliated office in Toronto becomes an active member of the prestigious Canadian Tax Foundation.",
@@ -389,7 +389,14 @@ export default function ArticleDetail({ onOpenStrategy }) {
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <div className="pmedia">
-                      <img src={rp.image || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1024&q=80'} alt={rp.title} />
+                      <img 
+                        src={rp.image || '/images/post-tax-season.jpg'} 
+                        alt={rp.title} 
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = '/images/post-tax-season.jpg';
+                        }}
+                      />
                     </div>
                     <div className="pbody">
                       <div className="meta">

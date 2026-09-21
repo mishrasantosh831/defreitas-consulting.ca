@@ -13,7 +13,7 @@ export default function Blog() {
       summary: "This is our usual time of year when our firm reminds all our valuable clients and friends in Canada about the crucial corporate installment deadlines and personal tax filing steps.",
       content: "TAX TIME APPROACHING IN CANADA. Important dates to remember: T1 Personal income tax filing deadline is April 30th (June 15th for self-employed individuals). T2 Corporate tax return is due 6 months following the corporation's fiscal year-end, while corporate taxes owed are payable 2 to 3 months following year-end depending on whether your company qualifies for the small business deduction. Contact DeFreitas & Associates today to organize your records and ensure prompt filing.",
       date: "2026-03-01",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1024&q=80",
+      image: "/images/post-tax-season.jpg",
       slug: "tax-time-approaching-in-canada-key-deadlines-preparation-steps"
     },
     {
@@ -35,7 +35,7 @@ export default function Blog() {
       summary: "D&A is proud to announce that the firm's North American affiliated office in Toronto has become a member of the Canadian Tax Foundation (ctf.ca).",
       content: "DeFreitas & Associates (D&A) is proud to announce that the firm’s North American affiliated office in Toronto, Canada has become a member of the Canadian Tax Foundation (www.ctf.ca). Membership in the Canadian Tax Foundation further reinforces our capacity to deliver leading-edge tax planning and CRA policy insights to our corporate and private clients.",
       date: "2025-08-20",
-      image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1024&q=80",
+      image: "/images/post-tax-foundation.jpg",
       slug: "defreitas-associates-joins-canadian-tax-foundation"
     }
   ]);
@@ -94,8 +94,12 @@ export default function Blog() {
                 style={{ borderRadius: 'var(--r)', overflow: 'hidden', height: '320px', display: 'block' }}
               >
                 <img 
-                  src={posts[0].image || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1024&q=80'} 
+                  src={posts[0].image || '/images/post-tax-season.jpg'} 
                   alt={posts[0].title} 
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/post-tax-season.jpg';
+                  }}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .3s ease' }} 
                 />
               </Link>
@@ -140,7 +144,14 @@ export default function Blog() {
                 style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}
               >
                 <div className="pmedia">
-                  <img src={p.image || 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1024&q=80'} alt={p.title} />
+                  <img 
+                    src={p.image || '/images/post-tax-foundation.jpg'} 
+                    alt={p.title} 
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/images/post-tax-foundation.jpg';
+                    }}
+                  />
                 </div>
                 <div className="pbody" style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <div className="meta">

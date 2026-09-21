@@ -7,7 +7,7 @@ export default function Home({ onOpenStrategy }) {
     hero_eyebrow: "Executive Tax Accountants · 30+ Years Legacy",
     hero_title: "Corporate advisory that builds real growth.",
     hero_description: "From corporate T2 filings and SR&ED tax credit claims to full-cycle accounting and business financing — DeFreitas & Associates delivers executive financial strategy for businesses across Toronto & Canada. Exceeding expectations for over 30 years.",
-    hero_image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1024&q=80",
+    hero_image: "/images/hero-tax-accountants.jpg",
     stat_1_number: "30",
     stat_1_suffix: "+ Yrs",
     stat_1_label: "Corporate Advisory Legacy",
@@ -22,7 +22,7 @@ export default function Home({ onOpenStrategy }) {
     stat_4_label: "CPA On-Time Compliance",
     why_title: "Proactive business advisors, not just annual tax filers",
     why_description: "We don't wait until year-end to examine your balance sheet. Our senior Chartered Professional Accountants provide continuous tax strategies, helping you seize capital opportunities and avoid CRA pitfalls.",
-    why_image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1024&q=80"
+    why_image: "/images/why-choose-us.jpg"
   });
 
   useEffect(() => {
@@ -63,7 +63,14 @@ export default function Home({ onOpenStrategy }) {
 
             <div className="hero-media">
               <div className="hero-frame">
-                <img src={content.hero_image} alt="DeFreitas CPA Executive Team" />
+                <img 
+                  src={content.hero_image || '/images/hero-tax-accountants.jpg'} 
+                  alt="DeFreitas CPA Executive Team"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/hero-tax-accountants.jpg';
+                  }}
+                />
               </div>
               <div className="hero-badge">
                 <span className="ic">
@@ -211,7 +218,14 @@ export default function Home({ onOpenStrategy }) {
           <div className="split">
             <div className="split-media">
               <div className="frame" style={{ aspectRatio: '5/4' }}>
-                <img src={content.why_image} alt="DeFreitas & Associates Advisory" />
+                <img 
+                  src={content.why_image || '/images/why-choose-us.jpg'} 
+                  alt="DeFreitas & Associates Advisory"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/images/why-choose-us.jpg';
+                  }}
+                />
               </div>
               <div className="tab">
                 <span className="ic">

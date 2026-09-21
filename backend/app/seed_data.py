@@ -20,7 +20,7 @@ DEFAULT_SITE_DATA = {
             "hero_eyebrow": "Executive Tax Accountants · 30+ Years Legacy",
             "hero_title": "Corporate advisory that builds real growth.",
             "hero_description": "From corporate T2 filings and SR&ED tax credit claims to full-cycle accounting and business financing — DeFreitas & Associates delivers executive financial strategy for businesses across Toronto & Canada. Exceeding expectations for over 30 years.",
-            "hero_image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1024&q=80",
+            "hero_image": "/images/hero-tax-accountants.jpg",
             "stat_1_number": "30",
             "stat_1_suffix": "+ Yrs",
             "stat_1_label": "Corporate Advisory Legacy",
@@ -35,7 +35,7 @@ DEFAULT_SITE_DATA = {
             "stat_4_label": "CPA On-Time Compliance",
             "why_title": "Proactive business advisors, not just annual tax filers",
             "why_description": "We don't wait until year-end to examine your balance sheet. Our senior Chartered Professional Accountants provide continuous tax strategies, helping you seize capital opportunities and avoid CRA pitfalls.",
-            "why_image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1024&q=80"
+            "why_image": "/images/why-choose-us.jpg"
         },
         
         "services": {
@@ -421,7 +421,7 @@ DEFAULT_SITE_DATA = {
             "title": "About Us — DeFreitas & Associates",
             "hero_title": "Exceeding expectations for over 30 years",
             "hero_subtitle": "We are a firm of Chartered Professional Accountants providing a wide array of business consulting and tax advisory services to individuals and business enterprises across Canada.",
-            "hero_image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1024&q=80",
+            "hero_image": "/images/about-team.jpg",
             "philosophy_title": "Professionalism delivered with personal commitment",
             "lead_text": "We pride ourselves on the extensive experience our team possesses along with a high level of professionalism extended to all of our clients, delivered at rates that are competitive.",
             "body_text": "Whether managing complex corporate restructures, preparing T2 corporate returns, recovering SR&ED research credits, or securing commercial bank loans, our advisors operate with unwavering diligence.",
@@ -457,7 +457,7 @@ DEFAULT_SITE_DATA = {
             "summary": "This is our usual time of year when our firm reminds all our valuable clients and friends in Canada about the crucial corporate installment deadlines and personal tax filing steps.",
             "content": "TAX TIME APPROACHING IN CANADA.\n\nImportant dates to remember:\n• T1 Personal income tax filing deadline is April 30th (June 15th for self-employed individuals).\n• T2 Corporate tax return is due 6 months following the corporation's fiscal year-end, while corporate taxes owed are payable 2 to 3 months following year-end depending on whether your company qualifies for the small business deduction.\n\nPreparing your corporate documentation early ensures maximum deductions and prevents costly late-filing penalties and CRA interest charges.\n\nContact DeFreitas & Associates today to organize your records and ensure prompt filing.",
             "date": "2026-03-01",
-            "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1024&q=80",
+            "image": "/images/post-tax-season.jpg",
             "slug": "tax-time-approaching-in-canada-key-deadlines-preparation-steps",
             "seo_title": "Tax Time Approaching in Canada: Key Deadlines & Preparation Steps",
             "seo_description": "Essential CRA tax deadlines and preparation steps for Canadian corporations and individuals for the 2026 tax year.",
@@ -471,7 +471,7 @@ DEFAULT_SITE_DATA = {
             "summary": "DeFreitas & Associates (D&A) was proud to be a corporate sponsor supporting the Dominica Rising Benefit Gala hosted by Trade & Investment Commissioner Frances Delsol.",
             "content": "DeFreitas & Associates (D&A) was proud to be a corporate sponsor of the Dominica Rising Benefit Gala hosted by the Trade & Investment Commissioner for Dominica (in Canada), Ms. Frances Delsol.\n\nOur team remains committed to community engagement, international business collaboration, and supporting philanthropic economic growth initiatives across the Caribbean diaspora and North America.\n\nWe thank all distinguished guests and community organizers for a memorable and impactful evening.",
             "date": "2025-11-15",
-            "image": "https://defreitas-consulting.ca/wp-content/uploads/2023/03/recent-post.jpg",
+            "image": "/images/recent-post.jpg",
             "slug": "defreitas-associates-sponsors-dominica-rising-benefit-gala",
             "seo_title": "DeFreitas & Associates Sponsors Dominica Rising Benefit Gala",
             "seo_description": "DeFreitas & Associates proud corporate sponsor of the Dominica Rising Benefit Gala hosted by Trade & Investment Commissioner Frances Delsol.",
@@ -485,7 +485,7 @@ DEFAULT_SITE_DATA = {
             "summary": "D&A is proud to announce that the firm's North American affiliated office in Toronto has become a member of the Canadian Tax Foundation (ctf.ca).",
             "content": "DeFreitas & Associates (D&A) is proud to announce that the firm’s North American affiliated office in Toronto, Canada has become a member of the Canadian Tax Foundation (www.ctf.ca).\n\nMembership in the Canadian Tax Foundation further reinforces our capacity to deliver leading-edge tax planning, high-level statutory compliance, and CRA policy insights to our corporate and private wealth clients.\n\nOur clients benefit directly from our firm's ongoing access to specialized national tax jurisprudence, scholarly conferences, and advanced research materials.",
             "date": "2025-08-20",
-            "image": "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1024&q=80",
+            "image": "/images/post-tax-foundation.jpg",
             "slug": "defreitas-associates-joins-canadian-tax-foundation",
             "seo_title": "DeFreitas & Associates Joins the Canadian Tax Foundation",
             "seo_description": "DeFreitas & Associates North American affiliated office in Toronto becomes an active member of the prestigious Canadian Tax Foundation.",
