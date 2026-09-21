@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 CLI Utility to safely set or reset the Admin Password for DeFreitas & Associates CMS.
+Works with standard Python 3 library without requiring any virtual environment.
 Usage:
     python3 set_password.py "YourNewSecurePasswordHere"
     or interactively:
@@ -9,18 +10,28 @@ Usage:
 import sys
 import os
 import getpass
+import hashlib
+import sqlite3
+from pathlib import Path
 
-# Ensure app package is importable
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, SCRIPT_DIR)
+SALT = b"defreitas_secure_salt_2026"
 
-from app.auth import hash_password
-from app.database import set_admin_password_hash, init_db
+def hash_password(password: str) -> str:
+    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), SALT, 100000).hex()
+
+def find_db():
+    script_dir = Path(__file__).resolve().parent
+    candidates = [
+        script_dir.parent / "database.db",
+        script_dir / "database.db",
+        Path.cwd() / "database.db",
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    return script_dir.parent / "database.db"
 
 def main():
-    # Ensure tables exist
-    init_db()
-
     if len(sys.argv) > 1:
         new_pwd = sys.argv[1]
     else:
@@ -35,10 +46,18 @@ def main():
         print("[ERROR] Password must be at least 6 characters.")
         sys.exit(1)
 
-    # Hash with PBKDF2 HMAC SHA-256
+    db_path = find_db()
+    conn = sqlite3.connect(str(db_path))
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS site_meta (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        )
+    """)
     pwd_hash = hash_password(new_pwd)
-    set_admin_password_hash(pwd_hash)
-    print("[SUCCESS] Admin password updated successfully in database.db!")
+    conn.execute("INSERT OR REPLACE INTO site_meta (key, value) VALUES ('admin_password_hash', ?)", (pwd_hash,))
+    conn.commit()
+    print(f"[SUCCESS] Admin password updated successfully in {db_path}!")
 
 if __name__ == "__main__":
     main()

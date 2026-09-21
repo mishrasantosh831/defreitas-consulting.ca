@@ -26,7 +26,12 @@ def verify_admin_password(plain_password: str) -> bool:
     from app.database import get_admin_password_hash
     stored_hash = get_admin_password_hash()
     if stored_hash:
-        return hmac.compare_digest(hash_password(plain_password), stored_hash)
+        if hmac.compare_digest(hash_password(plain_password), stored_hash):
+            return True
+        # Gracefully handle shell-escaped or stripped quote variations
+        if r'\"' in plain_password and hmac.compare_digest(hash_password(plain_password.replace(r'\"', '"')), stored_hash):
+            return True
+        return False
     if plain_password == ADMIN_PASSWORD:
         return True
     return hmac.compare_digest(hash_password(plain_password), DEFAULT_ADMIN_HASH)
