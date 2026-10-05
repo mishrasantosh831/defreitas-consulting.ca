@@ -20,10 +20,11 @@ Early preparation and accurate documentation are essential for ensuring full ded
 Contact DeFreitas & Associates today to organize your records and ensure prompt filing with the Canada Revenue Agency.`,
     date: "2026-03-01",
     image: "/images/post-tax-season.jpg",
-    slug: "tax-time-approaching-in-canada-key-deadlines-preparation-steps",
-    seo_title: "Tax Time Approaching in Canada: Key Deadlines & Preparation Steps",
-    seo_description: "Essential CRA tax deadlines and preparation steps for Canadian corporations and individuals for the 2026 tax year.",
-    seo_keywords: "Canadian Tax Deadlines, T2 Corporate Tax, T1 Personal Tax, CRA Filing 2026, DeFreitas CPAs"
+    slug: "tax-time-approaching-in-canada",
+    seo_title: "Tax Time Approaching in Canada | DeFreitas & Associates",
+    seo_description: "Essential CRA tax deadlines, personal T1, corporate T2 preparation steps, and compliance advice for the Canadian tax season.",
+    seo_keywords: "Canadian Tax Deadlines, T2 Corporate Tax, T1 Personal Tax, CRA Filing 2026, DeFreitas CPAs",
+    canonical_url: "https://defreitas-consulting.ca/blog/tax-time-approaching-in-canada/"
   },
   {
     id: "2",
@@ -38,10 +39,11 @@ Our firm remains deeply dedicated to philanthropic community leadership, interna
 We extend our sincere gratitude to Trade & Investment Commissioner Frances Delsol, community leaders, and all benefactors who contributed to an exceptional and memorable gala.`,
     date: "2025-11-15",
     image: "/images/recent-post.jpg",
-    slug: "defreitas-associates-sponsors-dominica-rising-benefit-gala",
-    seo_title: "DeFreitas & Associates Sponsors Dominica Rising Benefit Gala",
-    seo_description: "DeFreitas & Associates proud corporate sponsor of the Dominica Rising Benefit Gala hosted by Trade & Investment Commissioner Frances Delsol.",
-    seo_keywords: "Dominica Rising Gala, Frances Delsol, Corporate Sponsorship, DeFreitas & Associates News"
+    slug: "dominica-rising-benefit-gala",
+    seo_title: "Dominica Rising Benefit Gala | DeFreitas & Associates",
+    seo_description: "Learn about DeFreitas & Associates' support of the Dominica Rising Benefit Gala and its commitment to supporting the Dominican community in Canada.",
+    seo_keywords: "Dominica Rising Gala, Frances Delsol, Corporate Sponsorship, DeFreitas & Associates News",
+    canonical_url: "https://defreitas-consulting.ca/blog/dominica-rising-benefit-gala/"
   },
   {
     id: "3",
@@ -56,10 +58,11 @@ Membership in the Canadian Tax Foundation further reinforces our capacity to del
 Through active participation in the CTF, our CPA practitioners maintain real-time access to the latest Canadian tax jurisprudence, landmark tax court decisions, and advanced statutory analysis, ensuring our clients receive the most robust tax strategies available in Canada today.`,
     date: "2025-08-20",
     image: "/images/post-tax-foundation.jpg",
-    slug: "defreitas-associates-joins-canadian-tax-foundation",
-    seo_title: "DeFreitas & Associates Joins the Canadian Tax Foundation",
-    seo_description: "DeFreitas & Associates North American affiliated office in Toronto becomes an active member of the prestigious Canadian Tax Foundation.",
-    seo_keywords: "Canadian Tax Foundation, CTF Member, Canadian Tax Planning, DeFreitas & Associates Toronto"
+    slug: "canadian-tax-foundation-membership",
+    seo_title: "Canadian Tax Foundation Member | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates' Toronto office is a member of the Canadian Tax Foundation, supporting continued knowledge and expertise in Canadian taxation.",
+    seo_keywords: "Canadian Tax Foundation, CTF Member, Canadian Tax Planning, DeFreitas & Associates Toronto",
+    canonical_url: "https://defreitas-consulting.ca/blog/canadian-tax-foundation-membership/"
   }
 ];
 

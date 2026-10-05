@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent } from '../api';
+import SEOHead from '../components/SEOHead';
 
 export default function Services({ onOpenStrategy }) {
   const [filter, setFilter] = useState('all');
   const [data, setData] = useState({
-    title: "Services & Pricing — DeFreitas & Associates CPAs",
+    seo_title: "Business & Tax Advisory Services | DeFreitas & Associates Canada",
+    seo_description: "DeFreitas & Associates provides tailored business consulting, tax planning, bookkeeping, and advisory services to support growing businesses in Canada.",
+    canonical_url: "https://defreitas-consulting.ca/services/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"}]}",
+    title: "Business & Tax Advisory Services | DeFreitas & Associates Canada",
     hero_eyebrow: "Services & Pricing",
     hero_title: "Clear plans, fixed fees, no surprise bills",
     hero_subtitle: "Select a service bundle tailored to your corporate stage, or customize a package with our senior CPA team. Every plan includes dedicated advisory and total CRA compliance.",
@@ -16,57 +21,57 @@ export default function Services({ onOpenStrategy }) {
         cat: 'tax',
         title: 'Corporate T2 Tax Returns',
         meta: 'Tax & Compliance',
-        desc: 'Comprehensive corporate tax filing, tax planning, salary vs. dividend optimization, and active CRA audit representation.',
-        fee: 'From $1,200 / filing',
+        desc: 'Professional corporate tax preparation and T2 filing support, including tax planning and assistance with CRA reviews and audits.',
+        fee: 'From $1,100 / filing',
         link: '/tax-advisory'
       },
       {
         cat: 'tax',
-        title: 'Personal T1 & Executive Tax',
+        title: 'Personal T1 Tax Returns',
         meta: 'Tax & Compliance',
-        desc: 'Sole proprietorship and high-net-worth individual tax preparation with optimized deductions and wealth planning.',
-        fee: 'From $250 / filing',
+        desc: 'Professional personal tax preparation and T1 filing for individuals, with practical tax planning and advisory support.',
+        fee: 'From $200 / filing',
         link: '/tax-advisory'
       },
       {
         cat: 'bookkeeping',
-        title: 'Full-Cycle Cloud Bookkeeping',
-        meta: 'Bookkeeping & Payroll',
-        desc: 'Monthly bank reconciliations, accounts payable/receivable, and QuickBooks/Xero ledger maintenance.',
+        title: 'Business Bookkeeping Services',
+        meta: 'Accounting & Bookkeeping',
+        desc: 'Professional bookkeeping services with bookkeeping setup, ongoing consultation, and organized financial record support for businesses.',
         fee: 'From $249 / month',
-        link: '/accounting'
+        link: '/accounting-bookkeeping'
       },
       {
         cat: 'bookkeeping',
-        title: 'Payroll & Remittance Filing',
-        meta: 'Bookkeeping & Payroll',
-        desc: 'Direct deposit payroll processing, T4/T5 slip preparation, and monthly CRA source deduction remittances.',
+        title: 'Financial Statements & WSIB Support',
+        meta: 'Accounting & Bookkeeping',
+        desc: 'Professional financial statement preparation, along with WSIB filing and remittance support for businesses.',
         fee: 'From $99 / month',
-        link: '/accounting'
+        link: '/accounting-bookkeeping'
       },
       {
         cat: 'sred',
-        title: 'SR&ED Refund Claim Preparation',
-        meta: 'SR&ED Claims',
-        desc: 'Technical project identification, financial expenditure tracking, and filing for refundable federal/provincial credits.',
+        title: 'SR&ED Tax Credit Claim Support',
+        meta: 'SR&ED Tax Credit',
+        desc: 'Professional SR&ED tax credit support, including claim preparation, financial information and documentation, and related tax matters.',
         fee: 'Success-based 15% fee',
-        link: '/sred'
+        link: '/sred-tax-credits'
       },
       {
         cat: 'financing',
-        title: 'Bank Loan & Commercial Proposal',
+        title: 'Business Financing & Lender Preparation',
         meta: 'Business Financing',
-        desc: 'Lender-ready pro-forma statements, cash flow modeling, and direct introductions to financial institutions.',
+        desc: 'Professional financing support, including financial statement and projection preparation for lenders, and business plans for financing.',
         fee: 'From $1,500 one-off',
-        link: '/financing'
+        link: '/business-financing'
       },
       {
         cat: 'incorporation',
-        title: 'Federal & Ontario Incorporation',
-        meta: 'Incorporation',
-        desc: 'Name reservation, articles of incorporation, digital minute book, share issuance, and CRA account registration.',
+        title: 'Business Incorporation & Registration',
+        meta: 'Incorporation & Registration',
+        desc: 'Professional guidance and support for business incorporation, business registration, and business setup.',
         fee: 'From $599 package',
-        link: '/incorporation'
+        link: '/incorporation-business-registration'
       }
     ],
     pricing_eyebrow: "Structured Packages",
@@ -140,6 +145,12 @@ export default function Services({ onOpenStrategy }) {
 
   return (
     <div>
+      <SEOHead 
+        title={data.seo_title}
+        description={data.seo_description}
+        canonical={data.canonical_url}
+        breadcrumbSchema={data.breadcrumb_schema}
+      />
       {/* ===== PAGE HERO ===== */}
       <section className="page-hero">
         <div className="wrap">

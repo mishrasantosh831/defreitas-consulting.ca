@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent } from '../api';
+import SEOHead from '../components/SEOHead';
+import FAQSection from '../components/FAQSection';
 
 export default function SredClaims({ onOpenStrategy }) {
   const [data, setData] = useState({
-    title: "SR&ED Tax Incentive Claims",
-    hero_title: "Turn Canadian Innovation Into a Stronger SR&ED Claim",
-    hero_subtitle: "DeFreitas & Associates helps innovative businesses identify eligible work, assemble defensible technical documentation, calculate qualifying expenditures, and prepare complete SR&ED tax incentive claims.",
+    seo_title: "SR&ED Tax Credit Services Canada | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides SR&ED tax credit consulting, helping businesses prepare claims and access eligible R&D tax incentives.",
+    canonical_url: "https://defreitas-consulting.ca/sred-tax-credits/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"SR&ED Tax Credits\",\"item\":\"https://defreitas-consulting.ca/sred-tax-credits/\"}]}",
+    title: "SR&ED Tax Credit Services in Canada",
+    hero_eyebrow: "Scientific Research & Experimental Development",
+    hero_title: "SR&ED Tax Credit Consulting Services in Canada",
+    hero_subtitle: "Turn technical innovation into capital through Scientific Research & Experimental Development tax incentives.",
     hero_image: "/images/sred-hero.jpg",
     intro_image: "/images/sred-turning-innovation.jpg",
     intro_bullets: [
@@ -18,6 +25,40 @@ export default function SredClaims({ onOpenStrategy }) {
       "Claim submission coordination directly integrated with your T2 corporate return",
       "CRA review and objection defense support",
       "30+ years of business and tax advisory experience"
+    ],
+    faq_items: [
+      {
+        q: "What is the SR&ED tax credit?",
+        a: "The Scientific Research & Experimental Development (SR&ED) program is a Canadian tax incentive program that supports eligible research and development activities. Businesses conducting qualifying work may be able to claim SR&ED tax incentives based on eligible activities and expenditures."
+      },
+      {
+        q: "What types of businesses may qualify for SR&ED?",
+        a: "SR&ED is not limited to one particular industry. Businesses involved in research, experimentation, technological development, or improvements to products and processes may have activities worth reviewing for potential SR&ED eligibility."
+      },
+      {
+        q: "Does my business need a dedicated R&D department to consider SR&ED?",
+        a: "Not necessarily. Research and development activities can take place as part of regular operations, product development, technical work, or process improvement. What matters is the nature of the work being performed, rather than whether your company has a department formally labelled “R&D.”"
+      },
+      {
+        q: "What information is needed for an SR&ED claim?",
+        a: "An SR&ED claim generally requires information about the work performed and the expenditures associated with eligible activities. Maintaining appropriate technical and financial records can help support SR&ED claim preparation and the overall filing process."
+      },
+      {
+        q: "Can an SR&ED consultant help with claim preparation?",
+        a: "An SR&ED consultant can help businesses review potential SR&ED activities, understand the claim process, and organize relevant information for the preparation of an SR&ED tax credit claim. DeFreitas & Associates provides SR&ED consulting and tax support based on the circumstances and requirements of each client."
+      },
+      {
+        q: "Can you help with the financial side of an SR&ED claim?",
+        a: "Yes. DeFreitas & Associates can assist with the tax and financial aspects of SR&ED matters within our scope of services. Businesses requiring broader financial reporting or bookkeeping support can also explore our Accounting & Bookkeeping Services."
+      },
+      {
+        q: "Can you assist with CRA-related SR&ED matters?",
+        a: "We can review CRA-related SR&ED matters and determine how our team can assist based on the circumstances involved."
+      },
+      {
+        q: "Is SR&ED only for large companies?",
+        a: "No. Businesses of different sizes may conduct activities that fall within the SR&ED program. Eligibility depends on the applicable requirements and the nature of the work and expenditures involved."
+      }
     ],
     services: [
       {
@@ -72,7 +113,6 @@ export default function SredClaims({ onOpenStrategy }) {
       { step: "5", title: "Filing Integration", desc: "Seamless filing integration with your corporate T2 tax return with the Canada Revenue Agency." },
       { step: "6", title: "Post-Filing Support", desc: "Defending and representing the claim before CRA auditors until tax credits or refunds are issued." }
     ],
-    hero_eyebrow: "Innovation Tax Credits",
     hero_primary_btn: "Request Free SR&ED Assessment",
     hero_secondary_btn: "Contact Team",
     intro_eyebrow: "Maximize Your Refund",
@@ -126,6 +166,12 @@ export default function SredClaims({ onOpenStrategy }) {
 
   return (
     <div>
+      <SEOHead 
+        title={data.seo_title}
+        description={data.seo_description}
+        canonical={data.canonical_url}
+        breadcrumbSchema={data.breadcrumb_schema}
+      />
       {/* ===== HERO ===== */}
       <section className="page-hero">
         <div className="wrap">
@@ -276,6 +322,13 @@ export default function SredClaims({ onOpenStrategy }) {
           </div>
         </div>
       </section>
+
+      {/* ===== FAQS ===== */}
+      <FAQSection 
+        items={data.faq_items} 
+        title="Frequently Asked Questions About SR&ED" 
+        subtitle="Common questions regarding eligibility, documentation, and claiming SR&ED tax incentives in Canada."
+      />
 
       {/* ===== CTA ===== */}
       <section className="cta-band">

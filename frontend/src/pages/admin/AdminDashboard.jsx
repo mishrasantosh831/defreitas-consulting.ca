@@ -121,6 +121,8 @@ function ImageUploadField({ label, value, onChange, onToast }) {
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [selectedPage, setSelectedPage] = useState('home');
+  const [pagesSubTab, setPagesSubTab] = useState('all'); // 'all' | 'seo' | 'content'
+  const [schemaStatus, setSchemaStatus] = useState(null);
   const [allData, setAllData] = useState(null);
   const [pageData, setPageData] = useState({});
   const [siteMeta, setSiteMeta] = useState({});
@@ -311,6 +313,74 @@ export default function AdminDashboard() {
     } catch (err) {
       showToast(err.message || 'Error saving page content');
     }
+  };
+
+  const DEFAULT_CANONICAL_URLS = {
+    home: 'https://defreitas-consulting.ca/',
+    services: 'https://defreitas-consulting.ca/services/',
+    sred: 'https://defreitas-consulting.ca/sred-tax-credits/',
+    tax_advisory: 'https://defreitas-consulting.ca/tax-advisory/',
+    accounting: 'https://defreitas-consulting.ca/accounting-bookkeeping/',
+    financing: 'https://defreitas-consulting.ca/business-financing/',
+    incorporation: 'https://defreitas-consulting.ca/incorporation-business-registration/',
+    about: 'https://defreitas-consulting.ca/about/',
+    contact: 'https://defreitas-consulting.ca/contact/',
+    blog: 'https://defreitas-consulting.ca/blog/'
+  };
+
+  const getPageLiveUrl = (pageKey) => {
+    switch (pageKey) {
+      case 'home': return '/';
+      case 'services': return '/services';
+      case 'sred': return '/sred-tax-credits';
+      case 'tax_advisory': return '/tax-advisory';
+      case 'accounting': return '/accounting-bookkeeping';
+      case 'financing': return '/business-financing';
+      case 'incorporation': return '/incorporation-business-registration';
+      case 'about': return '/about';
+      case 'contact': return '/contact';
+      case 'blog': return '/blog';
+      default: return `/${pageKey}`;
+    }
+  };
+
+  const getPageDisplayName = (pageKey) => {
+    const names = {
+      home: 'Home Page',
+      services: 'Services & Pricing',
+      sred: 'SR&ED Tax Credits',
+      tax_advisory: 'Corporate & Personal Tax Advisory',
+      accounting: 'Accounting & Bookkeeping',
+      financing: 'Business Financing Solutions',
+      incorporation: 'Incorporation & Registration',
+      about: 'About Us',
+      contact: 'Contact Us',
+      blog: 'Tax Journal / Blog'
+    };
+    return names[pageKey] || (pageKey ? pageKey.replace('_', ' ').toUpperCase() : 'Page');
+  };
+
+  const handleValidateSchema = () => {
+    if (!pageData.breadcrumb_schema || !pageData.breadcrumb_schema.trim()) {
+      setSchemaStatus({ valid: true, msg: 'Schema is empty (optional)' });
+      showToast('Schema is empty (optional)');
+      return;
+    }
+    try {
+      const parsed = JSON.parse(pageData.breadcrumb_schema);
+      setPageData(prev => ({ ...prev, breadcrumb_schema: JSON.stringify(parsed, null, 2) }));
+      setSchemaStatus({ valid: true, msg: 'Valid JSON-LD schema formatted!' });
+      showToast('Schema formatted and verified valid! ✅');
+    } catch (err) {
+      setSchemaStatus({ valid: false, msg: `JSON Syntax Error: ${err.message}` });
+      showToast(`Invalid JSON: ${err.message}`, 'error');
+    }
+  };
+
+  const handleResetCanonical = () => {
+    const defaultUrl = DEFAULT_CANONICAL_URLS[selectedPage] || `https://defreitas-consulting.ca${getPageLiveUrl(selectedPage)}/`;
+    setPageData(prev => ({ ...prev, canonical_url: defaultUrl }));
+    showToast(`Canonical reset to: ${defaultUrl}`);
   };
 
   const handleSaveMeta = async () => {
@@ -910,198 +980,586 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* ================= TAB 1: PAGES EDITOR ================= */}
+        {/* ================= TAB 1: PAGES & SEO EDITOR ================= */}
         {activeTab === 'pages' && (
           <div>
-            <div className="admin-card">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                <label style={{ fontWeight: '700', color: '#334155' }}>Select Page to Edit:</label>
-                <select 
-                  value={selectedPage} 
-                  onChange={(e) => setSelectedPage(e.target.value)}
-                  style={{ padding: '.6rem 1rem', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontWeight: '600' }}
+            {/* Page Selector & Quick Action Bar */}
+            <div className="admin-card" style={{ padding: '1.25rem 1.8rem', marginBottom: '1.2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                  <label style={{ fontWeight: '700', color: '#1e293b', fontSize: '.92rem' }}>Select Page to Edit:</label>
+                  <select 
+                    value={selectedPage} 
+                    onChange={(e) => {
+                      setSelectedPage(e.target.value);
+                      setSchemaStatus(null);
+                    }}
+                    style={{ padding: '.65rem 1.1rem', borderRadius: '8px', border: '1.5px solid #cbd5e1', fontWeight: '700', fontSize: '.95rem', color: '#0f172a', background: '#f8fafc' }}
+                  >
+                    <option value="home">🏠 Home Page (/)</option>
+                    <option value="services">💼 Services &amp; Pricing (/services)</option>
+                    <option value="sred">🔬 SR&amp;ED Tax Credits (/sred-tax-credits)</option>
+                    <option value="tax_advisory">📊 Tax Advisory &amp; Filing (/tax-advisory)</option>
+                    <option value="accounting">📑 Accounting &amp; Bookkeeping (/accounting-bookkeeping)</option>
+                    <option value="financing">💰 Business Financing Solutions (/business-financing)</option>
+                    <option value="incorporation">🏢 Incorporation &amp; Registration (/incorporation-business-registration)</option>
+                    <option value="about">👥 About Us (/about)</option>
+                    <option value="contact">📍 Contact Us (/contact)</option>
+                    <option value="blog">📰 Tax Journal &amp; Articles (/blog)</option>
+                  </select>
+                  <Link 
+                    to={getPageLiveUrl(selectedPage)} 
+                    target="_blank" 
+                    style={{ 
+                      display: 'inline-flex', alignItems: 'center', gap: '.4rem', 
+                      fontSize: '.85rem', color: 'var(--mint-700)', fontWeight: '700', 
+                      padding: '.45rem .85rem', background: '#ecfdf5', borderRadius: '6px', 
+                      border: '1px solid #a7f3d0', textDecoration: 'none' 
+                    }}
+                  >
+                    View Live Page ↗
+                  </Link>
+                </div>
+
+                <div style={{ display: 'flex', gap: '.8rem', alignItems: 'center' }}>
+                  <button onClick={handleSavePage} className="btn btn-solid" style={{ padding: '.65rem 1.4rem' }}>
+                    💾 Save All Changes
+                  </button>
+                </div>
+              </div>
+
+              {/* Sub-Tab Filter: All vs SEO vs Content */}
+              <div style={{ display: 'flex', gap: '.5rem', marginTop: '1.2rem', paddingTop: '1rem', borderTop: '1px solid #e2e8f0' }}>
+                <button
+                  type="button"
+                  onClick={() => setPagesSubTab('all')}
+                  style={{
+                    padding: '.45rem 1rem', borderRadius: '6px', fontSize: '.84rem', fontWeight: '700', cursor: 'pointer', border: 0,
+                    background: pagesSubTab === 'all' ? '#0f172a' : '#f1f5f9',
+                    color: pagesSubTab === 'all' ? '#ffffff' : '#475569'
+                  }}
                 >
-                  <option value="home">Home Page</option>
-                  <option value="services">Services &amp; Pricing</option>
-                  <option value="sred">SR&amp;ED Claims Page</option>
-                  <option value="tax_advisory">Tax Advisory, Preparation &amp; Filing</option>
-                  <option value="accounting">Accounting &amp; Bookkeeping</option>
-                  <option value="financing">Business Financing Solutions</option>
-                  <option value="incorporation">Incorporation &amp; Registration</option>
-                  <option value="about">About Us</option>
-                  <option value="contact">Contact Us</option>
-                </select>
-                <Link 
-                  to={selectedPage === 'home' ? '/' : `/${selectedPage === 'tax_advisory' ? 'tax-advisory' : selectedPage}`} 
-                  target="_blank" 
-                  style={{ fontSize: '.88rem', color: 'var(--mint-700)', fontWeight: '600' }}
+                  📋 All Settings
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPagesSubTab('seo')}
+                  style={{
+                    padding: '.45rem 1rem', borderRadius: '6px', fontSize: '.84rem', fontWeight: '700', cursor: 'pointer', border: 0,
+                    background: pagesSubTab === 'seo' ? 'var(--mint-700)' : '#f1f5f9',
+                    color: pagesSubTab === 'seo' ? '#ffffff' : '#475569'
+                  }}
                 >
-                  View Live Page ↗
-                </Link>
+                  🎯 On-Page SEO &amp; SERP Preview
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPagesSubTab('content')}
+                  style={{
+                    padding: '.45rem 1rem', borderRadius: '6px', fontSize: '.84rem', fontWeight: '700', cursor: 'pointer', border: 0,
+                    background: pagesSubTab === 'content' ? '#0284c7' : '#f1f5f9',
+                    color: pagesSubTab === 'content' ? '#ffffff' : '#475569'
+                  }}
+                >
+                  📝 Content &amp; Semantic Headings (H1/H2/H3)
+                </button>
               </div>
             </div>
 
-            <div className="admin-card">
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '1rem' }}>
-                <div>
-                  <h3 style={{ margin: 0 }}>Editing: <span style={{ color: 'var(--mint-600)', textTransform: 'capitalize' }}>{selectedPage.replace('_', ' ')}</span></h3>
-                  <p style={{ margin: '.3rem 0 0 0', fontSize: '.85rem', color: '#64748b' }}>
-                    All visible titles, eyebrows, content sections, card callouts, and action buttons are fully editable below.
-                  </p>
+            {/* ================= ON-PAGE SEO & SERP PREVIEW CARD ================= */}
+            {(pagesSubTab === 'all' || pagesSubTab === 'seo') && (
+              <div className="admin-card" style={{ borderColor: '#cbd5e1' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.2rem', borderBottom: '1.5px solid #e2e8f0', paddingBottom: '.9rem' }}>
+                  <div>
+                    <h3 style={{ margin: 0, color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                      <span style={{ fontSize: '1.3rem' }}>🎯</span> On-Page SEO &amp; Google SERP Preview
+                    </h3>
+                    <p style={{ margin: '.3rem 0 0 0', fontSize: '.84rem', color: '#64748b' }}>
+                      Configure critical meta tags, canonical indexing rules, and structured JSON-LD schema for <strong style={{ color: '#0f172a' }}>{getPageDisplayName(selectedPage)}</strong>.
+                    </p>
+                  </div>
+                  <span style={{ fontSize: '.78rem', background: '#dcfce7', color: '#15803d', padding: '.3rem .75rem', borderRadius: '20px', fontWeight: '700' }}>
+                    SEO Active
+                  </span>
                 </div>
-                <button onClick={handleSavePage} className="btn btn-solid">
-                  💾 Save {selectedPage.replace('_', ' ')} Changes
-                </button>
-              </div>
-              
-              {/* Dynamic Field Renderer with Friendly Labels */}
-              {(() => {
-                const getFieldLabel = (key) => {
-                  const customLabels = {
-                    title: 'Internal Page Title',
-                    hero_eyebrow: 'Hero Eyebrow (Category Tagline above Title)',
-                    hero_title: 'Hero Title (Primary Heading)',
-                    hero_subtitle: 'Hero Subtitle / Description',
-                    hero_banner: 'Hero Background Banner Image',
-                    hero_image: 'Hero Image Asset',
-                    hero_primary_btn: 'Hero Primary Button Text',
-                    hero_secondary_btn: 'Hero Secondary Button Text',
-                    section_eyebrow: 'Section Eyebrow (Top Tagline)',
-                    section_title: 'Section Main Heading (H2)',
-                    section_list_title: 'Section List Subheading',
-                    intro: 'Introductory Paragraph',
-                    intro_lead: 'Intro Lead Text',
-                    intro_eyebrow: 'Intro Eyebrow',
-                    intro_title: 'Intro Section Heading',
-                    intro_image: 'Intro Showcase Image',
-                    intro_bullets: 'Intro Highlights (Bullet Points)',
-                    body: 'Detailed Body Text',
-                    body_text: 'Body Content Paragraph',
-                    services_list: 'Practice Services List (Bullet Points)',
-                    affiliation_text: 'Accreditations & Affiliation Callout Box',
-                    content_image: 'Content Demonstration Image',
-                    card_title: 'Sidebar Strategy Card Heading',
-                    card_text: 'Sidebar Strategy Card Description',
-                    card_button_text: 'Sidebar Strategy Card Button Text',
-                    cta_eyebrow: 'Bottom CTA Band Eyebrow (Small Tagline)',
-                    cta_title: 'Bottom CTA Band Main Heading',
-                    cta_subtitle: 'Bottom CTA Band Description / Subtitle',
-                    cta_primary_btn: 'Bottom CTA Primary Action Button Text',
-                    cta_secondary_btn: 'Bottom CTA Secondary Action Button Text',
-                    catalog_eyebrow: 'Service Catalog Section Eyebrow',
-                    catalog_title: 'Service Catalog Section Heading',
-                    catalog_services: 'Service Catalog Cards (Structured JSON)',
-                    pricing_eyebrow: 'Structured Packages Eyebrow',
-                    pricing_title: 'Structured Packages Heading',
-                    pricing_subtitle: 'Structured Packages Subtitle',
-                    packages: 'Monthly Pricing Packages (Structured JSON)',
-                    qualify_eyebrow: 'Eligibility Check Eyebrow',
-                    qualify_title: 'Eligibility Check Heading',
-                    qualify_description: 'Eligibility Explanation Paragraph',
-                    qualify_indicators_title: 'Qualification Indicators Heading',
-                    qualify_indicators: 'Qualification Indicators (Bullet Points)',
-                    expenditures_title: 'Eligible Expenditures Heading',
-                    expenditures_intro: 'Eligible Expenditures Description',
-                    expenditures: 'Expenditure Categories (Structured JSON)',
-                    industries_eyebrow: 'Industries Section Eyebrow',
-                    industries_title: 'Industries Section Heading',
-                    industries_subtitle: 'Industries Section Subtitle',
-                    industries: 'Eligible Canadian Industries List (Bullet Points)',
-                    process_eyebrow: 'Methodology Process Eyebrow',
-                    process_title: 'Methodology Process Heading',
-                    process_subtitle: 'Methodology Process Subtitle',
-                    process_steps: 'Methodology 6-Step Workflow (Structured JSON)'
-                  };
-                  return customLabels[key] || key.replace(/_/g, ' ').toUpperCase();
-                };
 
-                return Object.keys(pageData).map((key) => {
-                  const value = pageData[key];
-                  const label = getFieldLabel(key);
+                {/* Google SERP Snippet Simulator */}
+                <div style={{ marginBottom: '2rem', padding: '1.4rem', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '.76rem', fontWeight: '800', textTransform: 'uppercase', color: '#64748b', letterSpacing: '.06em', marginBottom: '.8rem' }}>
+                    Google Search Engine Result Snippet (Live SERP Preview)
+                  </div>
+                  
+                  <div style={{ 
+                    background: '#ffffff', padding: '1.2rem 1.4rem', borderRadius: '8px', 
+                    border: '1px solid #d1d5db', maxWidth: '640px', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' 
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '.6rem', marginBottom: '.3rem' }}>
+                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', background: 'var(--mint-700)', color: '#fff', fontSize: '.7rem', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
+                        D
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <span style={{ fontSize: '.85rem', fontWeight: '600', color: '#202124' }}>DeFreitas &amp; Associates</span>
+                        <span style={{ fontSize: '.75rem', color: '#4d5156', wordBreak: 'break-all' }}>
+                          {pageData.canonical_url || `https://defreitas-consulting.ca${getPageLiveUrl(selectedPage)}/`}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div style={{ 
+                      fontSize: '1.22rem', color: '#1a0dab', lineHeight: '1.3', fontWeight: '500', 
+                      cursor: 'pointer', marginBottom: '.35rem', textDecoration: 'none' 
+                    }}>
+                      {pageData.seo_title || pageData.hero_title || pageData.title || `${getPageDisplayName(selectedPage)} | DeFreitas & Associates`}
+                    </div>
 
-                  // Image Upload Fields
-                  if (key.includes('image') || key.includes('banner')) {
-                    return (
-                      <ImageUploadField 
-                        key={key}
-                        label={label}
-                        value={value || ''}
-                        onChange={(newUrl) => setPageData({ ...pageData, [key]: newUrl })}
-                        onToast={showToast}
-                      />
-                    );
-                  }
+                    <div style={{ fontSize: '.88rem', color: '#4d5156', lineHeight: '1.45' }}>
+                      {pageData.seo_description || pageData.hero_description || pageData.hero_subtitle || pageData.intro || 'Professional Canadian tax advisory, corporate accounting, SR&ED incentives, and business consulting.'}
+                    </div>
+                  </div>
 
-                  // Arrays (like bullets, lists, services)
-                  if (Array.isArray(value)) {
-                    if (typeof value[0] === 'string' || value.length === 0) {
+                  {/* SEO Health Checklist */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '.8rem', marginTop: '1rem' }}>
+                    {/* Title length check */}
+                    {(() => {
+                      const tLen = (pageData.seo_title || '').length;
+                      const isGood = tLen >= 40 && tLen <= 65;
                       return (
-                        <div key={key} className="admin-field">
-                          <label>{label}:</label>
-                          <textarea 
-                            rows="6"
-                            value={value.join('\n')}
-                            onChange={(e) => {
-                              const newArr = e.target.value.split('\n');
-                              setPageData({ ...pageData, [key]: newArr });
-                            }}
-                            placeholder="One item per line"
+                        <div style={{ padding: '.6rem .8rem', background: '#ffffff', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '.8rem' }}>
+                          <span style={{ fontWeight: '700', color: isGood ? '#15803d' : '#b45309' }}>
+                            {isGood ? '✅' : '⚠️'} Meta Title:
+                          </span> {tLen} chars {tLen === 0 ? '(Empty)' : isGood ? '(Optimal 50–60)' : tLen < 40 ? '(Short)' : '(Too long)'}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Description length check */}
+                    {(() => {
+                      const dLen = (pageData.seo_description || '').length;
+                      const isGood = dLen >= 110 && dLen <= 165;
+                      return (
+                        <div style={{ padding: '.6rem .8rem', background: '#ffffff', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '.8rem' }}>
+                          <span style={{ fontWeight: '700', color: isGood ? '#15803d' : '#b45309' }}>
+                            {isGood ? '✅' : '⚠️'} Meta Description:
+                          </span> {dLen} chars {dLen === 0 ? '(Empty)' : isGood ? '(Optimal 120–160)' : dLen < 110 ? '(Short)' : '(Truncated)'}
+                        </div>
+                      );
+                    })()}
+
+                    {/* Canonical status */}
+                    <div style={{ padding: '.6rem .8rem', background: '#ffffff', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '.8rem' }}>
+                      <span style={{ fontWeight: '700', color: pageData.canonical_url ? '#15803d' : '#b45309' }}>
+                        {pageData.canonical_url ? '✅' : '⚠️'} Canonical Tag:
+                      </span> {pageData.canonical_url ? 'Configured' : 'Missing'}
+                    </div>
+
+                    {/* Schema status */}
+                    <div style={{ padding: '.6rem .8rem', background: '#ffffff', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '.8rem' }}>
+                      <span style={{ fontWeight: '700', color: pageData.breadcrumb_schema ? '#15803d' : '#64748b' }}>
+                        {pageData.breadcrumb_schema ? '✅' : 'ℹ️'} JSON-LD Schema:
+                      </span> {pageData.breadcrumb_schema ? 'Embedded' : 'Optional (Home)'}
+                    </div>
+                  </div>
+                </div>
+
+                {/* SEO Input Fields */}
+                <div className="admin-form-full">
+                  {/* Meta Title */}
+                  <div className="admin-field">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                        <span>Meta Title Tag (&lt;title&gt;):</span>
+                        <span style={{ fontSize: '.72rem', background: '#e0f2fe', color: '#0369a1', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                          Primary SEO Factor
+                        </span>
+                      </label>
+                      <span style={{ fontSize: '.78rem', color: (pageData.seo_title || '').length > 65 ? '#dc2626' : '#64748b', fontWeight: '600' }}>
+                        {(pageData.seo_title || '').length} / 60 characters
+                      </span>
+                    </div>
+                    <input 
+                      type="text" 
+                      value={pageData.seo_title || ''}
+                      onChange={(e) => setPageData({ ...pageData, seo_title: e.target.value })}
+                      placeholder="e.g. Tax & Financial Services Canada | DeFreitas & Associates"
+                    />
+                    <span style={{ fontSize: '.78rem', color: '#64748b' }}>
+                      Recommended 50–60 characters. Displayed on Google search results and browser tabs.
+                    </span>
+                  </div>
+
+                  {/* Meta Description */}
+                  <div className="admin-field">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                        <span>Meta Description (&lt;meta name="description"&gt;):</span>
+                        <span style={{ fontSize: '.72rem', background: '#fef3c7', color: '#b45309', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                          CTR &amp; Snippet
+                        </span>
+                      </label>
+                      <span style={{ fontSize: '.78rem', color: (pageData.seo_description || '').length > 165 ? '#dc2626' : '#64748b', fontWeight: '600' }}>
+                        {(pageData.seo_description || '').length} / 160 characters
+                      </span>
+                    </div>
+                    <textarea 
+                      rows="3"
+                      value={pageData.seo_description || ''}
+                      onChange={(e) => setPageData({ ...pageData, seo_description: e.target.value })}
+                      placeholder="e.g. Explore tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services from DeFreitas & Associates in Toronto, Canada."
+                      style={{ minHeight: '85px' }}
+                    />
+                    <span style={{ fontSize: '.78rem', color: '#64748b' }}>
+                      Recommended 120–160 characters. A concise summary for search engine crawlers and users.
+                    </span>
+                  </div>
+
+                  {/* Canonical URL Tag */}
+                  <div className="admin-field">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                        <span>Canonical URL (&lt;link rel="canonical"&gt;):</span>
+                        <span style={{ fontSize: '.72rem', background: '#f1f5f9', color: '#334155', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                          Indexing Rule
+                        </span>
+                      </label>
+                      <button 
+                        type="button" 
+                        onClick={handleResetCanonical}
+                        style={{ background: 'none', border: 0, color: 'var(--mint-700)', fontSize: '.78rem', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
+                      >
+                        ↺ Reset to Recommended Canonical
+                      </button>
+                    </div>
+                    <input 
+                      type="url" 
+                      value={pageData.canonical_url || ''}
+                      onChange={(e) => setPageData({ ...pageData, canonical_url: e.target.value })}
+                      placeholder="https://defreitas-consulting.ca/..."
+                    />
+                    <span style={{ fontSize: '.78rem', color: '#64748b' }}>
+                      The authoritative URL Google should index. Prevents duplicate content penalties across URLs.
+                    </span>
+                  </div>
+
+                  {/* SEO Keywords */}
+                  <div className="admin-field">
+                    <label>Target SEO Keywords &amp; Search Queries:</label>
+                    <input 
+                      type="text" 
+                      value={pageData.seo_keywords || ''}
+                      onChange={(e) => setPageData({ ...pageData, seo_keywords: e.target.value })}
+                      placeholder="e.g. Canadian tax consulting, corporate accounting Toronto, SR&ED tax credits"
+                    />
+                    <span style={{ fontSize: '.78rem', color: '#64748b' }}>
+                      Comma-separated primary and secondary search queries targeted for this specific page.
+                    </span>
+                  </div>
+
+                  {/* Breadcrumb JSON-LD Structured Data */}
+                  <div className="admin-field">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '.5rem' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                        <span>Structured Schema (JSON-LD Breadcrumbs):</span>
+                        <span style={{ fontSize: '.72rem', background: '#ede9fe', color: '#6d28d9', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                          Rich Snippets
+                        </span>
+                      </label>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '.8rem' }}>
+                        {schemaStatus && (
+                          <span style={{ fontSize: '.78rem', fontWeight: '700', color: schemaStatus.valid ? '#15803d' : '#dc2626' }}>
+                            {schemaStatus.msg}
+                          </span>
+                        )}
+                        <button 
+                          type="button" 
+                          onClick={handleValidateSchema}
+                          className="btn"
+                          style={{ padding: '.35rem .75rem', fontSize: '.78rem', background: '#f1f5f9', border: '1px solid #cbd5e1', fontWeight: '700' }}
+                        >
+                          ✓ Validate &amp; Format JSON
+                        </button>
+                      </div>
+                    </div>
+                    <textarea 
+                      rows="6"
+                      value={pageData.breadcrumb_schema || ''}
+                      onChange={(e) => {
+                        setPageData({ ...pageData, breadcrumb_schema: e.target.value });
+                        if (schemaStatus) setSchemaStatus(null);
+                      }}
+                      placeholder='{"@context": "https://schema.org", "@type": "BreadcrumbList", ...}'
+                      style={{ fontFamily: 'monospace', fontSize: '.84rem', background: '#0f172a', color: '#e2e8f0', minHeight: '130px' }}
+                    />
+                    <span style={{ fontSize: '.78rem', color: '#64748b' }}>
+                      Valid JSON-LD schema injected dynamically into the page head. Enables Google Rich Breadcrumb results.
+                    </span>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1.5rem', paddingTop: '1.2rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'flex-end' }}>
+                  <button onClick={handleSavePage} className="btn btn-solid">
+                    💾 Save SEO &amp; Page Metadata
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* ================= PAGE CONTENT & SEMANTIC HEADINGS CARD ================= */}
+            {(pagesSubTab === 'all' || pagesSubTab === 'content') && (
+              <div className="admin-card">
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '1rem' }}>
+                  <div>
+                    <h3 style={{ margin: 0, display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                      <span>📝</span> Content Sections &amp; Semantic Headings (<span style={{ color: 'var(--mint-600)', textTransform: 'capitalize' }}>{selectedPage.replace('_', ' ')}</span>)
+                    </h3>
+                    <p style={{ margin: '.3rem 0 0 0', fontSize: '.85rem', color: '#64748b' }}>
+                      Each content section below is mapped to semantic heading tags (&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;) and alt-text tags for full SEO accessibility and search rankings.
+                    </p>
+                  </div>
+                  <button onClick={handleSavePage} className="btn btn-solid">
+                    💾 Save {selectedPage.replace('_', ' ')} Changes
+                  </button>
+                </div>
+                
+                {/* Dynamic Field Renderer with Friendly Labels and Semantic SEO Badges */}
+                {(() => {
+                  const getFieldMeta = (key) => {
+                    const custom = {
+                      title: { label: 'Internal Page Title', tag: null },
+                      hero_eyebrow: { label: 'Hero Eyebrow (Category Tagline)', tag: null },
+                      hero_title: { label: 'Hero Primary Heading', tag: '<h1> Primary SEO Heading' },
+                      hero_subtitle: { label: 'Hero Subtitle / Description', tag: null },
+                      hero_description: { label: 'Hero Main Overview Paragraph', tag: null },
+                      hero_banner: { label: 'Hero Background Banner Image', tag: 'Image' },
+                      hero_image: { label: 'Hero Asset Image', tag: 'Image' },
+                      hero_image_alt: { label: 'Hero Image Alt Text (SEO Description)', tag: 'Alt Tag' },
+                      hero_primary_btn: { label: 'Hero Primary Button Text', tag: null },
+                      hero_secondary_btn: { label: 'Hero Secondary Button Text', tag: null },
+                      why_title: { label: 'Value Proposition Heading', tag: '<h2> Section Heading' },
+                      why_description: { label: 'Value Proposition Description', tag: null },
+                      why_image: { label: 'Value Proposition Showcase Image', tag: 'Image' },
+                      why_image_alt: { label: 'Value Proposition Image Alt Text (SEO)', tag: 'Alt Tag' },
+                      section_eyebrow: { label: 'Section Eyebrow (Top Tagline)', tag: null },
+                      section_title: { label: 'Section Main Heading', tag: '<h2> Section Heading' },
+                      section_list_title: { label: 'Section Feature List Subheading', tag: '<h3> Sub-Heading' },
+                      intro: { label: 'Introductory Paragraph', tag: null },
+                      intro_lead: { label: 'Intro Lead Text', tag: null },
+                      intro_eyebrow: { label: 'Intro Eyebrow Tagline', tag: null },
+                      intro_title: { label: 'Intro Section Heading', tag: '<h2> Section Heading' },
+                      intro_image: { label: 'Intro Showcase Image', tag: 'Image' },
+                      intro_image_alt: { label: 'Intro Image Alt Text (SEO)', tag: 'Alt Tag' },
+                      intro_bullets: { label: 'Intro Highlights (Bullet Points)', tag: null },
+                      body: { label: 'Detailed Body Text', tag: null },
+                      body_text: { label: 'Body Content Paragraph', tag: null },
+                      services_list: { label: 'Practice Services List (Bullet Points)', tag: null },
+                      affiliation_text: { label: 'Accreditations & Affiliation Callout Box', tag: null },
+                      content_image: { label: 'Content Demonstration Image', tag: 'Image' },
+                      content_image_alt: { label: 'Content Image Alt Text (SEO)', tag: 'Alt Tag' },
+                      card_title: { label: 'Sidebar Strategy Card Heading', tag: '<h3> Sub-Heading' },
+                      card_text: { label: 'Sidebar Strategy Card Description', tag: null },
+                      card_button_text: { label: 'Sidebar Strategy Card Button Text', tag: null },
+                      cta_eyebrow: { label: 'Bottom CTA Band Eyebrow', tag: null },
+                      cta_title: { label: 'Bottom CTA Main Heading', tag: '<h2> Section Heading' },
+                      cta_subtitle: { label: 'Bottom CTA Subtitle / Description', tag: null },
+                      cta_primary_btn: { label: 'Bottom CTA Primary Action Button Text', tag: null },
+                      cta_secondary_btn: { label: 'Bottom CTA Secondary Action Button Text', tag: null },
+                      catalog_eyebrow: { label: 'Service Catalog Section Eyebrow', tag: null },
+                      catalog_title: { label: 'Service Catalog Section Heading', tag: '<h2> Section Heading' },
+                      catalog_services: { label: 'Service Catalog Cards (Structured JSON)', tag: null },
+                      pricing_eyebrow: { label: 'Structured Packages Eyebrow', tag: null },
+                      pricing_title: { label: 'Structured Packages Heading', tag: '<h2> Section Heading' },
+                      pricing_subtitle: { label: 'Structured Packages Subtitle', tag: null },
+                      packages: { label: 'Monthly Pricing Packages (Structured JSON)', tag: null },
+                      qualify_eyebrow: { label: 'Eligibility Check Eyebrow', tag: null },
+                      qualify_title: { label: 'Eligibility Check Heading', tag: '<h2> Section Heading' },
+                      qualify_description: { label: 'Eligibility Explanation Paragraph', tag: null },
+                      qualify_indicators_title: { label: 'Qualification Indicators Heading', tag: '<h3> Sub-Heading' },
+                      qualify_indicators: { label: 'Qualification Indicators (Bullet Points)', tag: null },
+                      expenditures_title: { label: 'Eligible Expenditures Heading', tag: '<h2> Section Heading' },
+                      expenditures_intro: { label: 'Eligible Expenditures Description', tag: null },
+                      expenditures: { label: 'Expenditure Categories (Structured JSON)', tag: null },
+                      industries_eyebrow: { label: 'Industries Section Eyebrow', tag: null },
+                      industries_title: { label: 'Industries Section Heading', tag: '<h2> Section Heading' },
+                      industries_subtitle: { label: 'Industries Section Subtitle', tag: null },
+                      industries: { label: 'Eligible Canadian Industries List (Bullet Points)', tag: null },
+                      process_eyebrow: { label: 'Methodology Process Eyebrow', tag: null },
+                      process_title: { label: 'Methodology Process Heading', tag: '<h2> Section Heading' },
+                      process_subtitle: { label: 'Methodology Process Subtitle', tag: null },
+                      process_steps: { label: 'Methodology 6-Step Workflow (Structured JSON)', tag: null }
+                    };
+
+                    const found = custom[key];
+                    if (found) return found;
+
+                    let tag = null;
+                    if (key.includes('title')) tag = '<h2> Section Heading';
+                    else if (key.includes('alt')) tag = 'Alt Tag';
+                    else if (key.includes('image') || key.includes('banner')) tag = 'Image';
+
+                    return {
+                      label: key.replace(/_/g, ' ').toUpperCase(),
+                      tag: tag
+                    };
+                  };
+
+                  // Exclude dedicated SEO fields from the generic content section
+                  const excludedSeoKeys = ['seo_title', 'seo_description', 'canonical_url', 'seo_keywords', 'breadcrumb_schema'];
+                  const contentKeys = Object.keys(pageData).filter(k => !excludedSeoKeys.includes(k));
+
+                  return contentKeys.map((key) => {
+                    const value = pageData[key];
+                    const meta = getFieldMeta(key);
+
+                    // Image Upload Fields with optional Image Alt text paired below
+                    if (key.includes('image') || key.includes('banner')) {
+                      const altKey = `${key}_alt`;
+                      return (
+                        <div key={key} style={{ padding: '1.2rem', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0', marginBottom: '1.4rem' }}>
+                          <ImageUploadField 
+                            label={meta.label}
+                            value={value || ''}
+                            onChange={(newUrl) => setPageData({ ...pageData, [key]: newUrl })}
+                            onToast={showToast}
                           />
-                          <span style={{ fontSize: '.75rem', color: '#64748b' }}>One item per line</span>
+                          {/* Image Alt Text field for On-Page SEO */}
+                          <div style={{ marginTop: '.8rem', paddingTop: '.8rem', borderTop: '1px dashed #cbd5e1' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '.3rem' }}>
+                              <label style={{ fontSize: '.8rem', fontWeight: '700', color: '#475569', display: 'flex', alignItems: 'center', gap: '.4rem' }}>
+                                <span>🏷️ Image Alt Text (SEO Accessibility):</span>
+                                <span style={{ fontSize: '.7rem', background: '#e0f2fe', color: '#0369a1', padding: '.1rem .4rem', borderRadius: '4px' }}>
+                                  Screen Readers &amp; Google Images
+                                </span>
+                              </label>
+                            </div>
+                            <input 
+                              type="text" 
+                              value={pageData[altKey] || ''}
+                              onChange={(e) => setPageData({ ...pageData, [altKey]: e.target.value })}
+                              placeholder={`Descriptive keyword alt text for ${meta.label.toLowerCase()}`}
+                              style={{ fontSize: '.88rem', padding: '.65rem .9rem' }}
+                            />
+                          </div>
                         </div>
                       );
                     }
-                    return (
-                      <div key={key} className="admin-field">
-                        <label>{label}:</label>
-                        <textarea 
-                          rows="8"
-                          value={JSON.stringify(value, null, 2)}
-                          onChange={(e) => {
-                            try {
-                              const parsed = JSON.parse(e.target.value);
-                              setPageData({ ...pageData, [key]: parsed });
-                            } catch (err) {}
-                          }}
-                        />
-                      </div>
-                    );
-                  }
 
-                  // Long text paragraphs
-                  if (key.includes('description') || key.includes('intro') || key.includes('lead') || key.includes('body') || key.includes('text') || key.includes('subtitle')) {
+                    // Alt text rendered directly if already handled above
+                    if (key.endsWith('_alt')) {
+                      const baseImageKey = key.replace('_alt', '');
+                      if (contentKeys.includes(baseImageKey)) {
+                        return null; // already rendered beneath image
+                      }
+                    }
+
+                    // Arrays (like bullets, lists, services)
+                    if (Array.isArray(value)) {
+                      if (typeof value[0] === 'string' || value.length === 0) {
+                        return (
+                          <div key={key} className="admin-field">
+                            <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                              <span>{meta.label}:</span>
+                              {meta.tag && (
+                                <span style={{ fontSize: '.7rem', background: '#f1f5f9', color: '#475569', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                                  {meta.tag}
+                                </span>
+                              )}
+                            </label>
+                            <textarea 
+                              rows="6"
+                              value={value.join('\n')}
+                              onChange={(e) => {
+                                const newArr = e.target.value.split('\n');
+                                setPageData({ ...pageData, [key]: newArr });
+                              }}
+                              placeholder="One item per line"
+                            />
+                            <span style={{ fontSize: '.75rem', color: '#64748b' }}>One item per line</span>
+                          </div>
+                        );
+                      }
+                      return (
+                        <div key={key} className="admin-field">
+                          <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                            <span>{meta.label}:</span>
+                            <span style={{ fontSize: '.7rem', background: '#ede9fe', color: '#6d28d9', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                              Structured Data Array
+                            </span>
+                          </label>
+                          <textarea 
+                            rows="8"
+                            value={JSON.stringify(value, null, 2)}
+                            onChange={(e) => {
+                              try {
+                                const parsed = JSON.parse(e.target.value);
+                                setPageData({ ...pageData, [key]: parsed });
+                              } catch (err) {}
+                            }}
+                            style={{ fontFamily: 'monospace', fontSize: '.84rem' }}
+                          />
+                        </div>
+                      );
+                    }
+
+                    // Long text paragraphs
+                    if (key.includes('description') || key.includes('intro') || key.includes('lead') || key.includes('body') || key.includes('text') || key.includes('subtitle')) {
+                      return (
+                        <div key={key} className="admin-field">
+                          <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                            <span>{meta.label}:</span>
+                            {meta.tag && (
+                              <span style={{ fontSize: '.7rem', background: '#f1f5f9', color: '#475569', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                                {meta.tag}
+                              </span>
+                            )}
+                          </label>
+                          <textarea 
+                            rows="4"
+                            value={value || ''}
+                            onChange={(e) => setPageData({ ...pageData, [key]: e.target.value })}
+                          />
+                        </div>
+                      );
+                    }
+
+                    // Short text strings / Headings
+                    const isH1 = key === 'hero_title';
+                    const isH2 = key.includes('title') && !isH1;
                     return (
                       <div key={key} className="admin-field">
-                        <label>{label}:</label>
-                        <textarea 
-                          rows="4"
+                        <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                          <span>{meta.label}:</span>
+                          {isH1 && (
+                            <span style={{ fontSize: '.7rem', background: '#fee2e2', color: '#b91c1c', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '800' }}>
+                              SEO &lt;h1&gt; Tag
+                            </span>
+                          )}
+                          {isH2 && (
+                            <span style={{ fontSize: '.7rem', background: '#e0f2fe', color: '#0369a1', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                              SEO &lt;h2&gt; Tag
+                            </span>
+                          )}
+                          {!isH1 && !isH2 && meta.tag && (
+                            <span style={{ fontSize: '.7rem', background: '#f1f5f9', color: '#475569', padding: '.15rem .45rem', borderRadius: '4px', fontWeight: '700' }}>
+                              {meta.tag}
+                            </span>
+                          )}
+                        </label>
+                        <input 
+                          type="text" 
                           value={value || ''}
                           onChange={(e) => setPageData({ ...pageData, [key]: e.target.value })}
                         />
                       </div>
                     );
-                  }
+                  });
+                })()}
 
-                  // Short text strings
-                  return (
-                    <div key={key} className="admin-field">
-                      <label>{label}:</label>
-                      <input 
-                        type="text" 
-                        value={value || ''}
-                        onChange={(e) => setPageData({ ...pageData, [key]: e.target.value })}
-                      />
-                    </div>
-                  );
-                });
-              })()}
-
-              <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'flex-start' }}>
-                <button onClick={handleSavePage} className="btn btn-solid" style={{ padding: '.8rem 2rem', fontSize: '1rem' }}>
-                  💾 Save {selectedPage.replace('_', ' ')} Changes
-                </button>
+                <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'flex-start' }}>
+                  <button onClick={handleSavePage} className="btn btn-solid" style={{ padding: '.8rem 2rem', fontSize: '1rem' }}>
+                    💾 Save {selectedPage.replace('_', ' ')} Changes
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
         )}
 

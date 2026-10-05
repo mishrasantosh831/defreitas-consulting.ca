@@ -1,33 +1,74 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent } from '../api';
+import SEOHead from '../components/SEOHead';
+import FAQSection from '../components/FAQSection';
 
 export default function Incorporation({ onOpenStrategy }) {
   const [data, setData] = useState({
-    title: "Incorporation and Business Registration",
-    hero_title: "Incorporation and Business Registration",
-    hero_subtitle: "Setting up your enterprise for legal protection, tax deferral, and strategic shareholder growth.",
+    seo_title: "Business Incorporation & Registration Services | DeFreitas & Associates Canada",
+    seo_description: "Business incorporation and registration services from DeFreitas & Associates Toronto, Canada. Get professional guidance to incorporate and register a business.",
+    canonical_url: "https://defreitas-consulting.ca/incorporation-business-registration/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Incorporation & Business Registration\",\"item\":\"https://defreitas-consulting.ca/incorporation-business-registration/\"}]}",
+    title: "Business Incorporation & Registration Services in Canada",
+    hero_eyebrow: "Professional Business Incorporation Services",
+    hero_title: "Business Incorporation & Registration Services in Canada",
+    hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional business incorporation and business registration services for individuals and entrepreneurs establishing a business.",
     hero_banner: "/images/icoopration-business-banner.png",
     content_image: "/images/668.png",
-    intro: "We offer full incorporation and business registration services across Canada while advising on the various business structures available (incorporation vs. sole proprietorship or partnership), their benefits and trade-offs, and providing a clear course of action from a business, tax, and accounting standpoint.",
+    intro: "Starting a business involves important decisions from the outset. We provide practical support through the incorporation or business registration process, helping you establish your business on the right footing. If you are planning to incorporate a business, DeFreitas & Associates can assist with the incorporation process based on your business requirements by helping you navigate the steps involved in establishing your corporation.",
+    section_eyebrow: "Business Incorporation Requirements",
+    section_title: "Business Setup & Advisory Services",
+    section_list_title: "Our Full Incorporation Package Includes:",
     services_list: [
       "Federal (Canada) & Provincial (Ontario) Incorporation",
+      "Business Registration Services",
       "Name Reservation (NUANS search) and Corporate Articles of Incorporation",
       "Digital Minute Book Setup, Corporate By-laws, and Shareholder Registers",
       "Shareholder Structure, Voting vs. Non-Voting shares, and Dividend Classes",
       "CRA Business Number (BN), Corporate Tax (RC), GST/HST (RT), and Payroll (RP) Registration",
       "Ongoing Corporate Annual Return filings and minute book maintenance"
     ],
-    hero_eyebrow: "Enterprise Structuring",
-    section_eyebrow: "Strategic Foundation",
-    section_title: "Incorporate Right From Day One",
-    section_list_title: "Our Full Incorporation Package Includes:",
     card_title: "Starting a New Venture?",
-    card_text: "Structuring your corporation properly avoids substantial tax costs down the road. Speak with our incorporation specialists.",
+    card_text: "Structuring your corporation properly avoids substantial tax costs down the road. Whether incorporation is appropriate depends on your business, financial circumstances, objectives, and other considerations.",
     card_button_text: "Book Incorporation Consultation",
+    faq_items: [
+      {
+        q: "What is the difference between business incorporation and business registration?",
+        a: "Business registration and incorporation are different ways of establishing a business. Incorporation creates a corporation as a separate legal entity, while business registration may apply when establishing and registering another form of business. The appropriate approach depends on your individual circumstances and business requirements."
+      },
+      {
+        q: "Can you help me incorporate a business in Canada?",
+        a: "Yes. DeFreitas & Associates provides business incorporation services and can assist clients through the incorporation process based on their requirements."
+      },
+      {
+        q: "Do you provide business registration services?",
+        a: "Yes. In addition to incorporation services, DeFreitas & Associates provides business registration support for individuals and entrepreneurs establishing a business."
+      },
+      {
+        q: "Should I incorporate my business?",
+        a: "Whether incorporation is appropriate depends on your business, financial circumstances, objectives, and other considerations. Rather than treating incorporation as the right choice for every business, it is important to consider your individual circumstances before deciding how to structure your business."
+      },
+      {
+        q: "What are some considerations when incorporating a business?",
+        a: "There are several factors that may need to be considered, including the nature of the business, ownership, ongoing administrative requirements, financial reporting, and taxation."
+      },
+      {
+        q: "Do you provide accounting services after incorporation?",
+        a: "Yes. Businesses that require ongoing accounting or bookkeeping support can explore our Accounting & Bookkeeping Services. Keeping financial records organized from the beginning can make ongoing business administration and reporting easier to manage."
+      },
+      {
+        q: "Can you also help with corporate tax matters?",
+        a: "Yes. Corporate taxation is handled through our Tax Advisory Services, which provides tax preparation, planning, filing, and advisory support within our scope of services."
+      },
+      {
+        q: "Can you help if my new business requires financing?",
+        a: "DeFreitas & Associates also provides Business Financing Services for businesses preparing to pursue commercial financing."
+      }
+    ],
     cta_eyebrow: "Launch With Legal & Tax Confidence",
     cta_title: "Protect your personal assets and unlock small business tax deductions",
-    cta_subtitle: "Get your corporate registration, minute book, and CRA tax accounts setup seamlessly.",
+    cta_subtitle: "If you are looking to incorporate or register a business, DeFreitas & Associates can help you navigate the process with professional, personalized support. Contact our team to discuss your business incorporation or registration requirements.",
     cta_primary_btn: "Incorporate Today",
     cta_secondary_btn: "Explore All Services"
   });
@@ -40,6 +81,12 @@ export default function Incorporation({ onOpenStrategy }) {
 
   return (
     <div>
+      <SEOHead 
+        title={data.seo_title}
+        description={data.seo_description}
+        canonical={data.canonical_url}
+        breadcrumbSchema={data.breadcrumb_schema}
+      />
       {/* ===== HERO WITH BACKGROUND BANNER ===== */}
       <section 
         className="service-banner-hero" 
@@ -95,6 +142,13 @@ export default function Incorporation({ onOpenStrategy }) {
           </div>
         </div>
       </section>
+
+      {/* ===== FAQS ===== */}
+      <FAQSection 
+        items={data.faq_items} 
+        title="Frequently Asked Questions About Incorporation" 
+        subtitle="Common questions regarding business registration, corporate structures, and requirements in Canada."
+      />
 
       <section className="cta-band">
         <div className="wrap">

@@ -35,7 +35,7 @@ export default function Header({ onOpenStrategy, siteMeta }) {
               <li>
                 <Link 
                   to="/services" 
-                  className={['/services', '/sred', '/tax-advisory', '/accounting', '/financing', '/incorporation'].includes(location.pathname) ? 'active' : ''}
+                  className={['/services', '/sred-tax-credits', '/sred', '/tax-advisory', '/accounting-bookkeeping', '/accounting', '/business-financing', '/financing', '/incorporation-business-registration', '/incorporation'].includes(location.pathname) ? 'active' : ''}
                 >
                   Services &amp; Plans
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M6 9l6 6 6-6"/></svg>
@@ -49,19 +49,19 @@ export default function Header({ onOpenStrategy, siteMeta }) {
                     <b>Tax Advisory, Preparation &amp; Filing</b>
                     <span className="desc">T1, T2, CRA audit defense, GST/HST</span>
                   </Link>
-                  <Link to="/sred">
+                  <Link to="/sred-tax-credits">
                     <b>SR&amp;ED Tax Credit Claims</b>
                     <span className="desc">Up to 64% refundable innovation grants</span>
                   </Link>
-                  <Link to="/accounting">
+                  <Link to="/accounting-bookkeeping">
                     <b>Accounting &amp; Bookkeeping</b>
                     <span className="desc">Notice to Reader, monthly cloud ledgers</span>
                   </Link>
-                  <Link to="/financing">
+                  <Link to="/business-financing">
                     <b>Business Financing Solutions</b>
                     <span className="desc">Lender proposals, cash flows, loan packages</span>
                   </Link>
-                  <Link to="/incorporation">
+                  <Link to="/incorporation-business-registration">
                     <b>Incorporation &amp; Registration</b>
                     <span className="desc">Federal &amp; Ontario articles, minute books</span>
                   </Link>
@@ -114,10 +114,10 @@ export default function Header({ onOpenStrategy, siteMeta }) {
             <Link to="/services" onClick={() => setMobileOpen(false)}>Services &amp; Pricing</Link>
             <div className="mobile-sublinks">
               <Link to="/tax-advisory" onClick={() => setMobileOpen(false)}>→ Tax Advisory &amp; Filing</Link>
-              <Link to="/sred" onClick={() => setMobileOpen(false)}>→ SR&amp;ED Claims</Link>
-              <Link to="/accounting" onClick={() => setMobileOpen(false)}>→ Accounting &amp; Bookkeeping</Link>
-              <Link to="/financing" onClick={() => setMobileOpen(false)}>→ Business Financing</Link>
-              <Link to="/incorporation" onClick={() => setMobileOpen(false)}>→ Incorporation</Link>
+              <Link to="/sred-tax-credits" onClick={() => setMobileOpen(false)}>→ SR&amp;ED Claims</Link>
+              <Link to="/accounting-bookkeeping" onClick={() => setMobileOpen(false)}>→ Accounting &amp; Bookkeeping</Link>
+              <Link to="/business-financing" onClick={() => setMobileOpen(false)}>→ Business Financing</Link>
+              <Link to="/incorporation-business-registration" onClick={() => setMobileOpen(false)}>→ Incorporation</Link>
             </div>
           </li>
           <li><Link to="/about" onClick={() => setMobileOpen(false)}>About Us</Link></li>

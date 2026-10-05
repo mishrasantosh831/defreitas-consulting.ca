@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent, submitInquiry } from '../api';
+import SEOHead from '../components/SEOHead';
 
 export default function Contact() {
   const [data, setData] = useState({
+    seo_title: "Contact DeFreitas & Associates | Toronto, Canada",
+    seo_description: "Contact DeFreitas & Associates in Toronto, Canada for tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services.",
+    canonical_url: "https://defreitas-consulting.ca/contact/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Contact Us\",\"item\":\"https://defreitas-consulting.ca/contact/\"}]}",
     title: "Contact Us — DeFreitas & Associates CPAs",
     hero_title: "Schedule Your Free Initial Consultation",
     hero_subtitle: "We look forward to being of service to you. Reach out to our senior management team in Toronto today.",
@@ -52,6 +57,12 @@ export default function Contact() {
 
   return (
     <div>
+      <SEOHead 
+        title={data.seo_title}
+        description={data.seo_description}
+        canonical={data.canonical_url}
+        breadcrumbSchema={data.breadcrumb_schema}
+      />
       <section className="page-hero">
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link> / <span>Contact Us</span></div>

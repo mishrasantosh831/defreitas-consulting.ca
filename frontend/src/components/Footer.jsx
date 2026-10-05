@@ -56,10 +56,10 @@ export default function Footer({ siteMeta }) {
           <div className="footer-col">
             <h4>Core Practices</h4>
             <Link to="/tax-advisory">Tax Advisory &amp; Filing</Link>
-            <Link to="/sred">SR&amp;ED Tax Credits</Link>
-            <Link to="/accounting">Accounting &amp; Bookkeeping</Link>
-            <Link to="/financing">Business Financing</Link>
-            <Link to="/incorporation">Incorporation &amp; Registration</Link>
+            <Link to="/sred-tax-credits">SR&amp;ED Tax Credits</Link>
+            <Link to="/accounting-bookkeeping">Accounting &amp; Bookkeeping</Link>
+            <Link to="/business-financing">Business Financing</Link>
+            <Link to="/incorporation-business-registration">Incorporation &amp; Registration</Link>
           </div>
 
           <div className="footer-col">

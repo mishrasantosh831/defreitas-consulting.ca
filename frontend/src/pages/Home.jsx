@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent } from '../api';
+import SEOHead from '../components/SEOHead';
+import FAQSection from '../components/FAQSection';
 
 export default function Home({ onOpenStrategy }) {
   const [content, setContent] = useState({
-    hero_eyebrow: "Executive Tax Accountants · 30+ Years Legacy",
-    hero_title: "Corporate advisory that builds real growth.",
-    hero_description: "From corporate T2 filings and SR&ED tax credit claims to full-cycle accounting and business financing — DeFreitas & Associates delivers executive financial strategy for businesses across Toronto & Canada. Exceeding expectations for over 30 years.",
+    seo_title: "Business & Financial Consultants Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates offers expert business, tax, and financial advisory services in Toronto, Canada. Trusted solutions for your financial success.",
+    canonical_url: "https://defreitas-consulting.ca/",
+    breadcrumb_schema: "",
+    hero_eyebrow: "Tax, Accounting & Business Advisory Services",
+    hero_title: "Tax, Accounting, Financial & Business Advisory Services",
+    hero_description: "DeFreitas & Associates provides professional tax, accounting, financial and business advisory services to individuals and businesses. For more than 30 years, we have helped clients navigate financial, tax and business matters with practical advice and personalized support.",
     hero_image: "/images/hero-tax-accountants.jpg",
     stat_1_number: "30",
     stat_1_suffix: "+ Yrs",
@@ -20,9 +26,31 @@ export default function Home({ onOpenStrategy }) {
     stat_4_number: "100",
     stat_4_suffix: "%",
     stat_4_label: "CPA On-Time Compliance",
-    why_title: "Proactive business advisors, not just annual tax filers",
-    why_description: "We don't wait until year-end to examine your balance sheet. Our senior Chartered Professional Accountants provide continuous tax strategies, helping you seize capital opportunities and avoid CRA pitfalls.",
-    why_image: "/images/why-choose-us.jpg"
+    why_title: "Over 30 Years of Trusted Tax, Financial & Business Advisory",
+    why_description: "Work with experienced Chartered Professional Accountants who bring decades of tax, accounting and business advisory experience across a range of industries. Receive direct, timely support from professionals who understand your business and provide guidance tailored to your circumstances.",
+    why_image: "/images/why-choose-us.jpg",
+    faq_items: [
+      {
+        q: "Do you work with both individuals and businesses?",
+        a: "Yes. DeFreitas & Associates works with individuals, entrepreneurs and businesses that need professional tax services, accounting services, financial guidance and business advisory services. Based in Toronto, Canada, we provide support based on each client’s circumstances and requirements."
+      },
+      {
+        q: "I’m not sure which service I need. Can you help me figure that out?",
+        a: "Yes. You don’t need to know exactly which service you need before contacting us. We can discuss your situation and determine whether you need tax advisory services, accounting and bookkeeping services, business financing services, incorporation and business registration, SR&ED tax credit support or CPA Fractional CFO Advisory."
+      },
+      {
+        q: "Can you handle more than just my taxes?",
+        a: "Yes. In addition to personal and corporate tax services, DeFreitas & Associates provides accounting and bookkeeping services, business financing services, SR&ED tax credit support, incorporation and business registration, and CPA Fractional CFO Advisory. This allows clients to access broader financial and business advisory services as their needs evolve."
+      },
+      {
+        q: "When is the right time to speak with a tax or business advisor?",
+        a: "You don’t have to wait until tax season or until a financial issue arises. An experienced tax advisor or business advisor can provide valuable guidance when you are starting or growing a business, considering business financing, managing a tax matter, reviewing cash flow or planning an important financial decision."
+      },
+      {
+        q: "What can I expect when I work with DeFreitas & Associates?",
+        a: "We start by understanding your situation, priorities and objectives before recommending an appropriate approach. With more than 30 years of experience, DeFreitas & Associates provides practical, personalized tax, accounting, financial and business advisory services based on each client’s needs."
+      }
+    ]
   });
 
   useEffect(() => {
@@ -33,6 +61,12 @@ export default function Home({ onOpenStrategy }) {
 
   return (
     <div>
+      <SEOHead 
+        title={content.seo_title}
+        description={content.seo_description}
+        canonical={content.canonical_url}
+        breadcrumbSchema={content.breadcrumb_schema}
+      />
       {/* ===== HERO ===== */}
       <section className="hero">
         <div className="wrap">
@@ -170,7 +204,7 @@ export default function Home({ onOpenStrategy }) {
               </span>
               <h3>Accounting &amp; Bookkeeping</h3>
               <p>Full-cycle cloud bookkeeping, monthly financial statements (Notice to Reader), payroll, and GST/HST filing.</p>
-              <Link to="/accounting" className="more">Explore Accounting →</Link>
+              <Link to="/accounting-bookkeeping" className="more">Explore Accounting →</Link>
             </article>
 
             <article className="svc">
@@ -179,7 +213,7 @@ export default function Home({ onOpenStrategy }) {
               </span>
               <h3>SR&amp;ED Tax Credit Claims</h3>
               <p>Recover up to 64% of qualifying software engineering, R&amp;D, and technical innovation costs via government tax refunds.</p>
-              <Link to="/sred" className="more">Explore SR&amp;ED Claims →</Link>
+              <Link to="/sred-tax-credits" className="more">Explore SR&amp;ED Claims →</Link>
             </article>
 
             <article className="svc">
@@ -188,7 +222,7 @@ export default function Home({ onOpenStrategy }) {
               </span>
               <h3>Business Financing Solutions</h3>
               <p>Preparation of financial statement models, business plans, and direct introductions to commercial lenders and financiers.</p>
-              <Link to="/financing" className="more">Explore Financing →</Link>
+              <Link to="/business-financing" className="more">Explore Financing →</Link>
             </article>
 
             <article className="svc">
@@ -197,7 +231,7 @@ export default function Home({ onOpenStrategy }) {
               </span>
               <h3>Incorporation &amp; Registration</h3>
               <p>Federal (Canada) &amp; Provincial (Ontario) incorporation, minute books, shareholder structure, and CRA account registration.</p>
-              <Link to="/incorporation" className="more">Explore Incorporation →</Link>
+              <Link to="/incorporation-business-registration" className="more">Explore Incorporation →</Link>
             </article>
 
             <article className="svc">
@@ -340,6 +374,13 @@ export default function Home({ onOpenStrategy }) {
           </div>
         </div>
       </section>
+
+      {/* ===== FAQS (FROM SPREADSHEET PAGE CONTENT DOC) ===== */}
+      <FAQSection 
+        title="Frequently Asked Questions" 
+        subtitle="Common questions about our professional tax, accounting, financial, and business advisory services."
+        items={content.faq_items} 
+      />
 
       {/* ===== CTA BAND ===== */}
       <section className="cta-band">

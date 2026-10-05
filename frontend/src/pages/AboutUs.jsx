@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPageContent } from '../api';
+import SEOHead from '../components/SEOHead';
 
 export default function AboutUs({ onOpenStrategy }) {
   const [data, setData] = useState({
-    title: "About Us — DeFreitas & Associates",
-    hero_title: "Exceeding expectations for over 30 years",
+    seo_title: "About DeFreitas & Associates | Business & Tax Advisors Toronto",
+    seo_description: "About DeFreitas & Associates | Toronto, Canada",
+    canonical_url: "https://defreitas-consulting.ca/about/",
+    breadcrumb_schema: "",
+    title: "About DeFreitas & Associates Canada",
+    hero_title: "About DeFreitas & Associates Canada",
     hero_subtitle: "We are a firm of Chartered Professional Accountants providing a wide array of business consulting and tax advisory services to individuals and business enterprises across Canada.",
     hero_image: "/images/about-team.jpg",
-    philosophy_title: "Professionalism delivered with personal commitment",
-    lead_text: "We pride ourselves on the extensive experience our team possesses along with a high level of professionalism extended to all of our clients, delivered at rates that are competitive.",
-    body_text: "Whether managing complex corporate restructures, preparing T2 corporate returns, recovering SR&ED research credits, or securing commercial bank loans, our advisors operate with unwavering diligence.",
+    philosophy_title: "Financial Consultants, Business Advisors & Tax Professionals",
+    lead_text: "Tax & Accounting Expertise",
+    body_text: "We pride ourselves on the extensive experience our team possesses along with a high level of professionalism extended to all of our clients, delivered at rates that are competitive.",
     credentials: [
       "Member, Canadian Tax Foundation (CTF)",
       "Registered EFILE Association of Canada Practice",
@@ -21,12 +26,18 @@ export default function AboutUs({ onOpenStrategy }) {
 
   useEffect(() => {
     fetchPageContent('about')
-      .then(res => { if (res) setData(res); })
+      .then(res => { if (res) setData(prev => ({ ...prev, ...res })); })
       .catch(err => console.warn("Using default About data:", err.message));
   }, []);
 
   return (
     <div>
+      <SEOHead 
+        title={data.seo_title}
+        description={data.seo_description}
+        canonical={data.canonical_url}
+        breadcrumbSchema={data.breadcrumb_schema}
+      />
       <section className="page-hero">
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link> / <span>About Us</span></div>

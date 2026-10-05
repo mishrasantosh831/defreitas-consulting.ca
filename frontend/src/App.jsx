@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -73,7 +73,6 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop />
       <StrategyModal isOpen={strategyOpen} onClose={() => setStrategyOpen(false)} />
-      
       <Routes>
         {/* Admin Portal Routes (No Public Header/Footer) */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -103,14 +102,8 @@ export default function App() {
             </MainLayout>
           } 
         />
-        <Route 
-          path="/sred" 
-          element={
-            <MainLayout onOpenStrategy={() => setStrategyOpen(true)} siteMeta={siteMeta}>
-              <SredClaims onOpenStrategy={() => setStrategyOpen(true)} />
-            </MainLayout>
-          } 
-        />
+
+        {/* Tax Advisory - URL unchanged */}
         <Route 
           path="/tax-advisory" 
           element={
@@ -119,30 +112,51 @@ export default function App() {
             </MainLayout>
           } 
         />
+
+        {/* SR&ED - new SEO URL, old URL redirects */}
         <Route 
-          path="/accounting" 
+          path="/sred-tax-credits" 
+          element={
+            <MainLayout onOpenStrategy={() => setStrategyOpen(true)} siteMeta={siteMeta}>
+              <SredClaims onOpenStrategy={() => setStrategyOpen(true)} />
+            </MainLayout>
+          } 
+        />
+        <Route path="/sred" element={<Navigate to="/sred-tax-credits" replace />} />
+
+        {/* Accounting - new SEO URL, old URL redirects */}
+        <Route 
+          path="/accounting-bookkeeping" 
           element={
             <MainLayout onOpenStrategy={() => setStrategyOpen(true)} siteMeta={siteMeta}>
               <Accounting onOpenStrategy={() => setStrategyOpen(true)} />
             </MainLayout>
           } 
         />
+        <Route path="/accounting" element={<Navigate to="/accounting-bookkeeping" replace />} />
+
+        {/* Financing - new SEO URL, old URL redirects */}
         <Route 
-          path="/financing" 
+          path="/business-financing" 
           element={
             <MainLayout onOpenStrategy={() => setStrategyOpen(true)} siteMeta={siteMeta}>
               <Financing onOpenStrategy={() => setStrategyOpen(true)} />
             </MainLayout>
           } 
         />
+        <Route path="/financing" element={<Navigate to="/business-financing" replace />} />
+
+        {/* Incorporation - new SEO URL, old URL redirects */}
         <Route 
-          path="/incorporation" 
+          path="/incorporation-business-registration" 
           element={
             <MainLayout onOpenStrategy={() => setStrategyOpen(true)} siteMeta={siteMeta}>
               <Incorporation onOpenStrategy={() => setStrategyOpen(true)} />
             </MainLayout>
           } 
         />
+        <Route path="/incorporation" element={<Navigate to="/incorporation-business-registration" replace />} />
+
         <Route 
           path="/about" 
           element={

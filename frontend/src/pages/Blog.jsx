@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchPosts } from '../api';
+import { fetchPosts, fetchPageContent } from '../api';
 import Pagination from '../components/Pagination';
+import SEOHead from '../components/SEOHead';
 
 export default function Blog() {
+  const [seo, setSeo] = useState({
+    seo_title: "Tax & Business Insights | DeFreitas & Associates Blog",
+    seo_description: "Tax, business, accounting and finance insights from DeFreitas & Associates, providing professional advisory and consulting services | Toronto, Canada.",
+    canonical_url: "https://defreitas-consulting.ca/blog/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tax Journal\",\"item\":\"https://defreitas-consulting.ca/blog/\"}]}"
+  });
+
   const [posts, setPosts] = useState([
     {
       id: "1",
@@ -14,7 +22,7 @@ export default function Blog() {
       content: "TAX TIME APPROACHING IN CANADA. Important dates to remember: T1 Personal income tax filing deadline is April 30th (June 15th for self-employed individuals). T2 Corporate tax return is due 6 months following the corporation's fiscal year-end, while corporate taxes owed are payable 2 to 3 months following year-end depending on whether your company qualifies for the small business deduction. Contact DeFreitas & Associates today to organize your records and ensure prompt filing.",
       date: "2026-03-01",
       image: "/images/post-tax-season.jpg",
-      slug: "tax-time-approaching-in-canada-key-deadlines-preparation-steps"
+      slug: "tax-time-approaching-in-canada"
     },
     {
       id: "2",
@@ -25,7 +33,7 @@ export default function Blog() {
       content: "DeFreitas & Associates (D&A) was proud to be a corporate sponsor of the Dominica Rising Benefit Gala hosted by the Trade & Investment Commissioner for Dominica (in Canada), Ms. Frances Delsol. Our team remains committed to community engagement and international business collaboration.",
       date: "2025-11-15",
       image: "/images/recent-post.jpg",
-      slug: "defreitas-associates-sponsors-dominica-rising-benefit-gala"
+      slug: "dominica-rising-benefit-gala"
     },
     {
       id: "3",
@@ -36,7 +44,7 @@ export default function Blog() {
       content: "DeFreitas & Associates (D&A) is proud to announce that the firm’s North American affiliated office in Toronto, Canada has become a member of the Canadian Tax Foundation (www.ctf.ca). Membership in the Canadian Tax Foundation further reinforces our capacity to deliver leading-edge tax planning and CRA policy insights to our corporate and private clients.",
       date: "2025-08-20",
       image: "/images/post-tax-foundation.jpg",
-      slug: "defreitas-associates-joins-canadian-tax-foundation"
+      slug: "canadian-tax-foundation-membership"
     }
   ]);
 
@@ -44,13 +52,9 @@ export default function Blog() {
   const pageSize = 4;
 
   useEffect(() => {
-    document.title = "Tax Journal & News — DeFreitas & Associates CPAs";
-    
-    // Update Meta Description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.content = "Stay informed on Canadian corporate tax updates, CRA filing deadlines, SR&ED credit strategies, and firm announcements from DeFreitas & Associates CPAs.";
-    }
+    fetchPageContent('blog')
+      .then(res => { if (res) setSeo(prev => ({ ...prev, ...res })); })
+      .catch(err => console.warn("Using default blog SEO:", err.message));
 
     fetchPosts('published')
       .then(res => { 
@@ -71,6 +75,12 @@ export default function Blog() {
 
   return (
     <div>
+      <SEOHead 
+        title={seo.seo_title}
+        description={seo.seo_description}
+        canonical={seo.canonical_url}
+        breadcrumbSchema={seo.breadcrumb_schema}
+      />
       <section className="page-hero">
         <div className="wrap">
           <div className="crumb"><Link to="/">Home</Link> / <span>Tax Journal</span></div>
