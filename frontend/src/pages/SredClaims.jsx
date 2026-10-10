@@ -5,19 +5,22 @@ import SEOHead from '../components/SEOHead';
 import FAQSection from '../components/FAQSection';
 
 const defaultSredData = {
-  seo_title: "SR&ED Tax Credit Services Canada | DeFreitas & Associates",
-  seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides professional SR&ED tax credit services for businesses involved in research, development, innovation, and technological advancement.",
-  canonical_url: "https://defreitas-consulting.ca/sred-tax-credits/",
-  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"SR&ED Tax Credits\",\"item\":\"https://defreitas-consulting.ca/sred-tax-credits/\"}]}",
-  title: "SR&ED Tax Credit Services in Canada",
-  hero_eyebrow: "Scientific Research & Experimental Development",
-  hero_title: "SR&ED Tax Credit Services in Canada",
+  seo_title: "SR&ED Tax Credit Services Toronto | DeFreitas & Associates",
+  seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides SR&ED tax credit consulting, helping businesses prepare claims and access eligible R&D tax incentives.",
+  canonical_url: "http://localhost:3000/sred-tax-credits/",
+  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"SR&ED Tax Credits\",\"item\":\"http://localhost:3000/sred-tax-credits/\"}]}",
+  title: "SR&ED Tax Credit Consulting Services in Canada",
+  hero_eyebrow: "Professional SR&ED Tax Credit Consultants",
+  hero_title: "SR&ED Tax Credit Consulting Services in Canada",
   hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional SR&ED tax credit services for businesses involved in research, development, innovation, and technological advancement.",
   hero_overview: "If your business is developing or improving products, processes, technologies, or technical capabilities, your activities may be worth reviewing under Canada’s Scientific Research & Experimental Development (SR&ED) tax incentive program.\n\nOur team provides practical SR&ED consulting and tax support to help businesses understand the process, review their circumstances, and prepare their SR&ED claims.",
   hero_banner: "/images/sred-hero.jpg",
-  consulting_title: "SR&ED Consulting & Tax Credit Support",
+  consulting_title: "Professional SR&ED Tax Credit Consultants",
+  h3_incentives_title: "Scientific Research & Experimental Development Tax Incentives",
   consulting_content: "Preparing an SR&ED tax credit claim involves both the work performed and the expenditures associated with eligible activities.\n\nAs an SR&ED consultant in Canada, DeFreitas & Associates works with businesses to review their research and development activities and provide professional guidance throughout the SR&ED claim process.\n\nOur SR&ED tax credit services can also complement broader Tax Advisory Services and Accounting & Bookkeeping Services when additional tax, accounting, or financial support is required.",
-  services_list_title: "Our SR&ED Services",
+  claims_title: "SR&ED Tax Credit Claims Toronto, Canada",
+  services_list_title: "SR&ED Tax Credit Claims Toronto, Canada",
+  preparing_title: "Preparing Your SR&ED Claim Toronto, Canada",
   services_list_intro: "Our SR&ED consulting services include support with:",
   services_list: [
     "Reviewing potential SR&ED activities",
@@ -121,9 +124,12 @@ export default function SredClaims({ onOpenStrategy }) {
               
               {/* Section 1: SR&ED Consulting & Tax Credit Support */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
-                  {data.consulting_title || "SR&ED Consulting & Tax Credit Support"}
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '.8rem', color: 'var(--ink)' }}>
+                  {data.consulting_title || "Professional SR&ED Tax Credit Consultants"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '1rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.h3_incentives_title || "Scientific Research & Experimental Development Tax Incentives"}
+                </h3>
                 {data.consulting_content && data.consulting_content.split('\n\n').map((paragraph, pIdx) => {
                   // If paragraph mentions Tax Advisory Services or Accounting & Bookkeeping Services, enrich with clickable internal links
                   if (paragraph.includes('Tax Advisory Services') || paragraph.includes('Accounting & Bookkeeping Services')) {
@@ -149,10 +155,10 @@ export default function SredClaims({ onOpenStrategy }) {
                 })}
               </div>
 
-              {/* Section 2: Our SR&ED Services */}
+              {/* Section 2: SR&ED Tax Credit Claims */}
               <div className="content-block" style={{ marginBottom: '2rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '.6rem', color: 'var(--ink)' }}>
-                  {data.services_list_title || "Our SR&ED Services"}
+                  {data.claims_title || data.services_list_title || "SR&ED Tax Credit Claims Toronto, Canada"}
                 </h2>
                 <p style={{ marginBottom: '1.25rem', color: 'var(--ink-soft)', fontWeight: '500' }}>
                   {data.services_list_intro || "Our SR&ED consulting services include support with:"}
@@ -174,8 +180,18 @@ export default function SredClaims({ onOpenStrategy }) {
                     {data.services_list_closing}
                   </p>
                 )}
+              </div>
 
-                <div style={{ marginTop: '2rem', padding: '1.2rem 1.4rem', background: '#f8fafc', borderRadius: '10px', borderLeft: '4px solid var(--mint-600)' }}>
+              {/* Section 3: Preparing Your SR&ED Claim */}
+              <div className="content-block" style={{ marginBottom: '2.5rem' }}>
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '1rem', color: 'var(--ink)' }}>
+                  {data.preparing_title || "Preparing Your SR&ED Claim Toronto, Canada"}
+                </h2>
+                <p style={{ lineHeight: '1.75', color: 'var(--ink-soft)' }}>
+                  Preparing an accurate and compliant SR&amp;ED claim requires thorough technical narrative development and detailed financial expenditure tracking. Our Toronto-based advisors provide end-to-end guidance to maximize eligible tax refunds.
+                </p>
+
+                <div style={{ marginTop: '1.5rem', padding: '1.2rem 1.4rem', background: '#f8fafc', borderRadius: '10px', borderLeft: '4px solid var(--mint-600)' }}>
                   <span style={{ color: 'var(--ink)' }}>Businesses looking for broader financial support can also explore our </span>
                   <Link to="/business-financing" style={{ color: 'var(--mint-700)', fontWeight: '600', textDecoration: 'underline' }}>
                     Business Financing Services

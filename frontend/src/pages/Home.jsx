@@ -18,7 +18,7 @@ const defaultPracticeServices = [
     link: "/accounting-bookkeeping"
   },
   {
-    title: "SR&ED Tax Credit",
+    title: "SR&ED Tax Credits",
     desc: "Professional SR&ED tax credit support, including claim preparation, financial documentation, and related tax matters.",
     link_text: "Explore SR&ED Services →",
     link: "/sred-tax-credits"
@@ -141,12 +141,12 @@ const getWhyIcon = (title = '', idx = 0) => {
 
 export default function Home({ onOpenStrategy }) {
   const [content, setContent] = useState({
-    seo_title: "Business & Financial Consultants Toronto | DeFreitas & Associates",
-    seo_description: "DeFreitas & Associates offers expert business, tax, and financial advisory services in Toronto, Canada. Trusted solutions for your financial success.",
-    canonical_url: "https://defreitas-consulting.ca/",
+    seo_title: "Tax & Business Services Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates provides tax, accounting, bookkeeping and business consulting services from Toronto, Canada, serving clients globally.",
+    canonical_url: "http://localhost:3000/",
     breadcrumb_schema: "",
     hero_eyebrow: "Tax, Accounting & Business Advisory Services",
-    hero_title: "Tax, Accounting, Financial & Business Advisory Services",
+    hero_title: "Tax, Accounting & Business Advisory Services Toronto, Canada",
     hero_description: "DeFreitas & Associates provides professional tax, accounting, financial and business advisory services to individuals and businesses. For more than 30 years, we have helped clients navigate financial, tax and business matters with practical advice and personalized support.",
     hero_image: "/images/hero-tax-accountants.jpg",
     stat_1_number: "30",
@@ -162,13 +162,13 @@ export default function Home({ onOpenStrategy }) {
     stat_4_suffix: "%",
     stat_4_label: "CPA On-Time Compliance",
     services_eyebrow: "What We Do",
-    services_title: "Comprehensive financial strategy,\ntailored for your business",
+    services_title: "Professional Services for Individuals & Businesses in Toronto, Canada",
     services_subtitle: "One dedicated team handling your day-to-day accounting, tax planning, and growth capital — with clear pricing and zero surprise bills.",
     practice_services: defaultPracticeServices,
     how_we_work_eyebrow: "HOW WE WORK",
     how_we_work_title: "A Simple, Seamless and Personalized Approach",
     how_we_work_steps: defaultHowWeWorkSteps,
-    why_title: "Over 30 Years of Trusted Tax, Financial & Business Advisory",
+    why_title: "Experienced Business & Financial Advisors in Toronto, Canada",
     why_image: "/images/why-choose-us.jpg",
     why_items: defaultWhyItems,
     faq_items: [

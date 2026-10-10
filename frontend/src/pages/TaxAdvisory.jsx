@@ -5,26 +5,29 @@ import SEOHead from '../components/SEOHead';
 import FAQSection from '../components/FAQSection';
 
 const defaultTaxAdvisoryData = {
-  seo_title: "Tax Consultant & Advisory Services Toronto | DeFreitas & Associates",
+  seo_title: "Tax Consultant & Tax Firm Toronto | DeFreitas & Associates",
   seo_description: "DeFreitas & Associates is a tax consulting firm in Toronto, Canada, providing professional tax advisory, tax consultancy and tax services for businesses.",
-  canonical_url: "https://defreitas-consulting.ca/tax-advisory/",
-  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Tax Advisory\",\"item\":\"https://defreitas-consulting.ca/tax-advisory/\"}]}",
-  title: "Tax Consultant & Tax Advisory Services in Canada",
-  hero_eyebrow: "Professional Tax Consultants & Tax Advisors",
-  hero_title: "Tax Consultant & Tax Advisory Services in Canada",
+  canonical_url: "http://localhost:3000/tax-advisory/",
+  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tax Advisory\",\"item\":\"http://localhost:3000/tax-advisory/\"}]}",
+  title: "Professional Tax Advisory & Tax Services in Toronto, Canada",
+  hero_eyebrow: "Professional Tax Consultants & Tax Advisors Toronto, Canada",
+  hero_title: "Professional Tax Advisory & Tax Services in Toronto, Canada",
   hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional tax consulting, advisory, preparation, and filing services to individuals and businesses. Whether you need help preparing a tax return, planning ahead, responding to a tax matter, or understanding your obligations, our team offers practical guidance based on your specific circumstances.",
   hero_overview: "For those looking for a tax consultant in Canada, a knowledgeable tax advisor, or an experienced tax firm, we provide personalized support across a broad range of personal and business tax matters.",
   hero_banner: "/images/tax-advisory-banner.png",
-  advisory_title: "Tax Consulting & Advisory",
+  advisory_title: "Professional Tax Consultants & Tax Advisors Toronto, Canada",
+  h3_experienced_advisors: "Experienced Tax Consultants & Tax Advisors",
   advisory_content: "Good tax planning is about more than meeting filing deadlines. It’s about understanding your obligations, anticipating potential issues, and making informed decisions throughout the year.\n\nOur tax consultants work with employed and self-employed individuals, proprietorships, partnerships, small and mid-sized businesses, and corporations on a variety of tax planning and advisory matters.",
   advisory_link_text: "Accounting & Bookkeeping Services",
   advisory_link_url: "/accounting-bookkeeping",
-  personal_corporate_title: "Personal & Corporate Tax Services",
+  personal_corporate_title: "Tax Planning Services Toronto, Canada",
+  h3_corporate_tax: "Corporate & Business Tax Advisory",
   personal_corporate_content: "We provide tax preparation, filing, planning, and advisory services for both individuals and businesses.\n\nFor individuals, this includes T1 General personal tax returns, adjustments, and related tax matters. For businesses, we assist with T2 Corporate Tax Returns, Compilation Engagement financial statements, corporate tax planning, and related filing requirements.",
   personal_corporate_link_text: "Business Incorporation Services",
   personal_corporate_link_url: "/incorporation-business-registration",
-  cra_matters_title: "GST/HST & CRA Tax Matters",
+  cra_matters_title: "GST/HST Tax Services Toronto, Canada",
   cra_matters_content: "Tax questions don’t always end once a return has been filed. We assist clients with GST/HST filings as well as a range of CRA-related matters that may arise afterward.\n\nOur services include personal and corporate tax reviews and audits, GST/HST reviews and audits, tax adjustments, Notices of Objection, tax appeals, and related CRA correspondence.",
+  reviews_appeals_title: "Tax Reviews, Objections & Appeals Toronto, Canada",
   cross_border_title: "Non-Resident & Cross-Border Tax Matters",
   cross_border_content: "Certain tax situations become more complex when income, investments, employment, or transactions extend beyond one jurisdiction.\n\nDeFreitas & Associates assists with selected non-resident employment and investment tax matters, Certificates of Compliance, commodity tax transactions, and HST-related cross-border matters.\n\nBecause every situation is different, we review each matter individually to understand the circumstances and determine how we can assist.",
   services_list_title: "Tax Services We Provide",
@@ -141,8 +144,11 @@ export default function TaxAdvisory({ onOpenStrategy }) {
               {/* Section 1: Tax Consulting & Advisory */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '1rem', color: 'var(--ink)' }}>
-                  {data.advisory_title || "Tax Consulting & Advisory"}
+                  {data.advisory_title || "Professional Tax Consultants & Tax Advisors Toronto, Canada"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '.8rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.h3_experienced_advisors || "Experienced Tax Consultants & Tax Advisors"}
+                </h3>
                 {data.advisory_content && data.advisory_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {paragraph}
@@ -159,8 +165,11 @@ export default function TaxAdvisory({ onOpenStrategy }) {
               {/* Section 2: Personal & Corporate Tax Services */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '1rem', color: 'var(--ink)' }}>
-                  {data.personal_corporate_title || "Personal & Corporate Tax Services"}
+                  {data.personal_corporate_title || "Tax Planning Services Toronto, Canada"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '.8rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.h3_corporate_tax || "Corporate & Business Tax Advisory"}
+                </h3>
                 {data.personal_corporate_content && data.personal_corporate_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {paragraph}
@@ -177,7 +186,7 @@ export default function TaxAdvisory({ onOpenStrategy }) {
               {/* Section 3: GST/HST & CRA Tax Matters */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '1rem', color: 'var(--ink)' }}>
-                  {data.cra_matters_title || "GST/HST & CRA Tax Matters"}
+                  {data.cra_matters_title || "GST/HST Tax Services Toronto, Canada"}
                 </h2>
                 {data.cra_matters_content && data.cra_matters_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
@@ -186,10 +195,10 @@ export default function TaxAdvisory({ onOpenStrategy }) {
                 ))}
               </div>
 
-              {/* Section 4: Non-Resident & Cross-Border Tax Matters */}
+              {/* Section 4: Reviews, Objections, Appeals & Cross-Border */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '1rem', color: 'var(--ink)' }}>
-                  {data.cross_border_title || "Non-Resident & Cross-Border Tax Matters"}
+                  {data.reviews_appeals_title || "Tax Reviews, Objections & Appeals Toronto, Canada"}
                 </h2>
                 {data.cross_border_content && data.cross_border_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>

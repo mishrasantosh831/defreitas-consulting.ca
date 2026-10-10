@@ -20,11 +20,11 @@ Early preparation and accurate documentation are essential for ensuring full ded
 Contact DeFreitas & Associates today to organize your records and ensure prompt filing with the Canada Revenue Agency.`,
     date: "2026-03-01",
     image: "/images/post-tax-season.jpg",
-    slug: "tax-time-approaching-in-canada",
-    seo_title: "Tax Time Approaching in Canada | DeFreitas & Associates",
-    seo_description: "Essential CRA tax deadlines, personal T1, corporate T2 preparation steps, and compliance advice for the Canadian tax season.",
+    slug: "canada-tax-deadlines-preparation",
+    seo_title: "Canada Tax Deadlines & Filing Guide | DeFreitas & Associates",
+    seo_description: "Stay informed about important Canadian tax deadlines, filing dates and tax preparation steps with insights from DeFreitas & Associates in Toronto, Canada.",
     seo_keywords: "Canadian Tax Deadlines, T2 Corporate Tax, T1 Personal Tax, CRA Filing 2026, DeFreitas CPAs",
-    canonical_url: "https://defreitas-consulting.ca/blog/tax-time-approaching-in-canada/"
+    canonical_url: "http://localhost:3000/blog/canada-tax-deadlines-preparation/"
   },
   {
     id: "2",
@@ -88,7 +88,8 @@ export default function ArticleDetail({ onOpenStrategy }) {
         console.warn("API article lookup failed, checking local defaults:", err.message);
         // Fallback to local default posts
         const match = DEFAULT_POSTS.find(
-          p => p.slug === slug || String(p.id) === String(slug)
+          p => p.slug === slug || String(p.id) === String(slug) ||
+          (p.slug === 'canada-tax-deadlines-preparation' && (slug === 'tax-time-approaching-in-canada' || slug === 'tax-time-approaching-in-canada-key-deadlines-preparation-steps'))
         );
         if (match) {
           setPost(match);

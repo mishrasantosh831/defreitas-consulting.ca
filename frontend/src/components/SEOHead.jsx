@@ -40,11 +40,17 @@ export default function SEOHead({ title, description, canonical, breadcrumbSchem
       existingSchema.remove();
     }
     if (breadcrumbSchema) {
-      const script = document.createElement('script');
-      script.setAttribute('type', 'application/ld+json');
-      script.setAttribute('id', 'breadcrumb-schema');
-      script.textContent = breadcrumbSchema;
-      document.head.appendChild(script);
+      let cleanSchema = String(breadcrumbSchema).trim();
+      if (cleanSchema.startsWith('<script')) {
+        cleanSchema = cleanSchema.replace(/^<script[^>]*>/i, '').replace(/<\/script>$/i, '').trim();
+      }
+      if (cleanSchema) {
+        const script = document.createElement('script');
+        script.setAttribute('type', 'application/ld+json');
+        script.setAttribute('id', 'breadcrumb-schema');
+        script.textContent = cleanSchema;
+        document.head.appendChild(script);
+      }
     }
 
     // Cleanup function - restore defaults on unmount

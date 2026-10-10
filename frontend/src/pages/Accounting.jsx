@@ -6,13 +6,13 @@ import FAQSection from '../components/FAQSection';
 
 export default function Accounting({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Accounting & Bookkeeping Services Canada | DeFreitas & Associates",
-    seo_description: "Professional accounting and bookkeeping services in Canada. DeFreitas & Associates offers bookkeeping setup, financial statement preparation, and WSIB filing support.",
-    canonical_url: "https://defreitas-consulting.ca/accounting-bookkeeping/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Accounting & Bookkeeping\",\"item\":\"https://defreitas-consulting.ca/accounting-bookkeeping/\"}]}",
-    title: "Accounting & Bookkeeping Services in Canada",
+    seo_title: "Accounting & Bookkeeping Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
+    canonical_url: "http://localhost:3000/accounting-bookkeeping/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accounting & Bookkeeping\",\"item\":\"http://localhost:3000/accounting-bookkeeping/\"}]}",
+    title: "Professional Accounting & Bookkeeping Services in Canada",
     hero_eyebrow: "Accounting & Bookkeeping Services",
-    hero_title: "Accounting & Bookkeeping Services in Canada",
+    hero_title: "Professional Accounting & Bookkeeping Services in Canada",
     hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional accounting and bookkeeping services designed to help businesses maintain clear, organized, and reliable financial records.",
     hero_overview: "Our approach is practical and personalized. We work with businesses to understand their bookkeeping and accounting requirements and provide the level of support that best fits their needs.",
     hero_banner: "/images/accounting-bookkeeping-banner.png",
@@ -20,16 +20,17 @@ export default function Accounting({ onOpenStrategy }) {
     content_image: "/images/658.png",
     content_image_alt: "DeFreitas & Associates Accounting & Bookkeeping Services",
     
-    bookkeeping_title: "Comprehensive Bookkeeping Services",
+    bookkeeping_title: "Accounting Services for Businesses Toronto, Canada",
+    solutions_title: "Accounting & Bookkeeping Solutions",
     bookkeeping_content: "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business.\n\nDeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date.\n\nWhether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.\n\nFor assistance with corporate tax, GST/HST, and other taxation matters, explore our [Tax Advisory Services].",
     
-    setup_title: "Bookkeeping Setup & Ongoing Consultation",
+    setup_title: "Bookkeeping Setup & Ongoing Support",
     setup_content: "A well-organized bookkeeping process can make it easier to manage financial information as your business operates and grows.\n\nWe provide bookkeeping setup and ongoing consultation to help businesses establish and maintain an appropriate bookkeeping process.\n\nOur support is tailored to your business, allowing you to receive professional guidance when you need it.",
     
-    wsib_title: "WSIB Filing & Remittances",
+    wsib_title: "WSIB Filing & Remittance Services",
     wsib_content: "DeFreitas & Associates assists businesses with WSIB filing and remittances.\n\nWe work with clients to help ensure the necessary information is properly organized and filing requirements are addressed within the scope of our accounting and bookkeeping services.",
     
-    financial_statements_title: "Financial Statement Preparation",
+    financial_statements_title: "Financial Record Management",
     financial_statements_content: "Clear financial statements provide important information about the financial position and performance of a business.\n\nDeFreitas & Associates provides financial statement preparation as part of our professional accounting services, helping businesses maintain useful and organized financial information.\n\nBusinesses that require financial statements as part of a financing process can also explore our [Business Financing Services].",
     
     card_title: "Professional Accounting Services",
@@ -152,11 +153,14 @@ export default function Accounting({ onOpenStrategy }) {
           <div className="split">
             <div className="split-copy">
               
-              {/* Section 1: Comprehensive Bookkeeping Services */}
+              {/* Section 1: Accounting Services for Businesses */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
-                  {data.bookkeeping_title || "Comprehensive Bookkeeping Services"}
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '.8rem', color: 'var(--ink)' }}>
+                  {data.bookkeeping_title || "Accounting Services for Businesses Toronto, Canada"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '1rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.solutions_title || "Accounting & Bookkeeping Solutions"}
+                </h3>
                 {data.bookkeeping_content && data.bookkeeping_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {renderParagraphWithLinks(paragraph)}
@@ -164,11 +168,11 @@ export default function Accounting({ onOpenStrategy }) {
                 ))}
               </div>
 
-              {/* Section 2: Bookkeeping Setup & Ongoing Consultation */}
+              {/* Section 2: Bookkeeping Setup & Ongoing Support */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
-                  {data.setup_title || "Bookkeeping Setup & Ongoing Consultation"}
-                </h2>
+                <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', color: 'var(--ink)', fontWeight: '700' }}>
+                  {data.setup_title || "Bookkeeping Setup & Ongoing Support"}
+                </h3>
                 {data.setup_content && data.setup_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {renderParagraphWithLinks(paragraph)}

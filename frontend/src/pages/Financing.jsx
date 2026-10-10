@@ -6,13 +6,13 @@ import FAQSection from '../components/FAQSection';
 
 export default function Financing({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Business Financing Solutions Canada | DeFreitas & Associates",
-    seo_description: "Professional business financing support in Canada. DeFreitas & Associates assists with financial statements, projections, cash flow models, CSBFP, and business plans.",
-    canonical_url: "https://defreitas-consulting.ca/business-financing/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Business Financing\",\"item\":\"https://defreitas-consulting.ca/business-financing/\"}]}",
-    title: "Business Financing Services in Canada",
-    hero_eyebrow: "Business Financing Services",
-    hero_title: "Business Financing Services in Canada",
+    seo_title: "Business Financing Solutions Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides business financing solutions and guidance to help businesses access funding and support their growth.",
+    canonical_url: "http://localhost:3000/business-financing/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Business Financing\",\"item\":\"http://localhost:3000/business-financing/\"}]}",
+    title: "Business Financing Solutions in Toronto, Canada",
+    hero_eyebrow: "Business Financing Solutions",
+    hero_title: "Business Financing Solutions in Toronto, Canada",
     hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional business financing support for companies preparing to pursue commercial lending and other financing opportunities.",
     hero_overview: "From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
     hero_banner: "/images/business-solution-banner.png",
@@ -20,33 +20,26 @@ export default function Financing({ onOpenStrategy }) {
     content_image: "/images/668.png",
     content_image_alt: "DeFreitas & Associates Business Financing Support",
     
-    support_title: "Business Financing Support",
+    support_title: "Financial Advisory Services",
+    projections_title: "Financial Projections for Business Financing",
     support_intro: "A well-prepared financing application gives lenders a clearer understanding of your business, its financial position, future outlook, and funding requirements.",
     services_list_title: "Our business financing services include:",
     financing_services: [
       {
-        title: "Financial Statement Preparation",
+        title: "Financial Statements for Financing",
         desc: "Preparation of financial statements, including Notice to Reader and Compilation Engagements, to support commercial financing and lender requirements.\n\nFor ongoing financial reporting support, explore our [Accounting & Bookkeeping Services]."
       },
       {
-        title: "Multi-Year Financial Projections & Cash Flow Modelling",
-        desc: "Preparation of multi-year financial projections and detailed cash flow models to help present your expected financial performance, cash requirements, and financing needs to potential lenders."
+        title: "Business Plans for Financing",
+        desc: "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
       },
       {
-        title: "Business Plans for Commercial Lenders",
-        desc: "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
+        title: "Business Loan & Lease Preparation",
+        desc: "Support for businesses preparing to pursue commercial equipment lease, loan or working capital financing, with a focus on organizing the financial information required for the financing process."
       },
       {
         title: "CSBFP Application Packages",
         desc: "Support with Canada Small Business Financing Program (CSBFP) application packages, including the preparation and organization of relevant financial information and supporting documentation."
-      },
-      {
-        title: "Commercial Equipment Lease & Working Capital Financing Support",
-        desc: "Support for businesses preparing to pursue commercial equipment lease or working capital financing, with a focus on organizing the financial information required for the financing process."
-      },
-      {
-        title: "Capital Structure & Debt vs. Equity Advisory",
-        desc: "Advisory support to help businesses assess capital structure and debt versus equity considerations in the context of their financial position, financing requirements, and business objectives."
       }
     ],
     
@@ -238,7 +231,7 @@ export default function Financing({ onOpenStrategy }) {
               {/* Section 2: Preparing for Business Financing */}
               <div className="content-block" style={{ marginBottom: '2rem' }}>
                 <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
-                  {data.preparing_title || "Preparing for Business Financing"}
+                  {data.projections_title || data.preparing_title || "Financial Projections for Business Financing"}
                 </h2>
                 {data.preparing_content && data.preparing_content.split('\n\n').map((para, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>

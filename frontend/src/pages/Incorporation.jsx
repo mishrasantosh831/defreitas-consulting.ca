@@ -6,12 +6,12 @@ import FAQSection from '../components/FAQSection';
 
 export default function Incorporation({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Business Incorporation & Registration Services | DeFreitas & Associates Canada",
+    seo_title: "Business Incorporation Services Toronto | DeFreitas & Associates",
     seo_description: "Business incorporation and registration services from DeFreitas & Associates Toronto, Canada. Get professional guidance to incorporate and register a business.",
-    canonical_url: "https://defreitas-consulting.ca/incorporation-business-registration/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Incorporation & Business Registration\",\"item\":\"https://defreitas-consulting.ca/incorporation-business-registration/\"}]}",
+    canonical_url: "http://localhost:3000/incorporation-business-registration/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Incorporation & Business Registration\",\"item\":\"http://localhost:3000/incorporation-business-registration/\"}]}",
     title: "Business Incorporation & Registration Services in Canada",
-    hero_eyebrow: "Business Incorporation & Registration",
+    hero_eyebrow: "Professional Business Incorporation Services",
     hero_title: "Business Incorporation & Registration Services in Canada",
     hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional business incorporation and business registration services for individuals and entrepreneurs establishing a business.",
     hero_overview: "Starting a business involves important decisions from the outset. We provide practical support through the incorporation or business registration process, helping you establish your business on the right footing.",
@@ -20,10 +20,12 @@ export default function Incorporation({ onOpenStrategy }) {
     content_image: "/images/668.png",
     content_image_alt: "DeFreitas & Associates Incorporation & Business Registration",
     
-    incorporation_title: "Business Incorporation Services",
+    incorporation_title: "Professional Business Incorporation Services",
+    requirements_title: "Business Incorporation Requirements",
     incorporation_content: "If you are planning to incorporate a business, DeFreitas & Associates can assist with the incorporation process based on your business requirements by helping you navigate the steps involved in establishing your corporation.\n\nOnce your business is established, our [Accounting & Bookkeeping Services] can provide ongoing support with your financial records and reporting.",
     
     registration_title: "Business Registration Services",
+    advisory_title: "Business Setup & Advisory Services",
     registration_content: "For entrepreneurs establishing a business, we also provide business registration services. We help make the registration process easier to understand and provide professional support based on the needs and structure of your business.\n\nFor ongoing tax preparation, planning, and related taxation matters, explore our [Tax Advisory Services].",
     
     advisory_closing: "DeFreitas & Associates combines business incorporation and registration support with access to accounting, tax, and business advisory services, allowing clients to continue working with our team as their business develops.",
@@ -163,9 +165,12 @@ export default function Incorporation({ onOpenStrategy }) {
               
               {/* Section 1: Business Incorporation Services */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
-                  {data.incorporation_title || "Business Incorporation Services"}
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '.8rem', color: 'var(--ink)' }}>
+                  {data.incorporation_title || "Professional Business Incorporation Services"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '1rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.requirements_title || "Business Incorporation Requirements"}
+                </h3>
                 {data.incorporation_content && data.incorporation_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {renderParagraphWithLinks(paragraph)}
@@ -175,9 +180,12 @@ export default function Incorporation({ onOpenStrategy }) {
 
               {/* Section 2: Business Registration Services */}
               <div className="content-block" style={{ marginBottom: '2.5rem' }}>
-                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '.8rem', color: 'var(--ink)' }}>
                   {data.registration_title || "Business Registration Services"}
                 </h2>
+                <h3 style={{ fontSize: '1.22rem', marginBottom: '1rem', color: 'var(--mint-700)', fontWeight: '600' }}>
+                  {data.advisory_title || "Business Setup & Advisory Services"}
+                </h3>
                 {data.registration_content && data.registration_content.split('\n\n').map((paragraph, pIdx) => (
                   <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
                     {renderParagraphWithLinks(paragraph)}

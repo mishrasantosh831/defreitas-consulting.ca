@@ -6,10 +6,10 @@ import SEOHead from '../components/SEOHead';
 
 export default function Blog() {
   const [seo, setSeo] = useState({
-    seo_title: "Tax & Business Insights | DeFreitas & Associates Blog",
+    seo_title: "Business, Tax & Finance Insights | DeFreitas & Associates",
     seo_description: "Tax, business, accounting and finance insights from DeFreitas & Associates, providing professional advisory and consulting services | Toronto, Canada.",
-    canonical_url: "https://defreitas-consulting.ca/blog/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tax Journal\",\"item\":\"https://defreitas-consulting.ca/blog/\"}]}"
+    canonical_url: "http://localhost:3000/blog/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"http://localhost:3000/blog/\"}]}"
   });
 
   const [posts, setPosts] = useState([
@@ -22,7 +22,7 @@ export default function Blog() {
       content: "TAX TIME APPROACHING IN CANADA. Important dates to remember: T1 Personal income tax filing deadline is April 30th (June 15th for self-employed individuals). T2 Corporate tax return is due 6 months following the corporation's fiscal year-end, while corporate taxes owed are payable 2 to 3 months following year-end depending on whether your company qualifies for the small business deduction. Contact DeFreitas & Associates today to organize your records and ensure prompt filing.",
       date: "2026-03-01",
       image: "/images/post-tax-season.jpg",
-      slug: "tax-time-approaching-in-canada"
+      slug: "canada-tax-deadlines-preparation"
     },
     {
       id: "2",

@@ -173,6 +173,24 @@ export default function App() {
             </MainLayout>
           } 
         />
+        {/* Blog Post Redirects for URL Changes specified in SEO mapping */}
+        <Route 
+          path="/blog/tax-time-approaching-in-canada-key-deadlines-preparation-steps" 
+          element={<Navigate to="/blog/canada-tax-deadlines-preparation" replace />} 
+        />
+        <Route 
+          path="/blog/tax-time-approaching-in-canada" 
+          element={<Navigate to="/blog/canada-tax-deadlines-preparation" replace />} 
+        />
+        <Route 
+          path="/blog/defreitas-associates-sponsors-dominica-rising-benefit-gala" 
+          element={<Navigate to="/blog/dominica-rising-benefit-gala" replace />} 
+        />
+        <Route 
+          path="/blog/defreitas-associates-joins-canadian-tax-foundation" 
+          element={<Navigate to="/blog/canadian-tax-foundation-membership" replace />} 
+        />
+
         <Route 
           path="/blog/:slug" 
           element={

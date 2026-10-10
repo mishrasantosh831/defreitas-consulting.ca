@@ -6,72 +6,56 @@ import SEOHead from '../components/SEOHead';
 export default function Services({ onOpenStrategy }) {
   const [filter, setFilter] = useState('all');
   const [data, setData] = useState({
-    seo_title: "Business & Tax Advisory Services | DeFreitas & Associates Canada",
-    seo_description: "DeFreitas & Associates provides tailored business consulting, tax planning, bookkeeping, and advisory services to support growing businesses in Canada.",
-    canonical_url: "https://defreitas-consulting.ca/services/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"}]}",
-    title: "Business & Tax Advisory Services | DeFreitas & Associates Canada",
+    seo_title: "Business & Tax Advisors Toronto | DeFreitas & Associates",
+    seo_description: "Explore tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services from DeFreitas & Associates in Toronto, Canada.",
+    canonical_url: "http://localhost:3000/services/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"http://localhost:3000/services/\"}]}",
+    title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
     hero_eyebrow: "Services & Pricing",
-    hero_title: "Clear plans, fixed fees, no surprise bills",
+    hero_title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
     hero_subtitle: "Select a service bundle tailored to your corporate stage, or customize a package with our senior CPA team. Every plan includes dedicated advisory and total CRA compliance.",
     catalog_eyebrow: "Full Service Catalog",
     catalog_title: "Pick the exact help you need",
     catalog_services: [
       {
+        cat: 'incorporation',
+        title: 'Business Incorporation & Registration Toronto, Canada',
+        meta: 'Incorporation & Registration',
+        desc: 'Professional guidance and support for business incorporation, business registration, and business setup.',
+        fee: 'From $599 package',
+        link: '/incorporation-business-registration'
+      },
+      {
         cat: 'tax',
-        title: 'Corporate T2 Tax Returns',
+        title: 'Professional Tax Advisory & Tax Preparation Services',
         meta: 'Tax & Compliance',
-        desc: 'Professional corporate tax preparation and T2 filing support, including tax planning and assistance with CRA reviews and audits.',
+        desc: 'Professional corporate and personal tax preparation, T2/T1 filing support, tax planning and CRA review representation.',
         fee: 'From $1,100 / filing',
         link: '/tax-advisory'
       },
       {
-        cat: 'tax',
-        title: 'Personal T1 Tax Returns',
-        meta: 'Tax & Compliance',
-        desc: 'Professional personal tax preparation and T1 filing for individuals, with practical tax planning and advisory support.',
-        fee: 'From $200 / filing',
-        link: '/tax-advisory'
-      },
-      {
         cat: 'bookkeeping',
-        title: 'Business Bookkeeping Services',
+        title: 'Accounting & Bookkeeping Services',
         meta: 'Accounting & Bookkeeping',
         desc: 'Professional bookkeeping services with bookkeeping setup, ongoing consultation, and organized financial record support for businesses.',
         fee: 'From $249 / month',
         link: '/accounting-bookkeeping'
       },
       {
-        cat: 'bookkeeping',
-        title: 'Financial Statements & WSIB Support',
-        meta: 'Accounting & Bookkeeping',
-        desc: 'Professional financial statement preparation, along with WSIB filing and remittance support for businesses.',
-        fee: 'From $99 / month',
-        link: '/accounting-bookkeeping'
-      },
-      {
         cat: 'sred',
-        title: 'SR&ED Tax Credit Claim Support',
+        title: 'SR&ED Tax Credit Consulting',
         meta: 'SR&ED Tax Credit',
-        desc: 'Professional SR&ED tax credit support, including claim preparation, financial information and documentation, and related tax matters.',
+        desc: 'Professional SR&ED tax credit support, including claim preparation, financial documentation, and related tax matters.',
         fee: 'Success-based 15% fee',
         link: '/sred-tax-credits'
       },
       {
         cat: 'financing',
-        title: 'Business Financing & Lender Preparation',
+        title: 'Business Financing Solutions',
         meta: 'Business Financing',
         desc: 'Professional financing support, including financial statement and projection preparation for lenders, and business plans for financing.',
         fee: 'From $1,500 one-off',
         link: '/business-financing'
-      },
-      {
-        cat: 'incorporation',
-        title: 'Business Incorporation & Registration',
-        meta: 'Incorporation & Registration',
-        desc: 'Professional guidance and support for business incorporation, business registration, and business setup.',
-        fee: 'From $599 package',
-        link: '/incorporation-business-registration'
       }
     ],
     pricing_eyebrow: "Structured Packages",
@@ -185,7 +169,7 @@ export default function Services({ onOpenStrategy }) {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/></svg>
                 </span>
                 <div className="meta">{item.meta}</div>
-                <h3>{item.title}</h3>
+                <h2 style={{ fontSize: '1.28rem', margin: '.4rem 0 .5rem 0', lineHeight: '1.35', color: 'var(--ink)' }}>{item.title}</h2>
                 <p>{item.desc}</p>
                 <div className="from">
                   <b>{item.fee}</b>
