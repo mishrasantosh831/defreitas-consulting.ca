@@ -8,8 +8,8 @@ export default function Financing({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Business Financing Solutions Toronto | DeFreitas & Associates",
     seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides business financing solutions and guidance to help businesses access funding and support their growth.",
-    canonical_url: "http://localhost:3000/business-financing/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Business Financing\",\"item\":\"http://localhost:3000/business-financing/\"}]}",
+    canonical_url: "https://defreitas-consulting.ca/business-financing/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Business Financing\",\"item\":\"https://defreitas-consulting.ca/business-financing/\"}]}",
     title: "Business Financing Solutions in Toronto, Canada",
     hero_eyebrow: "Business Financing Solutions",
     hero_title: "Business Financing Solutions in Toronto, Canada",

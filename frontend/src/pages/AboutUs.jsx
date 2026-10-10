@@ -7,7 +7,7 @@ export default function AboutUs({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Business & Tax Advisors Toronto | DeFreitas & Associates",
     seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting, tax, business advisory and consulting services to clients globally",
-    canonical_url: "http://localhost:3000/about/",
+    canonical_url: "https://defreitas-consulting.ca/about/",
     breadcrumb_schema: "",
     title: "About DeFreitas & Associates Toronto, Canada",
     hero_title: "About DeFreitas & Associates Toronto, Canada",

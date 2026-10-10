@@ -8,8 +8,8 @@ export default function Services({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Business & Tax Advisors Toronto | DeFreitas & Associates",
     seo_description: "Explore tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services from DeFreitas & Associates in Toronto, Canada.",
-    canonical_url: "http://localhost:3000/services/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"http://localhost:3000/services/\"}]}",
+    canonical_url: "https://defreitas-consulting.ca/services/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"}]}",
     title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
     hero_eyebrow: "Services & Pricing",
     hero_title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",

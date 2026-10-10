@@ -24,7 +24,7 @@ Contact DeFreitas & Associates today to organize your records and ensure prompt 
     seo_title: "Canada Tax Deadlines & Filing Guide | DeFreitas & Associates",
     seo_description: "Stay informed about important Canadian tax deadlines, filing dates and tax preparation steps with insights from DeFreitas & Associates in Toronto, Canada.",
     seo_keywords: "Canadian Tax Deadlines, T2 Corporate Tax, T1 Personal Tax, CRA Filing 2026, DeFreitas CPAs",
-    canonical_url: "http://localhost:3000/blog/canada-tax-deadlines-preparation/"
+    canonical_url: "https://defreitas-consulting.ca/blog/canada-tax-deadlines-preparation/"
   },
   {
     id: "2",

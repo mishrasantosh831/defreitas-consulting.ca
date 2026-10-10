@@ -8,8 +8,8 @@ export default function Blog() {
   const [seo, setSeo] = useState({
     seo_title: "Business, Tax & Finance Insights | DeFreitas & Associates",
     seo_description: "Tax, business, accounting and finance insights from DeFreitas & Associates, providing professional advisory and consulting services | Toronto, Canada.",
-    canonical_url: "http://localhost:3000/blog/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"http://localhost:3000/blog/\"}]}"
+    canonical_url: "https://defreitas-consulting.ca/blog/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://defreitas-consulting.ca/blog/\"}]}"
   });
 
   const [posts, setPosts] = useState([

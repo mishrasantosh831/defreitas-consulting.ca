@@ -7,8 +7,8 @@ import FAQSection from '../components/FAQSection';
 const defaultSredData = {
   seo_title: "SR&ED Tax Credit Services Toronto | DeFreitas & Associates",
   seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides SR&ED tax credit consulting, helping businesses prepare claims and access eligible R&D tax incentives.",
-  canonical_url: "http://localhost:3000/sred-tax-credits/",
-  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"SR&ED Tax Credits\",\"item\":\"http://localhost:3000/sred-tax-credits/\"}]}",
+  canonical_url: "https://defreitas-consulting.ca/sred-tax-credits/",
+  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"SR&ED Tax Credits\",\"item\":\"https://defreitas-consulting.ca/sred-tax-credits/\"}]}",
   title: "SR&ED Tax Credit Consulting Services in Canada",
   hero_eyebrow: "Professional SR&ED Tax Credit Consultants",
   hero_title: "SR&ED Tax Credit Consulting Services in Canada",

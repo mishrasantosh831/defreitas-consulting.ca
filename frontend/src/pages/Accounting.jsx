@@ -8,8 +8,8 @@ export default function Accounting({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Accounting & Bookkeeping Toronto | DeFreitas & Associates",
     seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
-    canonical_url: "http://localhost:3000/accounting-bookkeeping/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accounting & Bookkeeping\",\"item\":\"http://localhost:3000/accounting-bookkeeping/\"}]}",
+    canonical_url: "https://defreitas-consulting.ca/accounting-bookkeeping/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accounting & Bookkeeping\",\"item\":\"https://defreitas-consulting.ca/accounting-bookkeeping/\"}]}",
     title: "Professional Accounting & Bookkeeping Services in Canada",
     hero_eyebrow: "Accounting & Bookkeeping Services",
     hero_title: "Professional Accounting & Bookkeeping Services in Canada",

@@ -7,8 +7,8 @@ import FAQSection from '../components/FAQSection';
 const defaultTaxAdvisoryData = {
   seo_title: "Tax Consultant & Tax Firm Toronto | DeFreitas & Associates",
   seo_description: "DeFreitas & Associates is a tax consulting firm in Toronto, Canada, providing professional tax advisory, tax consultancy and tax services for businesses.",
-  canonical_url: "http://localhost:3000/tax-advisory/",
-  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tax Advisory\",\"item\":\"http://localhost:3000/tax-advisory/\"}]}",
+  canonical_url: "https://defreitas-consulting.ca/tax-advisory/",
+  breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Tax Advisory\",\"item\":\"https://defreitas-consulting.ca/tax-advisory/\"}]}",
   title: "Professional Tax Advisory & Tax Services in Toronto, Canada",
   hero_eyebrow: "Professional Tax Consultants & Tax Advisors Toronto, Canada",
   hero_title: "Professional Tax Advisory & Tax Services in Toronto, Canada",

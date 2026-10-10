@@ -8,8 +8,8 @@ export default function Incorporation({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Business Incorporation Services Toronto | DeFreitas & Associates",
     seo_description: "Business incorporation and registration services from DeFreitas & Associates Toronto, Canada. Get professional guidance to incorporate and register a business.",
-    canonical_url: "http://localhost:3000/incorporation-business-registration/",
-    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Incorporation & Business Registration\",\"item\":\"http://localhost:3000/incorporation-business-registration/\"}]}",
+    canonical_url: "https://defreitas-consulting.ca/incorporation-business-registration/",
+    breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Incorporation & Business Registration\",\"item\":\"https://defreitas-consulting.ca/incorporation-business-registration/\"}]}",
     title: "Business Incorporation & Registration Services in Canada",
     hero_eyebrow: "Professional Business Incorporation Services",
     hero_title: "Business Incorporation & Registration Services in Canada",
