@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FAQSection({ 
   title = "Frequently Asked Questions", 
@@ -22,9 +23,57 @@ export default function FAQSection({
       "name": item.q,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": item.a
+        "text": item.a ? item.a.replace(/\[(.*?)\](?:\(.*?\))?/g, '$1') : ''
       }
     }))
+  };
+
+  const renderFormattedAnswer = (text) => {
+    if (!text) return null;
+    const paragraphs = text.split('\n\n');
+
+    return paragraphs.map((para, pIdx) => {
+      const regex = /\[(.*?)\](?:\((.*?)\))?/g;
+      const elements = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(para)) !== null) {
+        if (match.index > lastIndex) {
+          elements.push(para.substring(lastIndex, match.index));
+        }
+        const label = match[1];
+        let url = match[2];
+        if (!url) {
+          const lower = label.toLowerCase();
+          if (lower.includes('tax')) url = '/tax-advisory';
+          else if (lower.includes('accounting') || lower.includes('bookkeeping')) url = '/accounting-bookkeeping';
+          else if (lower.includes('financing')) url = '/business-financing';
+          else if (lower.includes('sred') || lower.includes('sr&ed')) url = '/sred-tax-credits';
+          else if (lower.includes('incorporation') || lower.includes('registration')) url = '/incorporation-business-registration';
+          else url = '/services';
+        }
+        elements.push(
+          <Link 
+            key={match.index} 
+            to={url} 
+            style={{ color: 'var(--mint-700)', fontWeight: '600', textDecoration: 'underline' }}
+          >
+            {label}
+          </Link>
+        );
+        lastIndex = regex.lastIndex;
+      }
+      if (lastIndex < para.length) {
+        elements.push(para.substring(lastIndex));
+      }
+
+      return (
+        <p key={pIdx} style={{ margin: pIdx > 0 ? '0.75rem 0 0' : '0' }}>
+          {elements}
+        </p>
+      );
+    });
   };
 
   return (
@@ -97,7 +146,7 @@ export default function FAQSection({
                     borderTop: '1px solid #f1f5f9',
                     paddingTop: '1rem'
                   }}>
-                    {item.a}
+                    {renderFormattedAnswer(item.a)}
                   </div>
                 )}
               </div>
@@ -108,3 +157,4 @@ export default function FAQSection({
     </section>
   );
 }
+

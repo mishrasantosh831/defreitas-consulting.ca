@@ -4,6 +4,141 @@ import { fetchPageContent } from '../api';
 import SEOHead from '../components/SEOHead';
 import FAQSection from '../components/FAQSection';
 
+const defaultPracticeServices = [
+  {
+    title: "Tax Advisory & Filing",
+    desc: "Personal and corporate tax preparation, planning, GST/HST support, and assistance with CRA reviews, objections, and appeals.",
+    link_text: "Explore Tax Services →",
+    link: "/tax-advisory"
+  },
+  {
+    title: "Accounting & Bookkeeping",
+    desc: "Comprehensive bookkeeping, setup and ongoing consultation, financial statement preparation, and WSIB filing and remittance support.",
+    link_text: "Explore Accounting →",
+    link: "/accounting-bookkeeping"
+  },
+  {
+    title: "SR&ED Tax Credit",
+    desc: "Professional SR&ED tax credit support, including claim preparation, financial documentation, and related tax matters.",
+    link_text: "Explore SR&ED Services →",
+    link: "/sred-tax-credits"
+  },
+  {
+    title: "Business Financing",
+    desc: "Financial statements, multi-year projections, cash flow modelling, lender-focused business plans, and commercial financing support.",
+    link_text: "Explore Financing →",
+    link: "/business-financing"
+  },
+  {
+    title: "Incorporation & Registration",
+    desc: "Professional business incorporation and registration support, with practical guidance based on your business requirements.",
+    link_text: "Explore Incorporation →",
+    link: "/incorporation-business-registration"
+  },
+  {
+    title: "CPA Fractional CFO Advisory",
+    desc: "Strategic executive advisory, cash flow forecasting, and succession planning support for established and growing businesses.",
+    link_text: "Explore Advisory Services →",
+    link: "/services"
+  }
+];
+
+const getServiceIcon = (title = '', idx = 0) => {
+  const t = title.toLowerCase();
+  if (t.includes('tax')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/></svg>;
+  }
+  if (t.includes('accounting') || t.includes('bookkeeping')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v4H4zM4 10h16v10H4zM8 14h8M8 17h5"/></svg>;
+  }
+  if (t.includes('sred') || t.includes('sr&ed') || t.includes('r&d')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>;
+  }
+  if (t.includes('financing') || t.includes('loan') || t.includes('capital')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>;
+  }
+  if (t.includes('incorporation') || t.includes('registration')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>;
+  }
+  if (t.includes('cfo') || t.includes('advisory')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>;
+  }
+  const defaultIcons = [
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v4H4zM4 10h16v10H4zM8 14h8M8 17h5"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  ];
+  return defaultIcons[idx % defaultIcons.length];
+};
+
+const defaultHowWeWorkSteps = [
+  {
+    step: "1",
+    title: "Initial Consultation",
+    desc: "We start by understanding your needs, current situation, and the tax, accounting, financial, or business matters you want to address."
+  },
+  {
+    step: "2",
+    title: "Tailored Guidance",
+    desc: "Our team reviews your requirements and recommends a practical approach aligned with your personal or business objectives."
+  },
+  {
+    step: "3",
+    title: "Professional Support",
+    desc: "We work with you to prepare the required information, documentation, filings, or financial materials based on the services you need."
+  },
+  {
+    step: "4",
+    title: "Ongoing Advisory",
+    desc: "As your needs evolve, our team remains available to provide ongoing tax, accounting, financial, and business advisory support."
+  }
+];
+
+const defaultWhyItems = [
+  {
+    title: "Experienced CPA-Led Advice",
+    desc: "Work with experienced Chartered Professional Accountants who bring decades of tax, accounting and business advisory experience across a range of industries."
+  },
+  {
+    title: "Personalized, Responsive Service",
+    desc: "Receive direct, timely support from professionals who understand your business and provide guidance tailored to your circumstances."
+  },
+  {
+    title: "Year-Round Advisory Support",
+    desc: "Access practical tax planning and business advice throughout the year—not only when it’s time to file a return."
+  },
+  {
+    title: "Clear & Transparent Fees",
+    desc: "Professional services delivered with straightforward pricing, clear expectations and no hidden fees."
+  }
+];
+
+const getWhyIcon = (title = '', idx = 0) => {
+  const t = title.toLowerCase();
+  if (t.includes('cpa') || t.includes('advice') || t.includes('leadership')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>;
+  }
+  if (t.includes('responsive') || t.includes('personalized') || t.includes('service')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>;
+  }
+  if (t.includes('year-round') || t.includes('round') || t.includes('advisory')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>;
+  }
+  if (t.includes('fee') || t.includes('transparent') || t.includes('rates') || t.includes('pricing')) {
+    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>;
+  }
+  const icons = [
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>,
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+  ];
+  return icons[idx % icons.length];
+};
+
 export default function Home({ onOpenStrategy }) {
   const [content, setContent] = useState({
     seo_title: "Business & Financial Consultants Toronto | DeFreitas & Associates",
@@ -26,9 +161,16 @@ export default function Home({ onOpenStrategy }) {
     stat_4_number: "100",
     stat_4_suffix: "%",
     stat_4_label: "CPA On-Time Compliance",
+    services_eyebrow: "What We Do",
+    services_title: "Comprehensive financial strategy,\ntailored for your business",
+    services_subtitle: "One dedicated team handling your day-to-day accounting, tax planning, and growth capital — with clear pricing and zero surprise bills.",
+    practice_services: defaultPracticeServices,
+    how_we_work_eyebrow: "HOW WE WORK",
+    how_we_work_title: "A Simple, Seamless and Personalized Approach",
+    how_we_work_steps: defaultHowWeWorkSteps,
     why_title: "Over 30 Years of Trusted Tax, Financial & Business Advisory",
-    why_description: "Work with experienced Chartered Professional Accountants who bring decades of tax, accounting and business advisory experience across a range of industries. Receive direct, timely support from professionals who understand your business and provide guidance tailored to your circumstances.",
     why_image: "/images/why-choose-us.jpg",
+    why_items: defaultWhyItems,
     faq_items: [
       {
         q: "Do you work with both individuals and businesses?",
@@ -55,7 +197,7 @@ export default function Home({ onOpenStrategy }) {
 
   useEffect(() => {
     fetchPageContent('home')
-      .then(data => { if (data) setContent(data); })
+      .then(data => { if (data) setContent(prev => ({ ...prev, ...data })); })
       .catch(err => console.warn("Using default home content:", err.message));
   }, []);
 
@@ -183,65 +325,27 @@ export default function Home({ onOpenStrategy }) {
       <section className="section" id="services">
         <div className="wrap">
           <div className="sec-head center">
-            <span className="eyebrow center">What We Do</span>
-            <h2>Comprehensive financial strategy,<br />tailored for your business</h2>
-            <p>One dedicated team handling your day-to-day accounting, tax planning, and growth capital — with clear pricing and zero surprise bills.</p>
+            <span className="eyebrow center">{content.services_eyebrow || "What We Do"}</span>
+            <h2>{content.services_title || "Comprehensive financial strategy,\ntailored for your business"}</h2>
+            <p>{content.services_subtitle || "One dedicated team handling your day-to-day accounting, tax planning, and growth capital — with clear pricing and zero surprise bills."}</p>
           </div>
 
           <div className="svc-grid">
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/></svg>
-              </span>
-              <h3>Tax Advisory &amp; Filing</h3>
-              <p>Accurate corporate T2, personal T1, estate tax planning, and aggressive CRA audit defense to legally minimize liabilities.</p>
-              <Link to="/tax-advisory" className="more">Explore Tax Services →</Link>
-            </article>
-
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16v4H4zM4 10h16v10H4zM8 14h8M8 17h5"/></svg>
-              </span>
-              <h3>Accounting &amp; Bookkeeping</h3>
-              <p>Full-cycle cloud bookkeeping, monthly financial statements (Notice to Reader), payroll, and GST/HST filing.</p>
-              <Link to="/accounting-bookkeeping" className="more">Explore Accounting →</Link>
-            </article>
-
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-              </span>
-              <h3>SR&amp;ED Tax Credit Claims</h3>
-              <p>Recover up to 64% of qualifying software engineering, R&amp;D, and technical innovation costs via government tax refunds.</p>
-              <Link to="/sred-tax-credits" className="more">Explore SR&amp;ED Claims →</Link>
-            </article>
-
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6"/><rect x="12" y="7" width="3" height="10"/><rect x="17" y="13" width="3" height="4"/></svg>
-              </span>
-              <h3>Business Financing Solutions</h3>
-              <p>Preparation of financial statement models, business plans, and direct introductions to commercial lenders and financiers.</p>
-              <Link to="/business-financing" className="more">Explore Financing →</Link>
-            </article>
-
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7"/></svg>
-              </span>
-              <h3>Incorporation &amp; Registration</h3>
-              <p>Federal (Canada) &amp; Provincial (Ontario) incorporation, minute books, shareholder structure, and CRA account registration.</p>
-              <Link to="/incorporation-business-registration" className="more">Explore Incorporation →</Link>
-            </article>
-
-            <article className="svc">
-              <span className="ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </span>
-              <h3>CPA Fractional CFO Advisory</h3>
-              <p>Strategic executive advisory, cash flow forecasting, and succession planning for established mid-market companies.</p>
-              <Link to="/services" className="more">Explore Advisory Packages →</Link>
-            </article>
+            {(content.practice_services && content.practice_services.length > 0 
+              ? content.practice_services 
+              : defaultPracticeServices
+            ).map((svc, idx) => (
+              <article key={idx} className="svc">
+                <span className="ico">
+                  {getServiceIcon(svc.title, idx)}
+                </span>
+                <h3>{svc.title}</h3>
+                <p>{svc.desc}</p>
+                <Link to={svc.link || "/services"} className="more">
+                  {svc.link_text || "Explore Services →"}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -274,70 +378,46 @@ export default function Home({ onOpenStrategy }) {
             <div className="split-copy">
               <span className="eyebrow">Why Choose Us</span>
               <h2>{content.why_title}</h2>
-              <p className="lead">{content.why_description}</p>
               
-              <ul className="feature-list">
-                <li>
-                  <span className="ico">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>
-                  </span>
-                  <div>
-                    <h4>Senior CPA Leadership</h4>
-                    <p>Direct counsel from seasoned chartered accountants with decades of experience across diverse industries.</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="ico">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                  </span>
-                  <div>
-                    <h4>Rapid &amp; Direct Response</h4>
-                    <p>No call centers. Direct email and phone access to your assigned accounting team with fast turnaround times.</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="ico">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  </span>
-                  <div>
-                    <h4>Competitive &amp; Transparent Rates</h4>
-                    <p>Professional services delivered with transparent pricing designed to exceed client expectations without hidden fees.</p>
-                  </div>
-                </li>
+              <ul className="feature-list" style={{ marginTop: '2.2rem' }}>
+                {(content.why_items && content.why_items.length > 0 
+                  ? content.why_items 
+                  : defaultWhyItems
+                ).map((item, idx) => (
+                  <li key={idx}>
+                    <span className="ico">
+                      {getWhyIcon(item.title, idx)}
+                    </span>
+                    <div>
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== STEPS ===== */}
+      {/* ===== HOW WE WORK STEPS ===== */}
       <section className="section">
         <div className="wrap">
           <div className="sec-head center">
-            <span className="eyebrow center">How We Work</span>
-            <h2>Seamless onboarding in four simple steps</h2>
+            <span className="eyebrow center">{content.how_we_work_eyebrow || "HOW WE WORK"}</span>
+            <h2>{content.how_we_work_title || "A Simple, Seamless and Personalized Approach"}</h2>
           </div>
           <div className="steps">
-            <div className="step">
-              <div className="num">1</div>
-              <h4>Free Consultation</h4>
-              <p>A 30-minute review to examine your corporate setup, tax position, and accounting goals.</p>
-            </div>
-            <div className="step">
-              <div className="num">2</div>
-              <h4>Tailored Strategy</h4>
-              <p>We present a customized plan covering tax optimization, bookkeeping, and grant opportunities.</p>
-            </div>
-            <div className="step">
-              <div className="num">3</div>
-              <h4>Seamless Setup</h4>
-              <p>We migrate your records, handle CRA authorizations, and establish automated cloud workflows.</p>
-            </div>
-            <div className="step">
-              <div className="num">4</div>
-              <h4>Ongoing Growth</h4>
-              <p>Continuous compliance, monthly reporting, and proactive tax saving strategies year-round.</p>
-            </div>
+            {(content.how_we_work_steps && content.how_we_work_steps.length > 0 
+              ? content.how_we_work_steps 
+              : defaultHowWeWorkSteps
+            ).map((st, i) => (
+              <div key={i} className="step">
+                <div className="num">{st.step || (i + 1)}</div>
+                <h4>{st.title}</h4>
+                <p>{st.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

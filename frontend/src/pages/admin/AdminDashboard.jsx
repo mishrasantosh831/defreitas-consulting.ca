@@ -1335,9 +1335,9 @@ export default function AdminDashboard() {
                       hero_primary_btn: { label: 'Hero Primary Button Text', tag: null },
                       hero_secondary_btn: { label: 'Hero Secondary Button Text', tag: null },
                       why_title: { label: 'Value Proposition Heading', tag: '<h2> Section Heading' },
-                      why_description: { label: 'Value Proposition Description', tag: null },
                       why_image: { label: 'Value Proposition Showcase Image', tag: 'Image' },
                       why_image_alt: { label: 'Value Proposition Image Alt Text (SEO)', tag: 'Alt Tag' },
+                      why_items: { label: 'Value Proposition Highlights (4 Points)', tag: null },
                       section_eyebrow: { label: 'Section Eyebrow (Top Tagline)', tag: null },
                       section_title: { label: 'Section Main Heading', tag: '<h2> Section Heading' },
                       section_list_title: { label: 'Section Feature List Subheading', tag: '<h3> Sub-Heading' },
@@ -1362,6 +1362,54 @@ export default function AdminDashboard() {
                       cta_subtitle: { label: 'Bottom CTA Subtitle / Description', tag: null },
                       cta_primary_btn: { label: 'Bottom CTA Primary Action Button Text', tag: null },
                       cta_secondary_btn: { label: 'Bottom CTA Secondary Action Button Text', tag: null },
+                      services_eyebrow: { label: 'Services Highlights Section Eyebrow', tag: null },
+                      services_title: { label: 'Services Highlights Main Heading', tag: '<h2> Section Heading' },
+                      services_subtitle: { label: 'Services Highlights Subtitle / Description', tag: null },
+                      practice_services: { label: 'Homepage Services Highlights (6 Cards)', tag: null },
+                      how_we_work_eyebrow: { label: 'How We Work Section Eyebrow', tag: null },
+                      how_we_work_title: { label: 'How We Work Main Heading', tag: '<h2> Section Heading' },
+                      how_we_work_steps: { label: 'How We Work Process Steps', tag: null },
+                      faq_items: { label: 'Frequently Asked Questions (Accordion List)', tag: null },
+                      hero_overview: { label: 'Hero Secondary Overview Paragraph', tag: null },
+                      advisory_title: { label: 'Tax Consulting & Advisory Heading', tag: '<h2> Section Heading' },
+                      advisory_content: { label: 'Tax Consulting & Advisory Body', tag: null },
+                      advisory_link_text: { label: 'Tax Consulting Callout Link Text', tag: null },
+                      advisory_link_url: { label: 'Tax Consulting Callout Target URL', tag: null },
+                      personal_corporate_title: { label: 'Personal & Corporate Tax Heading', tag: '<h2> Section Heading' },
+                      personal_corporate_content: { label: 'Personal & Corporate Tax Body', tag: null },
+                      personal_corporate_link_text: { label: 'Personal & Corporate Callout Link Text', tag: null },
+                      personal_corporate_link_url: { label: 'Personal & Corporate Callout Target URL', tag: null },
+                      cra_matters_title: { label: 'GST/HST & CRA Tax Matters Heading', tag: '<h2> Section Heading' },
+                      cra_matters_content: { label: 'GST/HST & CRA Tax Matters Body', tag: null },
+                      cross_border_title: { label: 'Non-Resident & Cross-Border Heading', tag: '<h2> Section Heading' },
+                      cross_border_content: { label: 'Non-Resident & Cross-Border Body', tag: null },
+                      services_list_title: { label: 'Tax Services List Heading', tag: '<h2> Section Heading' },
+                      services_list_intro: { label: 'Tax Services List Intro Lead', tag: null },
+                      sred_link_text: { label: 'SR&ED Callout Link Text', tag: null },
+                      sred_link_url: { label: 'SR&ED Callout Target URL', tag: null },
+                      consulting_title: { label: 'SR&ED Consulting Heading', tag: '<h2> Section Heading' },
+                      consulting_content: { label: 'SR&ED Consulting Body Copy', tag: null },
+                      services_list_closing: { label: 'Services List Closing Paragraph', tag: null },
+                      bookkeeping_title: { label: 'Comprehensive Bookkeeping Heading', tag: '<h2> Section Heading' },
+                      bookkeeping_content: { label: 'Comprehensive Bookkeeping Body Copy', tag: null },
+                      setup_title: { label: 'Bookkeeping Setup & Ongoing Consultation Heading', tag: '<h2> Section Heading' },
+                      setup_content: { label: 'Bookkeeping Setup & Consultation Body Copy', tag: null },
+                      wsib_title: { label: 'WSIB Filing & Remittances Heading', tag: '<h2> Section Heading' },
+                      wsib_content: { label: 'WSIB Filing & Remittances Body Copy', tag: null },
+                      financial_statements_title: { label: 'Financial Statement Preparation Heading', tag: '<h2> Section Heading' },
+                      financial_statements_content: { label: 'Financial Statement Preparation Body Copy', tag: null },
+                      faq_title: { label: 'FAQ Section Heading', tag: '<h2> Section Heading' },
+                      faq_subtitle: { label: 'FAQ Section Subtitle', tag: null },
+                      support_title: { label: 'Business Financing Support Heading', tag: '<h2> Section Heading' },
+                      support_intro: { label: 'Business Financing Support Intro Lead', tag: null },
+                      financing_services: { label: 'Business Financing Services (6 Cards)', tag: null },
+                      preparing_title: { label: 'Preparing for Business Financing Heading', tag: '<h2> Section Heading' },
+                      preparing_content: { label: 'Preparing for Business Financing Body Copy', tag: null },
+                      incorporation_title: { label: 'Business Incorporation Services Heading', tag: '<h2> Section Heading' },
+                      incorporation_content: { label: 'Business Incorporation Services Body Copy', tag: null },
+                      registration_title: { label: 'Business Registration Services Heading', tag: '<h2> Section Heading' },
+                      registration_content: { label: 'Business Registration Services Body Copy', tag: null },
+                      advisory_closing: { label: 'Advisory & Services Closing Callout', tag: null },
                       catalog_eyebrow: { label: 'Service Catalog Section Eyebrow', tag: null },
                       catalog_title: { label: 'Service Catalog Section Heading', tag: '<h2> Section Heading' },
                       catalog_services: { label: 'Service Catalog Cards (Structured JSON)', tag: null },
@@ -1401,8 +1449,8 @@ export default function AdminDashboard() {
                     };
                   };
 
-                  // Exclude dedicated SEO fields from the generic content section
-                  const excludedSeoKeys = ['seo_title', 'seo_description', 'canonical_url', 'seo_keywords', 'breadcrumb_schema'];
+                  // Exclude dedicated SEO fields and deprecated fields from the generic content section
+                  const excludedSeoKeys = ['seo_title', 'seo_description', 'canonical_url', 'seo_keywords', 'breadcrumb_schema', 'why_description'];
                   const contentKeys = Object.keys(pageData).filter(k => !excludedSeoKeys.includes(k));
 
                   return contentKeys.map((key) => {
@@ -1476,6 +1524,552 @@ export default function AdminDashboard() {
                           </div>
                         );
                       }
+                      if (key === 'practice_services') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>💼</span> Homepage Services Highlights ({items.length} Cards)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Edit the 6 service cards displayed in the homepage &quot;What We Do&quot; section. Changes update live upon saving.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { title: "New Service", desc: "Service description...", link_text: "Explore Services →", link: "/services" };
+                                  setPageData({ ...pageData, practice_services: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add Service Card
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((svc, sIdx) => (
+                                <div key={sIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.8rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.88rem', color: 'var(--mint-700)', background: 'var(--mint-50)', padding: '.2rem .6rem', borderRadius: '4px' }}>
+                                      Card #{sIdx + 1}: {svc.title || 'Untitled Service'}
+                                    </span>
+                                    <div style={{ display: 'flex', gap: '.4rem' }}>
+                                      {sIdx > 0 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx - 1];
+                                            next[sIdx - 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, practice_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Up"
+                                        >
+                                          ▲
+                                        </button>
+                                      )}
+                                      {sIdx < items.length - 1 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx + 1];
+                                            next[sIdx + 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, practice_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Down"
+                                        >
+                                          ▼
+                                        </button>
+                                      )}
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const next = items.filter((_, idx) => idx !== sIdx);
+                                          setPageData({ ...pageData, practice_services: next });
+                                        }}
+                                        style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                        title="Remove Card"
+                                      >
+                                        ✕ Remove
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '.8rem' }}>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Service Title:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.title || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], title: e.target.value };
+                                          setPageData({ ...pageData, practice_services: next });
+                                        }}
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Button / Link Text:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.link_text || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], link_text: e.target.value };
+                                          setPageData({ ...pageData, practice_services: next });
+                                        }}
+                                        placeholder="e.g. Explore Tax Services →"
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div style={{ marginBottom: '.8rem' }}>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Service Description:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={svc.desc || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[sIdx] = { ...next[sIdx], desc: e.target.value };
+                                        setPageData({ ...pageData, practice_services: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Target Page Link:</label>
+                                    <input
+                                      type="text"
+                                      value={svc.link || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[sIdx] = { ...next[sIdx], link: e.target.value };
+                                        setPageData({ ...pageData, practice_services: next });
+                                      }}
+                                      placeholder="e.g. /tax-advisory"
+                                      style={{ width: '100%', fontSize: '.85rem', padding: '.45rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      if (key === 'faq_items') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>❓</span> Frequently Asked Questions ({items.length} FAQs)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Manage the Q&amp;A accordion items displayed on this page (also indexed for Google FAQPage Schema).
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { q: "New Question?", a: "Answer..." };
+                                  setPageData({ ...pageData, faq_items: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add FAQ Item
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((faq, fIdx) => (
+                                <div key={fIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.6rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.85rem', color: '#334155' }}>
+                                      FAQ #{fIdx + 1}
+                                    </span>
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        const next = items.filter((_, idx) => idx !== fIdx);
+                                        setPageData({ ...pageData, faq_items: next });
+                                      }}
+                                      style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                      title="Remove FAQ"
+                                    >
+                                      ✕ Remove
+                                    </button>
+                                  </div>
+                                  <div style={{ marginBottom: '.6rem' }}>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.2rem' }}>Question:</label>
+                                    <input
+                                      type="text"
+                                      value={faq.q || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[fIdx] = { ...next[fIdx], q: e.target.value };
+                                        setPageData({ ...pageData, faq_items: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.45rem .7rem' }}
+                                    />
+                                  </div>
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.2rem' }}>Answer:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={faq.a || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[fIdx] = { ...next[fIdx], a: e.target.value };
+                                        setPageData({ ...pageData, faq_items: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.45rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      if (key === 'how_we_work_steps') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>🚀</span> How We Work Process Steps ({items.length} Steps)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Manage the four steps shown in the homepage How We Work section.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { step: String(items.length + 1), title: "New Step", desc: "Step description..." };
+                                  setPageData({ ...pageData, how_we_work_steps: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add Step
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((st, stIdx) => (
+                                <div key={stIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.8rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.88rem', color: 'var(--mint-700)', background: 'var(--mint-50)', padding: '.2rem .6rem', borderRadius: '4px' }}>
+                                      Step {st.step || stIdx + 1}: {st.title || 'Untitled Step'}
+                                    </span>
+                                    <button
+                                      type="button"
+                                      onClick={() => {
+                                        const next = items.filter((_, idx) => idx !== stIdx);
+                                        setPageData({ ...pageData, how_we_work_steps: next });
+                                      }}
+                                      style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                      title="Remove Step"
+                                    >
+                                      ✕ Remove
+                                    </button>
+                                  </div>
+
+                                  <div style={{ display: 'grid', gridTemplateColumns: '100px 1fr', gap: '1rem', marginBottom: '.8rem' }}>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Step #:</label>
+                                      <input
+                                        type="text"
+                                        value={st.step || String(stIdx + 1)}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[stIdx] = { ...next[stIdx], step: e.target.value };
+                                          setPageData({ ...pageData, how_we_work_steps: next });
+                                        }}
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Step Title:</label>
+                                      <input
+                                        type="text"
+                                        value={st.title || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[stIdx] = { ...next[stIdx], title: e.target.value };
+                                          setPageData({ ...pageData, how_we_work_steps: next });
+                                        }}
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Step Description:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={st.desc || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[stIdx] = { ...next[stIdx], desc: e.target.value };
+                                        setPageData({ ...pageData, how_we_work_steps: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      if (key === 'why_items') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>⭐</span> Value Proposition Highlights ({items.length} Points)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Manage the key value proposition points displayed under &quot;Why Choose Us&quot; on the homepage.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { title: "New Point", desc: "Point description..." };
+                                  setPageData({ ...pageData, why_items: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add Point
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((item, wIdx) => (
+                                <div key={wIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.8rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.88rem', color: 'var(--mint-700)', background: 'var(--mint-50)', padding: '.2rem .6rem', borderRadius: '4px' }}>
+                                      Point #{wIdx + 1}: {item.title || 'Untitled Point'}
+                                    </span>
+                                    <div style={{ display: 'flex', gap: '.4rem' }}>
+                                      {wIdx > 0 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[wIdx - 1];
+                                            next[wIdx - 1] = next[wIdx];
+                                            next[wIdx] = temp;
+                                            setPageData({ ...pageData, why_items: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Up"
+                                        >
+                                          ▲
+                                        </button>
+                                      )}
+                                      {wIdx < items.length - 1 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[wIdx + 1];
+                                            next[wIdx + 1] = next[wIdx];
+                                            next[wIdx] = temp;
+                                            setPageData({ ...pageData, why_items: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Down"
+                                        >
+                                          ▼
+                                        </button>
+                                      )}
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const next = items.filter((_, idx) => idx !== wIdx);
+                                          setPageData({ ...pageData, why_items: next });
+                                        }}
+                                        style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                        title="Remove Point"
+                                      >
+                                        ✕ Remove
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div style={{ marginBottom: '.8rem' }}>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Point Title:</label>
+                                    <input
+                                      type="text"
+                                      value={item.title || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[wIdx] = { ...next[wIdx], title: e.target.value };
+                                        setPageData({ ...pageData, why_items: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Point Description:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={item.desc || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[wIdx] = { ...next[wIdx], desc: e.target.value };
+                                        setPageData({ ...pageData, why_items: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      if (key === 'financing_services') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>💳</span> Business Financing Services ({items.length} Cards)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Edit the financing service offerings displayed on the Business Financing page.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { title: "New Financing Service", desc: "Service description..." };
+                                  setPageData({ ...pageData, financing_services: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add Service Card
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((svc, sIdx) => (
+                                <div key={sIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.8rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.88rem', color: 'var(--mint-700)', background: 'var(--mint-50)', padding: '.2rem .6rem', borderRadius: '4px' }}>
+                                      Card #{sIdx + 1}: {svc.title || 'Untitled Service'}
+                                    </span>
+                                    <div style={{ display: 'flex', gap: '.4rem' }}>
+                                      {sIdx > 0 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx - 1];
+                                            next[sIdx - 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, financing_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Up"
+                                        >
+                                          ▲
+                                        </button>
+                                      )}
+                                      {sIdx < items.length - 1 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx + 1];
+                                            next[sIdx + 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, financing_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Down"
+                                        >
+                                          ▼
+                                        </button>
+                                      )}
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const next = items.filter((_, idx) => idx !== sIdx);
+                                          setPageData({ ...pageData, financing_services: next });
+                                        }}
+                                        style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                        title="Remove Card"
+                                      >
+                                        ✕ Remove
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div style={{ marginBottom: '.8rem' }}>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Card Title:</label>
+                                    <input
+                                      type="text"
+                                      value={svc.title || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[sIdx] = { ...next[sIdx], title: e.target.value };
+                                        setPageData({ ...pageData, financing_services: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Card Description / Details:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={svc.desc || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[sIdx] = { ...next[sIdx], desc: e.target.value };
+                                        setPageData({ ...pageData, financing_services: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
                       return (
                         <div key={key} className="admin-field">
                           <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>
@@ -1500,7 +2094,7 @@ export default function AdminDashboard() {
                     }
 
                     // Long text paragraphs
-                    if (key.includes('description') || key.includes('intro') || key.includes('lead') || key.includes('body') || key.includes('text') || key.includes('subtitle')) {
+                    if (key.includes('description') || key.includes('intro') || key.includes('lead') || key.includes('body') || key.includes('text') || key.includes('subtitle') || key.includes('content') || key.includes('overview') || key.includes('closing')) {
                       return (
                         <div key={key} className="admin-field">
                           <label style={{ display: 'flex', alignItems: 'center', gap: '.5rem' }}>

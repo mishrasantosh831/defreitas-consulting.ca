@@ -7,31 +7,58 @@ import FAQSection from '../components/FAQSection';
 export default function Financing({ onOpenStrategy }) {
   const [data, setData] = useState({
     seo_title: "Business Financing Solutions Canada | DeFreitas & Associates",
-    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
+    seo_description: "Professional business financing support in Canada. DeFreitas & Associates assists with financial statements, projections, cash flow models, CSBFP, and business plans.",
     canonical_url: "https://defreitas-consulting.ca/business-financing/",
     breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Business Financing\",\"item\":\"https://defreitas-consulting.ca/business-financing/\"}]}",
-    title: "Business Financing Solutions in Canada",
-    hero_eyebrow: "Financial Advisory Services",
+    title: "Business Financing Services in Canada",
+    hero_eyebrow: "Business Financing Services",
     hero_title: "Business Financing Services in Canada",
-    hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional financial statement preparation and loan documentation support for businesses.",
+    hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional business financing support for companies preparing to pursue commercial lending and other financing opportunities.",
+    hero_overview: "From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
     hero_banner: "/images/business-solution-banner.png",
+    hero_banner_alt: "Business Financing Services in Canada",
     content_image: "/images/668.png",
-    intro: "A well-prepared financing application gives lenders a clearer understanding of your business, its financial position, future outlook, and funding requirements. From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
-    section_eyebrow: "Financial Preparation & Documentation",
-    section_title: "Commercial Financing Support",
-    section_list_title: "Our Financing Advisory Services Include:",
-    services_list: [
-      "Financial Statement Preparation – Notice to Reader & Compilation Engagements",
-      "Multi-Year Financial Projections & Detailed Cash Flow Modelling",
-      "Business Plans for Commercial Lenders",
-      "CSBFP Application Packages",
-      "Commercial Equipment Lease & Working Capital Financing Support",
-      "Capital Structure & Debt vs. Equity Advisory"
+    content_image_alt: "DeFreitas & Associates Business Financing Support",
+    
+    support_title: "Business Financing Support",
+    support_intro: "A well-prepared financing application gives lenders a clearer understanding of your business, its financial position, future outlook, and funding requirements.",
+    services_list_title: "Our business financing services include:",
+    financing_services: [
+      {
+        title: "Financial Statement Preparation",
+        desc: "Preparation of financial statements, including Notice to Reader and Compilation Engagements, to support commercial financing and lender requirements.\n\nFor ongoing financial reporting support, explore our [Accounting & Bookkeeping Services]."
+      },
+      {
+        title: "Multi-Year Financial Projections & Cash Flow Modelling",
+        desc: "Preparation of multi-year financial projections and detailed cash flow models to help present your expected financial performance, cash requirements, and financing needs to potential lenders."
+      },
+      {
+        title: "Business Plans for Commercial Lenders",
+        desc: "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
+      },
+      {
+        title: "CSBFP Application Packages",
+        desc: "Support with Canada Small Business Financing Program (CSBFP) application packages, including the preparation and organization of relevant financial information and supporting documentation."
+      },
+      {
+        title: "Commercial Equipment Lease & Working Capital Financing Support",
+        desc: "Support for businesses preparing to pursue commercial equipment lease or working capital financing, with a focus on organizing the financial information required for the financing process."
+      },
+      {
+        title: "Capital Structure & Debt vs. Equity Advisory",
+        desc: "Advisory support to help businesses assess capital structure and debt versus equity considerations in the context of their financial position, financing requirements, and business objectives."
+      }
     ],
-    body: "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward. Financial statements provide historical context, while financial projections and cash flow modelling help demonstrate the expected financial outlook. A well-prepared business plan brings this information together with the company’s objectives and financing requirements. DeFreitas & Associates helps businesses prepare these materials as a coordinated financing package, making it easier to present clear, organized financial information to potential lenders.",
+    
+    preparing_title: "Preparing for Business Financing",
+    preparing_content: "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward.\n\nFinancial statements provide historical context, while financial projections and cash flow modelling help demonstrate the expected financial outlook. A well-prepared business plan brings this information together with the company’s objectives and financing requirements.\n\nDeFreitas & Associates helps businesses prepare these materials as a coordinated financing package, making it easier to present clear, organized financial information to potential lenders.",
+    
     card_title: "Preparing for Business Financing",
-    card_text: "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward. DeFreitas & Associates helps businesses prepare these materials as a coordinated financing package.",
+    card_text: "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process.",
     card_button_text: "Discuss Financing Requirements",
+    
+    faq_title: "Frequently Asked Questions",
+    faq_subtitle: "Common questions regarding commercial loan applications, financial projections, and CSBFP packages.",
     faq_items: [
       {
         q: "What business financing services does DeFreitas & Associates provide?",
@@ -39,11 +66,11 @@ export default function Financing({ onOpenStrategy }) {
       },
       {
         q: "What should a business prepare before approaching a commercial lender?",
-        a: "Requirements vary by lender and financing situation, but businesses may be asked to provide financial statements, financial projections, cash flow forecasts, a business plan, and other supporting information. We help prepare and organize the financial information relevant to the financing process."
+        a: "Requirements vary by lender and financing situation, but businesses may be asked to provide financial statements, financial projections, cash flow forecasts, a business plan, and other supporting information.\n\nWe help prepare and organize the financial information relevant to the financing process."
       },
       {
         q: "Can you prepare financial projections and cash flow models?",
-        a: "Yes. We prepare multi-year financial projections and detailed cash flow models to provide a forward-looking view of the business and its financing requirements. These materials can help potential lenders better understand expected financial performance and cash flow."
+        a: "Yes. We prepare multi-year financial projections and detailed cash flow models to provide a forward-looking view of the business and its financing requirements.\n\nThese materials can help potential lenders better understand expected financial performance and cash flow."
       },
       {
         q: "Can you prepare a business plan for a commercial lender?",
@@ -51,7 +78,7 @@ export default function Financing({ onOpenStrategy }) {
       },
       {
         q: "Can you help with a Canada Small Business Financing Program (CSBFP) application?",
-        a: "Yes. We assist with the preparation of CSBFP application packages, including relevant financial information and supporting documentation. Eligibility and financing approval remain subject to applicable program and lender requirements."
+        a: "Yes. We assist with the preparation of CSBFP application packages, including relevant financial information and supporting documentation.\n\nEligibility and financing approval remain subject to applicable program and lender requirements."
       },
       {
         q: "Do you provide commercial equipment lease financing support?",
@@ -62,15 +89,20 @@ export default function Financing({ onOpenStrategy }) {
         a: "Yes. We provide working capital financing support based on the needs and circumstances of the business, including assistance with preparing relevant financial information and supporting documentation."
       },
       {
+        q: "Can you advise on debt versus equity financing?",
+        a: "Yes. We provide advisory support on capital structure and debt versus equity considerations.\n\nThe appropriate structure depends on the financial position, financing requirements, and objectives of the individual business."
+      },
+      {
         q: "Does DeFreitas & Associates provide financing directly?",
         a: "DeFreitas & Associates provides business financing support, financial preparation, and advisory services. Financing decisions, amounts, rates, terms, and approvals remain subject to the applicable lender or financing provider."
       }
     ],
-    cta_eyebrow: "Financial Projections for Business Financing",
-    cta_title: "Build lender confidence with CPA-certified financial models",
-    cta_subtitle: "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process.",
-    cta_primary_btn: "Book Financing Strategy Call",
-    cta_secondary_btn: "Contact Us"
+    
+    cta_eyebrow: "Commercial Financing Support",
+    cta_title: "Discuss Your Business Financing Requirements",
+    cta_subtitle: "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process. Contact our team to discuss your business financing requirements and determine how we can assist.",
+    cta_primary_btn: "Contact Our Team",
+    cta_secondary_btn: "Explore Accounting Services"
   });
 
   useEffect(() => {
@@ -78,6 +110,46 @@ export default function Financing({ onOpenStrategy }) {
       .then(res => { if (res) setData(prev => ({ ...prev, ...res })); })
       .catch(err => console.warn("Using default Financing data:", err.message));
   }, []);
+
+  // Helper to render text with internal markdown-like links [Link Text] or [Link Text](url)
+  const renderParagraphWithLinks = (text) => {
+    if (!text) return null;
+    const regex = /\[(.*?)\](?:\((.*?)\))?/g;
+    const elements = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        elements.push(text.substring(lastIndex, match.index));
+      }
+      const label = match[1];
+      let url = match[2];
+      if (!url) {
+        const lower = label.toLowerCase();
+        if (lower.includes('tax')) url = '/tax-advisory';
+        else if (lower.includes('accounting') || lower.includes('bookkeeping')) url = '/accounting-bookkeeping';
+        else if (lower.includes('financing')) url = '/business-financing';
+        else if (lower.includes('sred') || lower.includes('sr&ed')) url = '/sred-tax-credits';
+        else if (lower.includes('incorporation') || lower.includes('registration')) url = '/incorporation-business-registration';
+        else url = '/services';
+      }
+      elements.push(
+        <Link 
+          key={match.index} 
+          to={url} 
+          style={{ color: 'var(--mint-700)', fontWeight: '600', textDecoration: 'underline' }}
+        >
+          {label}
+        </Link>
+      );
+      lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      elements.push(text.substring(lastIndex));
+    }
+    return elements;
+  };
 
   return (
     <div>
@@ -87,77 +159,156 @@ export default function Financing({ onOpenStrategy }) {
         canonical={data.canonical_url}
         breadcrumbSchema={data.breadcrumb_schema}
       />
+
       {/* ===== HERO WITH BACKGROUND BANNER ===== */}
       <section 
         className="service-banner-hero" 
-        style={{ backgroundImage: `url(${data.hero_banner})` }}
+        style={{ backgroundImage: `url(${data.hero_banner || '/images/business-solution-banner.png'})` }}
       >
         <div className="wrap">
           <div className="service-hero-copy">
             <div className="crumb">
               <Link to="/">Home</Link> / <Link to="/services">Services</Link> / <span>Business Financing</span>
             </div>
-            <span className="eyebrow">{data.hero_eyebrow || "Growth Capital Advisory"}</span>
-            <h1>{data.hero_title}</h1>
-            <p>{data.hero_subtitle}</p>
+            <span className="eyebrow">{data.hero_eyebrow || "Business Financing Services"}</span>
+            <h1>{data.hero_title || "Business Financing Services in Canada"}</h1>
+            <p style={{ marginBottom: '1rem' }}>
+              {data.hero_subtitle}
+            </p>
+            {data.hero_overview && data.hero_overview.split('\n\n').map((para, idx) => (
+              <p key={idx} style={{ opacity: 0.95, fontSize: '1.02rem', marginTop: '.5rem', lineHeight: '1.65' }}>
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* ===== MAIN CONTENT SECTIONS & SIDEBAR ===== */}
       <section className="section">
         <div className="wrap">
           <div className="split">
             <div className="split-copy">
-              <span className="eyebrow">{data.section_eyebrow || "Institutional Access"}</span>
-              <h2>{data.section_title || "Bank-Ready Commercial Financing Packages"}</h2>
-              <p className="lead">{data.intro}</p>
+              
+              {/* Section 1: Business Financing Support */}
+              <div className="content-block" style={{ marginBottom: '2.5rem' }}>
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
+                  {data.support_title || "Business Financing Support"}
+                </h2>
+                {data.support_intro && (
+                  <p className="lead" style={{ marginBottom: '1.5rem', color: 'var(--ink)' }}>
+                    {data.support_intro}
+                  </p>
+                )}
 
-              <h4 style={{ marginBottom: '1rem', color: 'var(--ink)' }}>{data.section_list_title || "Our Financing Advisory Services Include:"}</h4>
-              <ul className="feature-list">
-                {data.services_list.map((item, idx) => (
-                  <li key={idx} style={{ alignItems: 'flex-start' }}>
-                    <span className="ico" style={{ width: '30px', height: '30px', minWidth: '30px', marginTop: '3px' }}>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6L9 17l-5-5"/></svg>
-                    </span>
-                    <span style={{ fontSize: '1rem', color: 'var(--ink)' }}>{item}</span>
-                  </li>
+                {data.services_list_title && (
+                  <h4 style={{ marginBottom: '1.2rem', color: 'var(--ink)', fontSize: '1.15rem' }}>
+                    {data.services_list_title}
+                  </h4>
+                )}
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+                  {Array.isArray(data.financing_services) && data.financing_services.map((item, idx) => (
+                    <div 
+                      key={idx} 
+                      style={{ 
+                        background: '#ffffff', 
+                        padding: '1.4rem 1.6rem', 
+                        borderRadius: '10px', 
+                        border: '1px solid #e2e8f0', 
+                        borderLeft: '4px solid var(--mint-600)',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
+                      }}
+                    >
+                      <h3 style={{ fontSize: '1.18rem', margin: '0 0 .6rem 0', color: 'var(--ink)' }}>
+                        {item.title}
+                      </h3>
+                      <div style={{ color: 'var(--ink-soft)', lineHeight: '1.7', fontSize: '.96rem' }}>
+                        {item.desc && item.desc.split('\n\n').map((descP, dIdx) => (
+                          <p key={dIdx} style={{ margin: dIdx > 0 ? '.6rem 0 0' : 0 }}>
+                            {renderParagraphWithLinks(descP)}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Section 2: Preparing for Business Financing */}
+              <div className="content-block" style={{ marginBottom: '2rem' }}>
+                <h2 style={{ fontSize: '1.65rem', marginBottom: '1.2rem', color: 'var(--ink)' }}>
+                  {data.preparing_title || "Preparing for Business Financing"}
+                </h2>
+                {data.preparing_content && data.preparing_content.split('\n\n').map((para, pIdx) => (
+                  <p key={pIdx} style={{ marginBottom: '1rem', lineHeight: '1.75', color: 'var(--ink-soft)' }}>
+                    {renderParagraphWithLinks(para)}
+                  </p>
                 ))}
-              </ul>
+              </div>
+
             </div>
 
+            {/* Sidebar Column: Image & Consultation Card */}
             <div className="split-media">
               <div className="frame" style={{ aspectRatio: '4/3' }}>
-                <img src={data.content_image} alt="Commercial Business Loan Packaging" />
+                <img 
+                  src={data.content_image || '/images/668.png'} 
+                  alt={data.content_image_alt || "Commercial Business Financing Support"} 
+                />
               </div>
-              <div style={{ marginTop: '2rem', background: '#fff', padding: '2rem', borderRadius: 'var(--r)', border: '1px solid var(--line)', boxShadow: 'var(--shadow-sm)' }}>
-                <h3>{data.card_title || "Preparing to Seek Commercial Capital?"}</h3>
-                <p style={{ color: 'var(--ink-soft)', margin: '.8rem 0 1.5rem', fontSize: '.92rem' }}>
-                  {data.card_text || "Lenders review business proposals critically. Ensure your projections and Notice to Reader statements present your corporate capability in the best light."}
-                </p>
-                <button onClick={onOpenStrategy} className="btn btn-solid" style={{ width: '100%', justifyContent: 'center' }}>
+
+              <div style={{ marginTop: '2rem', background: 'var(--paper-2)', padding: '2rem', borderRadius: 'var(--r)', border: '1px solid var(--line)' }}>
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--ink)' }}>
+                  {data.card_title || "Preparing for Business Financing"}
+                </h3>
+                <div style={{ color: 'var(--ink-soft)', margin: '.8rem 0 1.5rem', fontSize: '.92rem', lineHeight: '1.65' }}>
+                  {data.card_text && data.card_text.split('\n\n').map((cardP, cIdx) => (
+                    <p key={cIdx} style={{ marginBottom: cIdx > 0 ? 0 : '.5rem' }}>
+                      {cardP}
+                    </p>
+                  ))}
+                </div>
+                <button 
+                  onClick={onOpenStrategy} 
+                  className="btn btn-solid" 
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
                   {data.card_button_text || "Discuss Financing Requirements"} <span className="arr">→</span>
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ===== FAQS ===== */}
+      {/* ===== FAQS ACCORDION SECTION ===== */}
       <FAQSection 
         items={data.faq_items} 
-        title="Frequently Asked Questions About Business Financing" 
-        subtitle="Common questions regarding commercial loan applications, financial projections, and CSBFP packages."
+        title={data.faq_title || "Frequently Asked Questions"} 
+        subtitle={data.faq_subtitle || "Common questions regarding commercial loan applications, financial projections, and CSBFP packages."}
       />
 
+      {/* ===== CLOSING CTA BAND ===== */}
       <section className="cta-band">
         <div className="wrap">
-          <span className="eyebrow center light">{data.cta_eyebrow || "Unlock Your Expansion Capital"}</span>
-          <h2>{data.cta_title || "Build lender confidence with CPA-certified financial models"}</h2>
-          <p>{data.cta_subtitle || "Let's prepare your business for commercial loans, equipment leases, or government backed financing."}</p>
+          <span className="eyebrow center light">{data.cta_eyebrow || "Commercial Financing Support"}</span>
+          <h2>{data.cta_title || "Discuss Your Business Financing Requirements"}</h2>
+          <div style={{ maxWidth: '780px', margin: '0 auto 1.8rem auto' }}>
+            {data.cta_subtitle && data.cta_subtitle.split('\n\n').map((subP, sIdx) => (
+              <p key={sIdx} style={{ margin: sIdx > 0 ? '.6rem 0 0' : 0, opacity: 0.95 }}>
+                {subP}
+              </p>
+            ))}
+          </div>
           <div className="hero-actions">
-            <button onClick={onOpenStrategy} className="btn btn-light">{data.cta_primary_btn || "Book Financing Strategy Call"} <span className="arr">→</span></button>
-            <Link to="/contact" className="btn btn-soft">{data.cta_secondary_btn || "Contact Us"}</Link>
+            <button onClick={onOpenStrategy} className="btn btn-light">
+              {data.cta_primary_btn || "Contact Our Team"} <span className="arr">→</span>
+            </button>
+            <Link to="/accounting-bookkeeping" className="btn btn-soft">
+              {data.cta_secondary_btn || "Explore Accounting Services"}
+            </Link>
           </div>
         </div>
       </section>

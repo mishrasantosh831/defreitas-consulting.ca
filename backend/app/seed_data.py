@@ -42,36 +42,41 @@ DEFAULT_SITE_DATA = {
                 {
                     "title": "Tax Advisory & Filing",
                     "desc": "Personal and corporate tax preparation, planning, GST/HST support, and assistance with CRA reviews, objections, and appeals.",
+                    "link_text": "Explore Tax Services →",
                     "link": "/tax-advisory"
                 },
                 {
                     "title": "Accounting & Bookkeeping",
                     "desc": "Comprehensive bookkeeping, setup and ongoing consultation, financial statement preparation, and WSIB filing and remittance support.",
+                    "link_text": "Explore Accounting →",
                     "link": "/accounting-bookkeeping"
                 },
                 {
                     "title": "SR&ED Tax Credit",
                     "desc": "Professional SR&ED tax credit support, including claim preparation, financial documentation, and related tax matters.",
+                    "link_text": "Explore SR&ED Services →",
                     "link": "/sred-tax-credits"
                 },
                 {
                     "title": "Business Financing",
                     "desc": "Financial statements, multi-year projections, cash flow modelling, lender-focused business plans, and commercial financing support.",
+                    "link_text": "Explore Financing →",
                     "link": "/business-financing"
                 },
                 {
                     "title": "Incorporation & Registration",
                     "desc": "Professional business incorporation and registration support, with practical guidance based on your business requirements.",
+                    "link_text": "Explore Incorporation →",
                     "link": "/incorporation-business-registration"
                 },
                 {
                     "title": "CPA Fractional CFO Advisory",
                     "desc": "Strategic executive advisory, cash flow forecasting, and succession planning support for established and growing businesses.",
+                    "link_text": "Explore Advisory Services →",
                     "link": "/services"
                 }
             ],
             "why_title": "Over 30 Years of Trusted Tax, Financial & Business Advisory",
-            "why_description": "Work with experienced Chartered Professional Accountants who bring decades of tax, accounting and business advisory experience across a range of industries. Receive direct, timely support from professionals who understand your business and provide guidance tailored to your circumstances.",
             "why_image": "/images/why-choose-us.jpg",
             "why_items": [
                 {
@@ -91,6 +96,7 @@ DEFAULT_SITE_DATA = {
                     "desc": "Professional services delivered with straightforward pricing, clear expectations and no hidden fees."
                 }
             ],
+            "how_we_work_eyebrow": "HOW WE WORK",
             "how_we_work_title": "A Simple, Seamless and Personalized Approach",
             "how_we_work_steps": [
                 {
@@ -264,21 +270,20 @@ DEFAULT_SITE_DATA = {
         
         "sred": {
             "seo_title": "SR&ED Tax Credit Services Canada | DeFreitas & Associates",
-            "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides SR&ED tax credit consulting, helping businesses prepare claims and access eligible R&D tax incentives.",
+            "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides professional SR&ED tax credit services for businesses involved in research, development, innovation, and technological advancement.",
             "canonical_url": "https://defreitas-consulting.ca/sred-tax-credits/",
             "breadcrumb_schema": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"SR&ED Tax Credits\",\"item\":\"https://defreitas-consulting.ca/sred-tax-credits/\"}]}",
             "title": "SR&ED Tax Credit Services in Canada",
-            "hero_eyebrow": "Scientific Research & Experimental Development Tax Incentives",
+            "hero_eyebrow": "Scientific Research & Experimental Development",
             "hero_title": "SR&ED Tax Credit Services in Canada",
             "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional SR&ED tax credit services for businesses involved in research, development, innovation, and technological advancement.",
-            "hero_primary_btn": "Request Free SR&ED Assessment",
-            "hero_secondary_btn": "Contact Team",
-            "hero_image": "/images/sred-hero.jpg",
-            "intro_image": "/images/sred-turning-innovation.jpg",
-            "intro_eyebrow": "Professional SR&ED Tax Credit Consultants",
-            "intro_title": "SR&ED Tax Credit Claims",
-            "intro_lead": "Preparing an SR&ED tax credit claim involves both the work performed and the expenditures associated with eligible activities. As an SR&ED consultant in Canada, DeFreitas & Associates works with businesses to review their research and development activities and provide professional guidance throughout the SR&ED claim process.",
-            "intro_bullets": [
+            "hero_overview": "If your business is developing or improving products, processes, technologies, or technical capabilities, your activities may be worth reviewing under Canada’s Scientific Research & Experimental Development (SR&ED) tax incentive program.\n\nOur team provides practical SR&ED consulting and tax support to help businesses understand the process, review their circumstances, and prepare their SR&ED claims.",
+            "hero_banner": "/images/sred-hero.jpg",
+            "consulting_title": "SR&ED Consulting & Tax Credit Support",
+            "consulting_content": "Preparing an SR&ED tax credit claim involves both the work performed and the expenditures associated with eligible activities.\n\nAs an SR&ED consultant in Canada, DeFreitas & Associates works with businesses to review their research and development activities and provide professional guidance throughout the SR&ED claim process.\n\nOur SR&ED tax credit services can also complement broader Tax Advisory Services and Accounting & Bookkeeping Services when additional tax, accounting, or financial support is required.",
+            "services_list_title": "Our SR&ED Services",
+            "services_list_intro": "Our SR&ED consulting services include support with:",
+            "services_list": [
                 "Reviewing potential SR&ED activities",
                 "SR&ED tax credit claims",
                 "SR&ED claim preparation and filing support",
@@ -286,134 +291,36 @@ DEFAULT_SITE_DATA = {
                 "Tax-related SR&ED matters",
                 "CRA-related SR&ED matters"
             ],
-            "services_eyebrow": "Preparing Your SR&ED Claim",
-            "services_title": "SR&ED Advisory Services",
-            "services_subtitle": "From early technical scoping to full filing and CRA audit defense.",
-            "services": [
-                {
-                    "title": "1. Opportunity Assessment",
-                    "description": "We review your projects, technical challenges, experiments, personnel, and costs to identify work that may meet the SR&ED requirements."
-                },
-                {
-                    "title": "2. Technical Claim Preparation",
-                    "description": "Structured interviews capture technological uncertainties, hypotheses, experiments, results, and advances for clear project descriptions."
-                },
-                {
-                    "title": "3. Expenditure Analysis",
-                    "description": "We work with your accounting records to identify and link eligible salaries, materials, contracts, equipment costs, and applicable overhead."
-                },
-                {
-                    "title": "4. Documentation Improvement",
-                    "description": "We help establish practical contemporaneous records so future claims are better supported without burdening your technical team."
-                },
-                {
-                    "title": "5. CRA Review Support",
-                    "description": "When questions arise, we help organize responses, clarify the technical work, prepare supporting materials, and participate in review discussions."
-                },
-                {
-                    "title": "6. Previously Denied Claims",
-                    "description": "We independently assess a reviewed or denied claim, identify weaknesses, and advise whether further representation or an objection may be appropriate."
-                }
-            ],
-            "qualify_eyebrow": "Eligibility Check",
-            "qualify_title": "Could Your Work Qualify?",
-            "qualify_description": "SR&ED is not limited to one particular industry. Businesses involved in research, experimentation, technological development, or improvements to products and processes may have activities worth reviewing for potential SR&ED eligibility. Eligibility depends on the nature of the work performed and the applicable program requirements. Does your business need a dedicated R&D department? Not necessarily. What matters is the nature of the work being performed.",
-            "qualify_indicators_title": "Common Qualification Indicators:",
-            "qualify_indicators": [
-                "Your team developed or improved a product, process, material, device, or software system.",
-                "Experienced personnel could not determine the solution in advance using standard industry knowledge.",
-                "You tested alternatives, prototypes, models, formulations, code algorithms, or system configurations.",
-                "You encountered technical obstacles, failures, limitations, or unexpected results.",
-                "Your work generated new technological knowledge or incremental advancement for your business."
-            ],
-            "expenditures_title": "Eligible Expenditures:",
-            "expenditures_intro": "Under Canadian tax law, qualifying work enables you to claim expenditures directly linked to R&D activities:",
-            "expenditures": [
-                {
-                    "title": "Canadian Salaries & Wages",
-                    "desc": "Directly engaged technical staff + proxy overhead allowance (55%)."
-                },
-                {
-                    "title": "Arm's Length Contractors",
-                    "desc": "Canadian third-party developer and engineering contract costs (80% rate)."
-                },
-                {
-                    "title": "Consumed Materials",
-                    "desc": "Physical prototypes, testing materials, and experimental components."
-                }
-            ],
-            "industries_eyebrow": "Sectors We Serve",
-            "industries_title": "Eligible Canadian Industries",
-            "industries_subtitle": "SR&ED claims span dozens of commercial fields beyond pure science.",
-            "industries": [
-                "Manufacturing & Processing",
-                "Software & Information Technology",
-                "Clean Technology & Renewable Energy",
-                "Food & Beverage Formulation",
-                "Engineering & Industrial Design",
-                "Life Sciences & Pharmaceuticals",
-                "Mining & Environmental Engineering",
-                "Construction & Building Sciences"
-            ],
-            "process_eyebrow": "Methodology",
-            "process_title": "How We Work With You",
-            "process_subtitle": "A disciplined 6-stage process designed to minimize distraction for your technical team.",
-            "process_steps": [
-                {
-                    "step": "1",
-                    "title": "Preliminary Discussion",
-                    "desc": "Initial consultation to understand your technological operations and identify eligible projects."
-                },
-                {
-                    "step": "2",
-                    "title": "Technical Scoping",
-                    "desc": "Interviews with your technical leads to document uncertainties, hypotheses, and testing cycles."
-                },
-                {
-                    "step": "3",
-                    "title": "Narrative Drafting",
-                    "desc": "Preparation of robust, CRA-defensible Form T661 project descriptions and reports."
-                },
-                {
-                    "step": "4",
-                    "title": "Cost Identification",
-                    "desc": "Quantifying eligible direct wages, contractor expenditures, and proxy overhead calculations."
-                },
-                {
-                    "step": "5",
-                    "title": "Filing Integration",
-                    "desc": "Seamless filing integration with your corporate T2 tax return with the Canada Revenue Agency."
-                },
-                {
-                    "step": "6",
-                    "title": "Post-Filing Support",
-                    "desc": "Defending and representing the claim before CRA auditors until tax credits or refunds are issued."
-                }
-            ],
+            "services_list_closing": "Every business and project is different. We take the time to understand your activities and determine how we can assist with your SR&ED tax credit requirements.",
+            "content_image": "/images/sred-turning-innovation.jpg",
+            "card_title": "Talk to an SR&ED Consultant",
+            "card_text": "Whether assessing potential research activities or organizing documentation for filing, speak with our SR&ED specialists today.",
+            "card_button_text": "Talk to an SR&ED Consultant",
+            "affiliation_text": "OUR FIRM IS A PROUD MEMBER OF THE CANADIAN TAX FOUNDATION AND THE EFILE ASSOCIATION OF CANADA",
             "faq_items": [
                 {
                     "q": "What is the SR&ED tax credit?",
-                    "a": "The Scientific Research & Experimental Development (SR&ED) program is a Canadian tax incentive program that supports eligible research and development activities. Businesses conducting qualifying work may be able to claim SR&ED tax incentives based on eligible activities and expenditures."
+                    "a": "The Scientific Research & Experimental Development (SR&ED) program is a Canadian tax incentive program that supports eligible research and development activities.\n\nBusinesses conducting qualifying work may be able to claim SR&ED tax incentives based on eligible activities and expenditures."
                 },
                 {
                     "q": "What types of businesses may qualify for SR&ED?",
-                    "a": "SR&ED is not limited to one particular industry. Businesses involved in research, experimentation, technological development, or improvements to products and processes may have activities worth reviewing for potential SR&ED eligibility."
+                    "a": "SR&ED is not limited to one particular industry. Businesses involved in research, experimentation, technological development, or improvements to products and processes may have activities worth reviewing for potential SR&ED eligibility.\n\nEligibility depends on the nature of the work performed and the applicable program requirements."
                 },
                 {
                     "q": "Does my business need a dedicated R&D department to consider SR&ED?",
-                    "a": "Not necessarily. Research and development activities can take place as part of regular operations, product development, technical work, or process improvement. What matters is the nature of the work being performed, rather than whether your company has a department formally labelled “R&D.”"
+                    "a": "Not necessarily. Research and development activities can take place as part of regular operations, product development, technical work, or process improvement.\n\nWhat matters is the nature of the work being performed, rather than whether your company has a department formally labelled “R&D.”"
                 },
                 {
                     "q": "What information is needed for an SR&ED claim?",
-                    "a": "An SR&ED claim generally requires information about the work performed and the expenditures associated with eligible activities. Maintaining appropriate technical and financial records can help support SR&ED claim preparation and the overall filing process."
+                    "a": "An SR&ED claim generally requires information about the work performed and the expenditures associated with eligible activities.\n\nMaintaining appropriate technical and financial records can help support SR&ED claim preparation and the overall filing process."
                 },
                 {
                     "q": "Can an SR&ED consultant help with claim preparation?",
-                    "a": "An SR&ED consultant can help businesses review potential SR&ED activities, understand the claim process, and organize relevant information for the preparation of an SR&ED tax credit claim. DeFreitas & Associates provides SR&ED consulting and tax support based on the circumstances and requirements of each client."
+                    "a": "An SR&ED consultant can help businesses review potential SR&ED activities, understand the claim process, and organize relevant information for the preparation of an SR&ED tax credit claim.\n\nDeFreitas & Associates provides SR&ED consulting and tax support based on the circumstances and requirements of each client."
                 },
                 {
                     "q": "Can you help with the financial side of an SR&ED claim?",
-                    "a": "Yes. DeFreitas & Associates can assist with the tax and financial aspects of SR&ED matters within our scope of services. Businesses requiring broader financial reporting or bookkeeping support can also explore our Accounting & Bookkeeping Services."
+                    "a": "Yes. DeFreitas & Associates can assist with the tax and financial aspects of SR&ED matters within our scope of services.\n\nBusinesses requiring broader financial reporting or bookkeeping support can also explore our Accounting & Bookkeeping Services."
                 },
                 {
                     "q": "Can you assist with CRA-related SR&ED matters?",
@@ -424,11 +331,11 @@ DEFAULT_SITE_DATA = {
                     "a": "No. Businesses of different sizes may conduct activities that fall within the SR&ED program. Eligibility depends on the applicable requirements and the nature of the work and expenditures involved."
                 }
             ],
-            "cta_eyebrow": "Maximize Your Refund Today",
-            "cta_title": "Ready to discover your eligible SR&ED refund?",
-            "cta_subtitle": "If you are looking for an SR&ED consultant in Canada or professional support with an SR&ED tax credit claim, contact DeFreitas & Associates to discuss your requirements.",
-            "cta_primary_btn": "Book Free Assessment",
-            "cta_secondary_btn": "Contact Toronto Office"
+            "cta_eyebrow": "SR&ED Consultation",
+            "cta_title": "Talk to an SR&ED Consultant",
+            "cta_subtitle": "If you are looking for an SR&ED consultant in Canada or professional support with an SR&ED tax credit claim, contact DeFreitas & Associates to discuss your requirements.\n\nBusinesses looking for broader financial support can also explore our Business Financing Services.",
+            "cta_primary_btn": "Schedule Consultation",
+            "cta_secondary_btn": "Explore Financing"
         },
         
         "tax_advisory": {
@@ -440,11 +347,22 @@ DEFAULT_SITE_DATA = {
             "hero_eyebrow": "Professional Tax Consultants & Tax Advisors",
             "hero_title": "Tax Consultant & Tax Advisory Services in Canada",
             "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional tax consulting, advisory, preparation, and filing services to individuals and businesses. Whether you need help preparing a tax return, planning ahead, responding to a tax matter, or understanding your obligations, our team offers practical guidance based on your specific circumstances.",
+            "hero_overview": "For those looking for a tax consultant in Canada, a knowledgeable tax advisor, or an experienced tax firm, we provide personalized support across a broad range of personal and business tax matters.",
             "hero_banner": "/images/tax-advisory-banner.png",
-            "content_image": "/images/648.png",
-            "section_eyebrow": "Tax Planning Services",
-            "section_title": "GST/HST Tax Services",
-            "intro": "Good tax planning is about more than meeting filing deadlines. It's about understanding your obligations, anticipating potential issues, and making informed decisions throughout the year. Our tax consultants work with employed and self-employed individuals, proprietorships, partnerships, small and mid-sized businesses, and corporations on a variety of tax planning and advisory matters.",
+            "advisory_title": "Tax Consulting & Advisory",
+            "advisory_content": "Good tax planning is about more than meeting filing deadlines. It’s about understanding your obligations, anticipating potential issues, and making informed decisions throughout the year.\n\nOur tax consultants work with employed and self-employed individuals, proprietorships, partnerships, small and mid-sized businesses, and corporations on a variety of tax planning and advisory matters.",
+            "advisory_link_text": "Accounting & Bookkeeping Services",
+            "advisory_link_url": "/accounting-bookkeeping",
+            "personal_corporate_title": "Personal & Corporate Tax Services",
+            "personal_corporate_content": "We provide tax preparation, filing, planning, and advisory services for both individuals and businesses.\n\nFor individuals, this includes T1 General personal tax returns, adjustments, and related tax matters. For businesses, we assist with T2 Corporate Tax Returns, Compilation Engagement financial statements, corporate tax planning, and related filing requirements.",
+            "personal_corporate_link_text": "Business Incorporation Services",
+            "personal_corporate_link_url": "/incorporation-business-registration",
+            "cra_matters_title": "GST/HST & CRA Tax Matters",
+            "cra_matters_content": "Tax questions don’t always end once a return has been filed. We assist clients with GST/HST filings as well as a range of CRA-related matters that may arise afterward.\n\nOur services include personal and corporate tax reviews and audits, GST/HST reviews and audits, tax adjustments, Notices of Objection, tax appeals, and related CRA correspondence.",
+            "cross_border_title": "Non-Resident & Cross-Border Tax Matters",
+            "cross_border_content": "Certain tax situations become more complex when income, investments, employment, or transactions extend beyond one jurisdiction.\n\nDeFreitas & Associates assists with selected non-resident employment and investment tax matters, Certificates of Compliance, commodity tax transactions, and HST-related cross-border matters.\n\nBecause every situation is different, we review each matter individually to understand the circumstances and determine how we can assist.",
+            "services_list_title": "Tax Services We Provide",
+            "services_list_intro": "Our tax services include:",
             "services_list": [
                 "T1 General Personal Tax Returns",
                 "T2 Corporate Tax Returns",
@@ -463,9 +381,12 @@ DEFAULT_SITE_DATA = {
                 "Commodity & Selected Cross-Border Tax Matters",
                 "Scientific Research & Experimental Development (SR&ED) Tax Credit"
             ],
+            "sred_link_text": "SR&ED Tax Credit Services",
+            "sred_link_url": "/sred-tax-credits",
+            "content_image": "/images/648.png",
             "affiliation_text": "OUR FIRM IS A PROUD MEMBER OF THE CANADIAN TAX FOUNDATION AND THE EFILE ASSOCIATION OF CANADA",
-            "card_title": "Corporate & Business Tax Advisory",
-            "card_text": "Whether dealing with an overdue corporate T2 return, CRA audit letter, or cross-border asset disposition, speak with our senior tax consultants today.",
+            "card_title": "Talk to a Tax Consultant",
+            "card_text": "Whether dealing with a corporate T2 return, personal T1 filing, GST/HST audit, or CRA correspondence, speak with our advisors today.",
             "card_button_text": "Talk to a Tax Consultant",
             "faq_items": [
                 {
@@ -494,18 +415,18 @@ DEFAULT_SITE_DATA = {
                 },
                 {
                     "q": "Do you handle non-resident and cross-border tax matters?",
-                    "a": "We assist with selected non-resident and cross-border matters, including non-resident employment and investment taxation, Certificates of Compliance, commodity tax transactions, and HST-related cross-border matters."
+                    "a": "We assist with selected non-resident and cross-border matters, including non-resident employment and investment taxation, Certificates of Compliance, commodity tax transactions, and HST-related cross-border matters.\n\nBecause requirements can vary considerably, each situation is reviewed individually."
                 },
                 {
                     "q": "Do you provide SR&ED tax credit services?",
                     "a": "Yes. We provide services related to the Scientific Research & Experimental Development (SR&ED) Tax Credit. Visit our SR&ED Tax Credit Services page to learn more."
                 }
             ],
-            "cta_eyebrow": "Tax Reviews, Objections & Appeals",
+            "cta_eyebrow": "Professional Tax Advisory",
             "cta_title": "Talk to a Tax Consultant",
-            "cta_subtitle": "Tax matters can be straightforward or complex, but getting the right guidance can make the process easier to manage. If you're looking for a tax consultant in Canada, a professional tax advisor, or an experienced tax firm, contact DeFreitas & Associates to discuss your personal or business tax needs.",
-            "cta_primary_btn": "Schedule Free Consultation",
-            "cta_secondary_btn": "View Pricing Plans"
+            "cta_subtitle": "Tax matters can be straightforward or complex, but getting the right guidance can make the process easier to manage. If you’re looking for a tax consultant in Canada, a professional tax advisor, or an experienced tax firm, contact DeFreitas & Associates to discuss your personal or business tax needs.",
+            "cta_primary_btn": "Schedule Tax Consultation",
+            "cta_secondary_btn": "Explore All Services"
         },
         
         "accounting": {
@@ -514,32 +435,35 @@ DEFAULT_SITE_DATA = {
             "canonical_url": "https://defreitas-consulting.ca/accounting-bookkeeping/",
             "breadcrumb_schema": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Accounting & Bookkeeping\",\"item\":\"https://defreitas-consulting.ca/accounting-bookkeeping/\"}]}",
             "title": "Accounting & Bookkeeping Services in Canada",
-            "hero_eyebrow": "Accounting Services for Businesses",
+            "hero_eyebrow": "Accounting & Bookkeeping Services",
             "hero_title": "Accounting & Bookkeeping Services in Canada",
-            "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional accounting and bookkeeping services designed to help businesses maintain clear, organized, and reliable financial records. Our approach is practical and personalized.",
+            "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional accounting and bookkeeping services designed to help businesses maintain clear, organized, and reliable financial records.",
+            "hero_overview": "Our approach is practical and personalized. We work with businesses to understand their bookkeeping and accounting requirements and provide the level of support that best fits their needs.",
             "hero_banner": "/images/accounting-bookkeeping-banner.png",
+            "hero_banner_alt": "Accounting & Bookkeeping Services in Canada",
             "content_image": "/images/658.png",
-            "section_eyebrow": "Bookkeeping Setup & Ongoing Support",
-            "section_title": "Accounting & Bookkeeping Solutions",
-            "intro": "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business. DeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date. Whether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.",
-            "section_list_title": "Our Accounting & Bookkeeping Services:",
-            "services_list": [
-                "Comprehensive Bookkeeping Services",
-                "Bookkeeping Setup & Ongoing Consultation",
-                "WSIB Filing & Remittances",
-                "Financial Statement Preparation",
-                "Notice to Reader / Compilation Engagement Financial Statements",
-                "Monthly Bank and Credit Card Reconciliations"
-            ],
-            "body": "A well-organized bookkeeping process can make it easier to manage financial information as your business operates and grows. We provide bookkeeping setup and ongoing consultation to help businesses establish and maintain an appropriate bookkeeping process. Our support is tailored to your business, allowing you to receive professional guidance when you need it.",
+            "content_image_alt": "DeFreitas & Associates Accounting & Bookkeeping Services",
+            "bookkeeping_title": "Comprehensive Bookkeeping Services",
+            "bookkeeping_content": "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business.\n\nDeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date.\n\nWhether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.\n\nFor assistance with corporate tax, GST/HST, and other taxation matters, explore our [Tax Advisory Services].",
+            "setup_title": "Bookkeeping Setup & Ongoing Consultation",
+            "setup_content": "A well-organized bookkeeping process can make it easier to manage financial information as your business operates and grows.\n\nWe provide bookkeeping setup and ongoing consultation to help businesses establish and maintain an appropriate bookkeeping process.\n\nOur support is tailored to your business, allowing you to receive professional guidance when you need it.",
+            "wsib_title": "WSIB Filing & Remittances",
+            "wsib_content": "DeFreitas & Associates assists businesses with WSIB filing and remittances.\n\nWe work with clients to help ensure the necessary information is properly organized and filing requirements are addressed within the scope of our accounting and bookkeeping services.",
+            "financial_statements_title": "Financial Statement Preparation",
+            "financial_statements_content": "Clear financial statements provide important information about the financial position and performance of a business.\n\nDeFreitas & Associates provides financial statement preparation as part of our professional accounting services, helping businesses maintain useful and organized financial information.\n\nBusinesses that require financial statements as part of a financing process can also explore our [Business Financing Services].",
+            "card_title": "Professional Accounting Services",
+            "card_text": "If you are looking for professional accounting services in Canada or reliable bookkeeping services for your business, contact DeFreitas & Associates.\n\nWe can discuss your requirements and determine the appropriate level of accounting and bookkeeping support for your business.",
+            "card_button_text": "Contact DeFreitas & Associates",
+            "faq_title": "Frequently Asked Questions",
+            "faq_subtitle": "Common questions regarding bookkeeping setup, ongoing consultation, WSIB remittances, and financial statement preparation.",
             "faq_items": [
                 {
                     "q": "What bookkeeping services does DeFreitas & Associates provide?",
-                    "a": "Our bookkeeping services include comprehensive bookkeeping, bookkeeping setup, and ongoing consultation. We work with businesses to understand their requirements and provide bookkeeping services suited to their needs."
+                    "a": "Our bookkeeping services include comprehensive bookkeeping, bookkeeping setup, and ongoing consultation.\n\nWe work with businesses to understand their requirements and provide bookkeeping services suited to their needs."
                 },
                 {
                     "q": "Can you help set up bookkeeping for my business?",
-                    "a": "Yes. DeFreitas & Associates provides bookkeeping setup and consultation to help businesses establish an organized bookkeeping process. In addition to bookkeeping setup, we provide ongoing consultation and comprehensive bookkeeping services."
+                    "a": "Yes. DeFreitas & Associates provides bookkeeping setup and consultation to help businesses establish an organized bookkeeping process.\n\nIn addition to bookkeeping setup, we provide ongoing consultation and comprehensive bookkeeping services."
                 },
                 {
                     "q": "Do you assist with WSIB filing and remittances?",
@@ -551,43 +475,66 @@ DEFAULT_SITE_DATA = {
                 },
                 {
                     "q": "Do you also provide tax services?",
-                    "a": "Yes. Tax services are provided separately through our Tax Advisory Services, including personal and corporate tax preparation and other tax matters within our scope of services."
+                    "a": "Yes. Tax services are provided separately through our [Tax Advisory Services], including personal and corporate tax preparation and other tax matters within our scope of services."
                 }
             ],
-            "card_title": "Get Your Books Up-To-Date",
-            "card_text": "Looking for professional accounting services in Canada or reliable bookkeeping services for your business? Contact DeFreitas & Associates. We can discuss your requirements and determine the appropriate level of accounting and bookkeeping support for your business.",
-            "card_button_text": "Consult Our Bookkeeping Team",
-            "cta_eyebrow": "Financial Record Management",
-            "cta_title": "Automate your financial records with senior CPA oversight",
-            "cta_subtitle": "Gain absolute clarity over cash flows, profit margins, and monthly tax obligations.",
-            "cta_primary_btn": "Get Started Today",
-            "cta_secondary_btn": "View Monthly Plans"
+            "cta_eyebrow": "Accounting & Bookkeeping in Canada",
+            "cta_title": "Looking for Professional Accounting or Bookkeeping Support?",
+            "cta_subtitle": "If you are looking for professional accounting services in Canada or reliable bookkeeping services for your business, contact DeFreitas & Associates. We can discuss your requirements and determine the appropriate level of accounting and bookkeeping support for your business.",
+            "cta_primary_btn": "Contact Us Today",
+            "cta_secondary_btn": "Explore Tax Advisory"
         },
         
         "financing": {
             "seo_title": "Business Financing Solutions Canada | DeFreitas & Associates",
-            "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
+            "seo_description": "Professional business financing support in Canada. DeFreitas & Associates assists with financial statements, projections, cash flow models, CSBFP, and business plans.",
             "canonical_url": "https://defreitas-consulting.ca/business-financing/",
             "breadcrumb_schema": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Business Financing\",\"item\":\"https://defreitas-consulting.ca/business-financing/\"}]}",
             "title": "Business Financing Services in Canada",
-            "hero_eyebrow": "Financial Advisory Services",
+            "hero_eyebrow": "Business Financing Services",
             "hero_title": "Business Financing Services in Canada",
             "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional business financing support for companies preparing to pursue commercial lending and other financing opportunities.",
+            "hero_overview": "From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
             "hero_banner": "/images/business-solution-banner.png",
+            "hero_banner_alt": "Business Financing Services in Canada",
             "content_image": "/images/668.png",
-            "section_eyebrow": "Business Loan & Lease Preparation",
-            "section_title": "Financial Statements for Financing",
-            "intro": "A well-prepared financing application gives lenders a clearer understanding of your business, its financial position, future outlook, and funding requirements. From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
-            "section_list_title": "Our Financing Advisory Services Include:",
-            "services_list": [
-                "Financial Statement Preparation – Notice to Reader & Compilation Engagements",
-                "Multi-Year Financial Projections & Detailed Cash Flow Modelling",
-                "Business Plans for Commercial Lenders",
-                "CSBFP Application Packages",
-                "Commercial Equipment Lease & Working Capital Financing Support",
-                "Capital Structure & Debt vs. Equity Advisory"
+            "content_image_alt": "DeFreitas & Associates Business Financing Support",
+            "support_title": "Business Financing Support",
+            "support_intro": "A well-prepared financing application gives lenders a clearer understanding of your business, its financial position, future outlook, and funding requirements.",
+            "services_list_title": "Our business financing services include:",
+            "financing_services": [
+                {
+                    "title": "Financial Statement Preparation",
+                    "desc": "Preparation of financial statements, including Notice to Reader and Compilation Engagements, to support commercial financing and lender requirements.\n\nFor ongoing financial reporting support, explore our [Accounting & Bookkeeping Services]."
+                },
+                {
+                    "title": "Multi-Year Financial Projections & Cash Flow Modelling",
+                    "desc": "Preparation of multi-year financial projections and detailed cash flow models to help present your expected financial performance, cash requirements, and financing needs to potential lenders."
+                },
+                {
+                    "title": "Business Plans for Commercial Lenders",
+                    "desc": "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
+                },
+                {
+                    "title": "CSBFP Application Packages",
+                    "desc": "Support with Canada Small Business Financing Program (CSBFP) application packages, including the preparation and organization of relevant financial information and supporting documentation."
+                },
+                {
+                    "title": "Commercial Equipment Lease & Working Capital Financing Support",
+                    "desc": "Support for businesses preparing to pursue commercial equipment lease or working capital financing, with a focus on organizing the financial information required for the financing process."
+                },
+                {
+                    "title": "Capital Structure & Debt vs. Equity Advisory",
+                    "desc": "Advisory support to help businesses assess capital structure and debt versus equity considerations in the context of their financial position, financing requirements, and business objectives."
+                }
             ],
-            "body": "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward. Financial statements provide historical context, while financial projections and cash flow modelling help demonstrate the expected financial outlook. A well-prepared business plan brings this information together with the company’s objectives and financing requirements. DeFreitas & Associates helps businesses prepare these materials as a coordinated financing package, making it easier to present clear, organized financial information to potential lenders.",
+            "preparing_title": "Preparing for Business Financing",
+            "preparing_content": "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward.\n\nFinancial statements provide historical context, while financial projections and cash flow modelling help demonstrate the expected financial outlook. A well-prepared business plan brings this information together with the company’s objectives and financing requirements.\n\nDeFreitas & Associates helps businesses prepare these materials as a coordinated financing package, making it easier to present clear, organized financial information to potential lenders.",
+            "card_title": "Preparing for Business Financing",
+            "card_text": "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process.",
+            "card_button_text": "Discuss Financing Requirements",
+            "faq_title": "Frequently Asked Questions",
+            "faq_subtitle": "Common questions regarding commercial loan applications, financial projections, and CSBFP packages.",
             "faq_items": [
                 {
                     "q": "What business financing services does DeFreitas & Associates provide?",
@@ -595,11 +542,11 @@ DEFAULT_SITE_DATA = {
                 },
                 {
                     "q": "What should a business prepare before approaching a commercial lender?",
-                    "a": "Requirements vary by lender and financing situation, but businesses may be asked to provide financial statements, financial projections, cash flow forecasts, a business plan, and other supporting information. We help prepare and organize the financial information relevant to the financing process."
+                    "a": "Requirements vary by lender and financing situation, but businesses may be asked to provide financial statements, financial projections, cash flow forecasts, a business plan, and other supporting information.\n\nWe help prepare and organize the financial information relevant to the financing process."
                 },
                 {
                     "q": "Can you prepare financial projections and cash flow models?",
-                    "a": "Yes. We prepare multi-year financial projections and detailed cash flow models to provide a forward-looking view of the business and its financing requirements. These materials can help potential lenders better understand expected financial performance and cash flow."
+                    "a": "Yes. We prepare multi-year financial projections and detailed cash flow models to provide a forward-looking view of the business and its financing requirements.\n\nThese materials can help potential lenders better understand expected financial performance and cash flow."
                 },
                 {
                     "q": "Can you prepare a business plan for a commercial lender?",
@@ -607,7 +554,7 @@ DEFAULT_SITE_DATA = {
                 },
                 {
                     "q": "Can you help with a Canada Small Business Financing Program (CSBFP) application?",
-                    "a": "Yes. We assist with the preparation of CSBFP application packages, including relevant financial information and supporting documentation. Eligibility and financing approval remain subject to applicable program and lender requirements."
+                    "a": "Yes. We assist with the preparation of CSBFP application packages, including relevant financial information and supporting documentation.\n\nEligibility and financing approval remain subject to applicable program and lender requirements."
                 },
                 {
                     "q": "Do you provide commercial equipment lease financing support?",
@@ -618,18 +565,19 @@ DEFAULT_SITE_DATA = {
                     "a": "Yes. We provide working capital financing support based on the needs and circumstances of the business, including assistance with preparing relevant financial information and supporting documentation."
                 },
                 {
+                    "q": "Can you advise on debt versus equity financing?",
+                    "a": "Yes. We provide advisory support on capital structure and debt versus equity considerations.\n\nThe appropriate structure depends on the financial position, financing requirements, and objectives of the individual business."
+                },
+                {
                     "q": "Does DeFreitas & Associates provide financing directly?",
                     "a": "DeFreitas & Associates provides business financing support, financial preparation, and advisory services. Financing decisions, amounts, rates, terms, and approvals remain subject to the applicable lender or financing provider."
                 }
             ],
-            "card_title": "Preparing for Business Financing",
-            "card_text": "Commercial lenders typically need a clear picture of both where a business stands today and how it expects to perform going forward. DeFreitas & Associates helps businesses prepare these materials as a coordinated financing package.",
-            "card_button_text": "Discuss Financing Requirements",
-            "cta_eyebrow": "Financial Projections for Business Financing",
-            "cta_title": "Build lender confidence with CPA-certified financial models",
-            "cta_subtitle": "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process.",
-            "cta_primary_btn": "Book Financing Strategy Call",
-            "cta_secondary_btn": "Contact Us"
+            "cta_eyebrow": "Commercial Financing Support",
+            "cta_title": "Discuss Your Business Financing Requirements",
+            "cta_subtitle": "If your business is preparing to pursue commercial financing, DeFreitas & Associates can help you develop the financial statements, projections, cash flow models, business plan, and supporting documentation required for the process. Contact our team to discuss your business financing requirements and determine how we can assist.",
+            "cta_primary_btn": "Contact Our Team",
+            "cta_secondary_btn": "Explore Accounting Services"
         },
         
         "incorporation": {
@@ -638,28 +586,28 @@ DEFAULT_SITE_DATA = {
             "canonical_url": "https://defreitas-consulting.ca/incorporation-business-registration/",
             "breadcrumb_schema": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Incorporation & Business Registration\",\"item\":\"https://defreitas-consulting.ca/incorporation-business-registration/\"}]}",
             "title": "Business Incorporation & Registration Services in Canada",
-            "hero_eyebrow": "Professional Business Incorporation Services",
+            "hero_eyebrow": "Business Incorporation & Registration",
             "hero_title": "Business Incorporation & Registration Services in Canada",
             "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional business incorporation and business registration services for individuals and entrepreneurs establishing a business.",
+            "hero_overview": "Starting a business involves important decisions from the outset. We provide practical support through the incorporation or business registration process, helping you establish your business on the right footing.",
             "hero_banner": "/images/icoopration-business-banner.png",
+            "hero_banner_alt": "Business Incorporation & Registration Services in Canada",
             "content_image": "/images/668.png",
-            "section_eyebrow": "Business Incorporation Requirements",
-            "section_title": "Business Setup & Advisory Services",
-            "intro": "Starting a business involves important decisions from the outset. We provide practical support through the incorporation or business registration process, helping you establish your business on the right footing. If you are planning to incorporate a business, DeFreitas & Associates can assist with the incorporation process based on your business requirements by helping you navigate the steps involved in establishing your corporation.",
-            "section_list_title": "Our Full Incorporation Package Includes:",
-            "services_list": [
-                "Federal (Canada) & Provincial (Ontario) Incorporation",
-                "Business Registration Services",
-                "Name Reservation (NUANS search) and Corporate Articles of Incorporation",
-                "Digital Minute Book Setup, Corporate By-laws, and Shareholder Registers",
-                "Shareholder Structure, Voting vs. Non-Voting shares, and Dividend Classes",
-                "CRA Business Number (BN), Corporate Tax (RC), GST/HST (RT), and Payroll (RP) Registration",
-                "Ongoing Corporate Annual Return filings and minute book maintenance"
-            ],
+            "content_image_alt": "DeFreitas & Associates Incorporation & Business Registration",
+            "incorporation_title": "Business Incorporation Services",
+            "incorporation_content": "If you are planning to incorporate a business, DeFreitas & Associates can assist with the incorporation process based on your business requirements by helping you navigate the steps involved in establishing your corporation.\n\nOnce your business is established, our [Accounting & Bookkeeping Services] can provide ongoing support with your financial records and reporting.",
+            "registration_title": "Business Registration Services",
+            "registration_content": "For entrepreneurs establishing a business, we also provide business registration services. We help make the registration process easier to understand and provide professional support based on the needs and structure of your business.\n\nFor ongoing tax preparation, planning, and related taxation matters, explore our [Tax Advisory Services].",
+            "advisory_closing": "DeFreitas & Associates combines business incorporation and registration support with access to accounting, tax, and business advisory services, allowing clients to continue working with our team as their business develops.",
+            "card_title": "Incorporate or Register Your Business",
+            "card_text": "If you are looking to incorporate or register a business, DeFreitas & Associates can help you navigate the process with professional, personalized support. Contact our team to discuss your business incorporation or registration requirements.",
+            "card_button_text": "Discuss Incorporation",
+            "faq_title": "Frequently Asked Questions",
+            "faq_subtitle": "Common questions regarding business registration, corporate structures, and requirements in Canada.",
             "faq_items": [
                 {
                     "q": "What is the difference between business incorporation and business registration?",
-                    "a": "Business registration and incorporation are different ways of establishing a business. Incorporation creates a corporation as a separate legal entity, while business registration may apply when establishing and registering another form of business. The appropriate approach depends on your individual circumstances and business requirements."
+                    "a": "Business registration and incorporation are different ways of establishing a business.\n\nIncorporation creates a corporation as a separate legal entity, while business registration may apply when establishing and registering another form of business. The appropriate approach depends on your individual circumstances and business requirements."
                 },
                 {
                     "q": "Can you help me incorporate a business in Canada?",
@@ -679,25 +627,22 @@ DEFAULT_SITE_DATA = {
                 },
                 {
                     "q": "Do you provide accounting services after incorporation?",
-                    "a": "Yes. Businesses that require ongoing accounting or bookkeeping support can explore our Accounting & Bookkeeping Services. Keeping financial records organized from the beginning can make ongoing business administration and reporting easier to manage."
+                    "a": "Yes. Businesses that require ongoing accounting or bookkeeping support can explore our [Accounting & Bookkeeping Services]. Keeping financial records organized from the beginning can make ongoing business administration and reporting easier to manage."
                 },
                 {
                     "q": "Can you also help with corporate tax matters?",
-                    "a": "Yes. Corporate taxation is handled through our Tax Advisory Services, which provides tax preparation, planning, filing, and advisory support within our scope of services."
+                    "a": "Yes. Corporate taxation is handled through our [Tax Advisory Services], which provides tax preparation, planning, filing, and advisory support within our scope of services."
                 },
                 {
                     "q": "Can you help if my new business requires financing?",
-                    "a": "DeFreitas & Associates also provides Business Financing Services for businesses preparing to pursue commercial financing."
+                    "a": "DeFreitas & Associates also provides [Business Financing Services] for businesses preparing to pursue commercial financing."
                 }
             ],
-            "card_title": "Starting a New Venture?",
-            "card_text": "Structuring your corporation properly avoids substantial tax costs down the road. Whether incorporation is appropriate depends on your business, financial circumstances, objectives, and other considerations.",
-            "card_button_text": "Book Incorporation Consultation",
-            "cta_eyebrow": "Launch With Legal & Tax Confidence",
-            "cta_title": "Protect your personal assets and unlock small business tax deductions",
+            "cta_eyebrow": "Starting a Business in Canada",
+            "cta_title": "Incorporate or Register with Professional Confidence",
             "cta_subtitle": "If you are looking to incorporate or register a business, DeFreitas & Associates can help you navigate the process with professional, personalized support. Contact our team to discuss your business incorporation or registration requirements.",
-            "cta_primary_btn": "Incorporate Today",
-            "cta_secondary_btn": "Explore All Services"
+            "cta_primary_btn": "Contact Our Team",
+            "cta_secondary_btn": "Explore Tax Advisory"
         },
         
         "about": {
