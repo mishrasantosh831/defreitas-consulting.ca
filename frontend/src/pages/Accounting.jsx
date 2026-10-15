@@ -20,7 +20,7 @@ export default function Accounting({ onOpenStrategy }) {
     content_image: "/images/658.png",
     content_image_alt: "DeFreitas & Associates Accounting & Bookkeeping Services",
     
-    bookkeeping_title: "Accounting Services for Businesses Toronto, Canada",
+    bookkeeping_title: "Accounting Services for Businesses",
     solutions_title: "Accounting & Bookkeeping Solutions",
     bookkeeping_content: "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business.\n\nDeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date.\n\nWhether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.\n\nFor assistance with corporate tax, GST/HST, and other taxation matters, explore our [Tax Advisory Services].",
     

@@ -35,19 +35,19 @@ DEFAULT_SITE_DATA = {
                 "catalog_title": "Professional Services",
                 "catalog_services": [
                         {
-                                "cat": "tax",
-                                "title": "Professional Tax Advisory & Tax Preparation Services",
-                                "meta": "Tax & Compliance",
-                                "desc": "Professional corporate tax preparation and T2 filing support, including tax planning and assistance with CRA reviews and audits.",
-                                "fee": "From $1,100 / filing",
-                                "link": "/tax-advisory"
+                                "cat": "incorporation",
+                                "title": "Business Incorporation & Registration",
+                                "meta": "Incorporation & Registration",
+                                "desc": "Professional guidance and support for business incorporation, business registration, and business setup.",
+                                "fee": "From $599 package",
+                                "link": "/incorporation-business-registration"
                         },
                         {
                                 "cat": "tax",
                                 "title": "Professional Tax Advisory & Tax Preparation Services",
                                 "meta": "Tax & Compliance",
-                                "desc": "Professional personal tax preparation and T1 filing for individuals, with practical tax planning and advisory support.",
-                                "fee": "From $200 / filing",
+                                "desc": "Professional corporate and personal tax preparation, T2/T1 filing support, tax planning and CRA review representation.",
+                                "fee": "From $1,100 / filing",
                                 "link": "/tax-advisory"
                         },
                         {
@@ -59,18 +59,10 @@ DEFAULT_SITE_DATA = {
                                 "link": "/accounting-bookkeeping"
                         },
                         {
-                                "cat": "bookkeeping",
-                                "title": "Accounting & Bookkeeping Services",
-                                "meta": "Accounting & Bookkeeping",
-                                "desc": "Professional financial statement preparation, along with WSIB filing and remittance support for businesses.",
-                                "fee": "From $99 / month",
-                                "link": "/accounting-bookkeeping"
-                        },
-                        {
                                 "cat": "sred",
-                                "title": "Professional Tax Advisory & Tax Preparation Services",
+                                "title": "SR&ED Tax Credit Consulting",
                                 "meta": "SR&ED Tax Credit",
-                                "desc": "Professional SR&ED tax credit support, including claim preparation, financial information and documentation, and related tax matters.",
+                                "desc": "Professional SR&ED tax credit support, including claim preparation, financial documentation, and related tax matters.",
                                 "fee": "Success-based 15% fee",
                                 "link": "/sred-tax-credits"
                         },
@@ -78,17 +70,9 @@ DEFAULT_SITE_DATA = {
                                 "cat": "financing",
                                 "title": "Business Financing Solutions",
                                 "meta": "Business Financing",
-                                "desc": "Professional business financing support, including financial statements, cash flow modelling, financial projections, and business plans for commercial lenders.",
+                                "desc": "Professional financing support, including financial statement and projection preparation for lenders, and business plans for financing.",
                                 "fee": "From $1,500 one-off",
                                 "link": "/business-financing"
-                        },
-                        {
-                                "cat": "incorporation",
-                                "title": "Business Incorporation & Registration",
-                                "meta": "Incorporation & Registration",
-                                "desc": "Professional business incorporation and registration services with practical guidance based on your business requirements.",
-                                "fee": "From $599 package",
-                                "link": "/incorporation-business-registration"
                         }
                 ],
                 "pricing_eyebrow": "Structured Packages",
@@ -392,28 +376,20 @@ DEFAULT_SITE_DATA = {
                 "services_list_title": "Our business financing services include:",
                 "financing_services": [
                         {
-                                "title": "Financial Statement Preparation",
+                                "title": "Financial Statements for Financing",
                                 "desc": "Preparation of financial statements, including Notice to Reader and Compilation Engagements, to support commercial financing and lender requirements.\n\nFor ongoing financial reporting support, explore our [Accounting & Bookkeeping Services]."
                         },
                         {
-                                "title": "Multi-Year Financial Projections & Cash Flow Modelling",
-                                "desc": "Preparation of multi-year financial projections and detailed cash flow models to help present your expected financial performance, cash requirements, and financing needs to potential lenders."
+                                "title": "Business Plans for Financing",
+                                "desc": "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
                         },
                         {
-                                "title": "Business Plans for Commercial Lenders",
-                                "desc": "Comprehensive business plan preparation designed to present your business, financial outlook, objectives, and funding requirements clearly to commercial lenders."
+                                "title": "Business Loan & Lease Preparation",
+                                "desc": "Support for businesses preparing to pursue commercial equipment lease, loan or working capital financing, with a focus on organizing the financial information required for the financing process."
                         },
                         {
                                 "title": "CSBFP Application Packages",
                                 "desc": "Support with Canada Small Business Financing Program (CSBFP) application packages, including the preparation and organization of relevant financial information and supporting documentation."
-                        },
-                        {
-                                "title": "Commercial Equipment Lease & Working Capital Financing Support",
-                                "desc": "Support for businesses preparing to pursue commercial equipment lease or working capital financing, with a focus on organizing the financial information required for the financing process."
-                        },
-                        {
-                                "title": "Capital Structure & Debt vs. Equity Advisory",
-                                "desc": "Advisory support to help businesses assess capital structure and debt versus equity considerations in the context of their financial position, financing requirements, and business objectives."
                         }
                 ],
                 "preparing_title": "Preparing for Business Financing",

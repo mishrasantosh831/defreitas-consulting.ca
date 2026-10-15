@@ -18,9 +18,9 @@ const defaultSredData = {
   consulting_title: "Professional SR&ED Tax Credit Consultants",
   h3_incentives_title: "Scientific Research & Experimental Development Tax Incentives",
   consulting_content: "Preparing an SR&ED tax credit claim involves both the work performed and the expenditures associated with eligible activities.\n\nAs an SR&ED consultant in Canada, DeFreitas & Associates works with businesses to review their research and development activities and provide professional guidance throughout the SR&ED claim process.\n\nOur SR&ED tax credit services can also complement broader Tax Advisory Services and Accounting & Bookkeeping Services when additional tax, accounting, or financial support is required.",
-  claims_title: "SR&ED Tax Credit Claims Toronto, Canada",
-  services_list_title: "SR&ED Tax Credit Claims Toronto, Canada",
-  preparing_title: "Preparing Your SR&ED Claim Toronto, Canada",
+  claims_title: "SR&ED Tax Credit Claims",
+  services_list_title: "SR&ED Tax Credit Claims",
+  preparing_title: "Preparing Your SR&ED Claim",
   services_list_intro: "Our SR&ED consulting services include support with:",
   services_list: [
     "Reviewing potential SR&ED activities",

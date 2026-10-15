@@ -1402,7 +1402,7 @@ export default function AdminDashboard() {
                       faq_subtitle: { label: 'FAQ Section Subtitle', tag: null },
                       support_title: { label: 'Business Financing Support Heading', tag: '<h2> Section Heading' },
                       support_intro: { label: 'Business Financing Support Intro Lead', tag: null },
-                      financing_services: { label: 'Business Financing Services (6 Cards)', tag: null },
+                      financing_services: { label: 'Business Financing Services (4 Cards)', tag: '<h3> Service Headings' },
                       preparing_title: { label: 'Preparing for Business Financing Heading', tag: '<h2> Section Heading' },
                       preparing_content: { label: 'Preparing for Business Financing Body Copy', tag: null },
                       incorporation_title: { label: 'Business Incorporation Services Heading', tag: '<h2> Section Heading' },
@@ -1412,7 +1412,7 @@ export default function AdminDashboard() {
                       advisory_closing: { label: 'Advisory & Services Closing Callout', tag: null },
                       catalog_eyebrow: { label: 'Service Catalog Section Eyebrow', tag: null },
                       catalog_title: { label: 'Service Catalog Section Heading', tag: '<h2> Section Heading' },
-                      catalog_services: { label: 'Service Catalog Cards (Structured JSON)', tag: null },
+                      catalog_services: { label: 'Service Catalog Cards (5 H2 Services)', tag: '<h2> Service Headings' },
                       pricing_eyebrow: { label: 'Structured Packages Eyebrow', tag: null },
                       pricing_title: { label: 'Structured Packages Heading', tag: '<h2> Section Heading' },
                       pricing_subtitle: { label: 'Structured Packages Subtitle', tag: null },
@@ -2037,7 +2037,12 @@ export default function AdminDashboard() {
                                   </div>
 
                                   <div style={{ marginBottom: '.8rem' }}>
-                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Card Title:</label>
+                                    <label style={{ display: 'flex', alignItems: 'center', gap: '.4rem', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>
+                                      <span>Card Title:</span>
+                                      <span style={{ fontSize: '.68rem', background: '#fef3c7', color: '#92400e', padding: '.1rem .4rem', borderRadius: '4px', fontWeight: '800' }}>
+                                        SEO &lt;h3&gt; Tag
+                                      </span>
+                                    </label>
                                     <input
                                       type="text"
                                       value={svc.title || ''}
@@ -2059,6 +2064,186 @@ export default function AdminDashboard() {
                                         const next = [...items];
                                         next[sIdx] = { ...next[sIdx], desc: e.target.value };
                                         setPageData({ ...pageData, financing_services: next });
+                                      }}
+                                      style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                    />
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      if (key === 'catalog_services') {
+                        const items = Array.isArray(value) ? value : [];
+                        return (
+                          <div key={key} style={{ marginTop: '1.5rem', marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '12px', border: '1px solid #cbd5e1' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '.5rem' }}>
+                              <div>
+                                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0f172a', display: 'flex', alignItems: 'center', gap: '.5rem' }}>
+                                  <span>📁</span> Service Catalog Offerings ({items.length} Cards)
+                                </h4>
+                                <p style={{ margin: '.2rem 0 0', fontSize: '.82rem', color: '#64748b' }}>
+                                  Edit the 5 core service offerings displayed on the Services &amp; Pricing page. Each service card title is indexed as an SEO &lt;h2&gt; tag.
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const newItem = { cat: "general", title: "New Service Offering", meta: "Service Category", desc: "Service description...", fee: "From $500", link: "/services" };
+                                  setPageData({ ...pageData, catalog_services: [...items, newItem] });
+                                }}
+                                className="btn btn-soft"
+                                style={{ fontSize: '.82rem', padding: '.4rem .8rem' }}
+                              >
+                                + Add Service Card
+                              </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                              {items.map((svc, sIdx) => (
+                                <div key={sIdx} style={{ background: '#fff', padding: '1.2rem', borderRadius: '8px', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '.8rem' }}>
+                                    <span style={{ fontWeight: '700', fontSize: '.88rem', color: 'var(--mint-700)', background: 'var(--mint-50)', padding: '.2rem .6rem', borderRadius: '4px' }}>
+                                      Card #{sIdx + 1}: {svc.title || 'Untitled Service'}
+                                    </span>
+                                    <div style={{ display: 'flex', gap: '.4rem' }}>
+                                      {sIdx > 0 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx - 1];
+                                            next[sIdx - 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, catalog_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Up"
+                                        >
+                                          ▲
+                                        </button>
+                                      )}
+                                      {sIdx < items.length - 1 && (
+                                        <button
+                                          type="button"
+                                          onClick={() => {
+                                            const next = [...items];
+                                            const temp = next[sIdx + 1];
+                                            next[sIdx + 1] = next[sIdx];
+                                            next[sIdx] = temp;
+                                            setPageData({ ...pageData, catalog_services: next });
+                                          }}
+                                          style={{ border: '1px solid #cbd5e1', background: '#fff', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                          title="Move Down"
+                                        >
+                                          ▼
+                                        </button>
+                                      )}
+                                      <button
+                                        type="button"
+                                        onClick={() => {
+                                          const next = items.filter((_, idx) => idx !== sIdx);
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        style={{ border: '1px solid #fecaca', background: '#fff1f2', color: '#b91c1c', borderRadius: '4px', cursor: 'pointer', padding: '.2rem .5rem', fontSize: '.75rem' }}
+                                        title="Remove Card"
+                                      >
+                                        ✕ Remove
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem', marginBottom: '.8rem' }}>
+                                    <div>
+                                      <label style={{ display: 'flex', alignItems: 'center', gap: '.4rem', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>
+                                        <span>Service Title:</span>
+                                        <span style={{ fontSize: '.68rem', background: '#e0f2fe', color: '#0369a1', padding: '.1rem .4rem', borderRadius: '4px', fontWeight: '800' }}>
+                                          SEO &lt;h2&gt; Tag
+                                        </span>
+                                      </label>
+                                      <input
+                                        type="text"
+                                        value={svc.title || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], title: e.target.value };
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Filter Category Key:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.cat || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], cat: e.target.value };
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        placeholder="e.g. tax, bookkeeping, sred, financing, incorporation"
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', marginBottom: '.8rem' }}>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Category Pill / Badge Text:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.meta || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], meta: e.target.value };
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        placeholder="e.g. Tax & Compliance"
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Fee / Starting Price:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.fee || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], fee: e.target.value };
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        placeholder="e.g. From $1,100 / filing"
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                    <div>
+                                      <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Target Page Link:</label>
+                                      <input
+                                        type="text"
+                                        value={svc.link || ''}
+                                        onChange={(e) => {
+                                          const next = [...items];
+                                          next[sIdx] = { ...next[sIdx], link: e.target.value };
+                                          setPageData({ ...pageData, catalog_services: next });
+                                        }}
+                                        placeholder="e.g. /tax-advisory"
+                                        style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <div>
+                                    <label style={{ display: 'block', fontSize: '.78rem', fontWeight: '700', color: '#475569', marginBottom: '.3rem' }}>Service Description:</label>
+                                    <textarea
+                                      rows="3"
+                                      value={svc.desc || ''}
+                                      onChange={(e) => {
+                                        const next = [...items];
+                                        next[sIdx] = { ...next[sIdx], desc: e.target.value };
+                                        setPageData({ ...pageData, catalog_services: next });
                                       }}
                                       style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
                                     />
