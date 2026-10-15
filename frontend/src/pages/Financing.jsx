@@ -6,13 +6,13 @@ import FAQSection from '../components/FAQSection';
 
 export default function Financing({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Business Financing Solutions Canada | DeFreitas & Associates",
-    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
+    seo_title: "Business Financing Solutions Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides business financing solutions and guidance to help businesses access funding and support their growth.",
     canonical_url: "https://defreitas-consulting.ca/business-financing/",
     breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Business Financing\",\"item\":\"https://defreitas-consulting.ca/business-financing/\"}]}",
-    title: "Business Financing Solutions in Canada",
+    title: "Business Financing Solutions in Toronto, Canada",
     hero_eyebrow: "Business Financing Solutions",
-    hero_title: "Business Financing Solutions in Canada",
+    hero_title: "Business Financing Solutions in Toronto, Canada",
     hero_subtitle: "DeFreitas & Associates, based in Toronto, Canada, provides professional business financing support for companies preparing to pursue commercial lending and other financing opportunities.",
     hero_overview: "From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
     hero_banner: "/images/business-solution-banner.png",

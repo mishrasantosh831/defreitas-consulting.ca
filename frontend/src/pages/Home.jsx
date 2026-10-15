@@ -141,12 +141,12 @@ const getWhyIcon = (title = '', idx = 0) => {
 
 export default function Home({ onOpenStrategy }) {
   const [content, setContent] = useState({
-    seo_title: "Tax & Business Consulting Services Canada | DeFreitas",
+    seo_title: "Tax & Business Services Toronto | DeFreitas & Associates",
     seo_description: "DeFreitas & Associates provides tax, accounting, bookkeeping and business consulting services from Toronto, Canada, serving clients globally.",
     canonical_url: "https://defreitas-consulting.ca/",
     breadcrumb_schema: "",
     hero_eyebrow: "Tax, Accounting & Business Advisory Services",
-    hero_title: "Tax, Accounting & Business Advisory Services",
+    hero_title: "Tax, Accounting & Business Advisory Services Toronto, Canada",
     hero_description: "DeFreitas & Associates provides professional tax, accounting, financial and business advisory services to individuals and businesses. For more than 30 years, we have helped clients navigate financial, tax and business matters with practical advice and personalized support.",
     hero_image: "/images/hero-tax-accountants.jpg",
     stat_1_number: "30",

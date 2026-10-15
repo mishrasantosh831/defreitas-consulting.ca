@@ -23,20 +23,20 @@ DEFAULT_SITE_DATA = {
 
     "pages": {
         "services": {
-                "seo_title": "Tax & Financial Services Canada | DeFreitas & Associates",
+                "seo_title": "Business & Tax Advisors Toronto | DeFreitas & Associates",
                 "seo_description": "Explore tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services from DeFreitas & Associates in Toronto, Canada.",
                 "canonical_url": "https://defreitas-consulting.ca/services/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    }\n  ]\n}\n</script>",
                 "title": "Business & Tax Advisory Services | DeFreitas & Associates Canada",
                 "hero_eyebrow": "Services & Pricing",
-                "hero_title": "Tax, Accounting, Bookkeeping & Business Financial Services Canada",
+                "hero_title": "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
                 "hero_subtitle": "Select a service bundle tailored to your corporate stage, or customize a package with our senior CPA team. Every plan includes dedicated advisory and total CRA compliance.",
                 "catalog_eyebrow": "Full Service Catalog",
                 "catalog_title": "Professional Services",
                 "catalog_services": [
                         {
                                 "cat": "incorporation",
-                                "title": "Business Incorporation & Registration",
+                                "title": "Business Incorporation & Registration Toronto, Canada",
                                 "meta": "Incorporation & Registration",
                                 "desc": "Professional guidance and support for business incorporation, business registration, and business setup.",
                                 "fee": "From $599 package",
@@ -137,10 +137,10 @@ DEFAULT_SITE_DATA = {
                 ]
         },
         "sred": {
-                "seo_title": "SR&ED Tax Credit Services Canada | DeFreitas & Associates",
+                "seo_title": "SR&ED Tax Credit Services Toronto | DeFreitas & Associates",
                 "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides SR&ED tax credit consulting, helping businesses prepare claims and access eligible R&D tax incentives.",
                 "canonical_url": "https://defreitas-consulting.ca/sred-tax-credits/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 3,\n\"name\": \"SR&ED Tax Credits\",\n\"item\": \"https://defreitas-consulting.ca/sred-tax-credits/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"SR&ED Tax Credits\",\n      \"item\": \"https://defreitas-consulting.ca/sred-tax-credits/\"\n    }\n  ]\n}\n</script>",
                 "title": "SR&ED Tax Credit Services in Canada",
                 "hero_eyebrow": "Scientific Research & Experimental Development",
                 "hero_title": "SR&ED Tax Credit Consulting Services in Canada",
@@ -204,30 +204,30 @@ DEFAULT_SITE_DATA = {
                 "cta_subtitle": "If you are looking for an SR&ED consultant in Canada or professional support with an SR&ED tax credit claim, contact DeFreitas & Associates to discuss your requirements.\n\nBusinesses looking for broader financial support can also explore our Business Financing Services.",
                 "cta_primary_btn": "Schedule Consultation",
                 "cta_secondary_btn": "Explore Financing",
-                "claims_title": "SR&ED Tax Credit Claims",
-                "preparing_title": "Preparing Your SR&ED Claim",
+                "claims_title": "SR&ED Tax Credit Claims Toronto, Canada",
+                "preparing_title": "Preparing Your SR&ED Claim Toronto, Canada",
                 "h3_incentives_title": "Scientific Research & Experimental Development Tax Incentives"
         },
         "tax_advisory": {
                 "seo_title": "Tax Consultant & Tax Firm Toronto | DeFreitas & Associates",
                 "seo_description": "DeFreitas & Associates is a tax consulting firm in Toronto, Canada, providing professional tax advisory, tax consultancy and tax services for businesses.",
                 "canonical_url": "https://defreitas-consulting.ca/tax-advisory/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 3,\n\"name\": \"Tax Advisory\",\n\"item\": \"https://defreitas-consulting.ca/tax-advisory/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"Tax Advisory\",\n      \"item\": \"https://defreitas-consulting.ca/tax-advisory/\"\n    }\n  ]\n}\n</script>",
                 "title": "Tax Consultant & Tax Advisory Services in Canada",
                 "hero_eyebrow": "Professional Tax Consultants & Tax Advisors",
-                "hero_title": "Professional Tax Advisory & Tax Services in Canada",
+                "hero_title": "Professional Tax Advisory & Tax Services in Toronto, Canada",
                 "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional tax consulting, advisory, preparation, and filing services to individuals and businesses. Whether you need help preparing a tax return, planning ahead, responding to a tax matter, or understanding your obligations, our team offers practical guidance based on your specific circumstances.",
                 "hero_overview": "For those looking for a tax consultant in Canada, a knowledgeable tax advisor, or an experienced tax firm, we provide personalized support across a broad range of personal and business tax matters.",
                 "hero_banner": "/images/tax-advisory-banner.png",
-                "advisory_title": "Professional Tax Consultants & Tax Advisors",
+                "advisory_title": "Professional Tax Consultants & Tax Advisors Toronto, Canada",
                 "advisory_content": "Good tax planning is about more than meeting filing deadlines. It\u2019s about understanding your obligations, anticipating potential issues, and making informed decisions throughout the year.\n\nOur tax consultants work with employed and self-employed individuals, proprietorships, partnerships, small and mid-sized businesses, and corporations on a variety of tax planning and advisory matters.",
                 "advisory_link_text": "Accounting & Bookkeeping Services",
                 "advisory_link_url": "/accounting-bookkeeping",
-                "personal_corporate_title": "Tax Planning Services",
+                "personal_corporate_title": "Tax Planning Services Toronto, Canada",
                 "personal_corporate_content": "We provide tax preparation, filing, planning, and advisory services for both individuals and businesses.\n\nFor individuals, this includes T1 General personal tax returns, adjustments, and related tax matters. For businesses, we assist with T2 Corporate Tax Returns, Compilation Engagement financial statements, corporate tax planning, and related filing requirements.",
                 "personal_corporate_link_text": "Business Incorporation Services",
                 "personal_corporate_link_url": "/incorporation-business-registration",
-                "cra_matters_title": "GST/HST Tax Services",
+                "cra_matters_title": "GST/HST Tax Services Toronto, Canada",
                 "cra_matters_content": "Tax questions don\u2019t always end once a return has been filed. We assist clients with GST/HST filings as well as a range of CRA-related matters that may arise afterward.\n\nOur services include personal and corporate tax reviews and audits, GST/HST reviews and audits, tax adjustments, Notices of Objection, tax appeals, and related CRA correspondence.",
                 "cross_border_title": "Non-Resident & Cross-Border Tax Matters",
                 "cross_border_content": "Certain tax situations become more complex when income, investments, employment, or transactions extend beyond one jurisdiction.\n\nDeFreitas & Associates assists with selected non-resident employment and investment tax matters, Certificates of Compliance, commodity tax transactions, and HST-related cross-border matters.\n\nBecause every situation is different, we review each matter individually to understand the circumstances and determine how we can assist.",
@@ -297,15 +297,17 @@ DEFAULT_SITE_DATA = {
                 "cta_subtitle": "Tax matters can be straightforward or complex, but getting the right guidance can make the process easier to manage. If you\u2019re looking for a tax consultant in Canada, a professional tax advisor, or an experienced tax firm, contact DeFreitas & Associates to discuss your personal or business tax needs.",
                 "cta_primary_btn": "Schedule Tax Consultation",
                 "cta_secondary_btn": "Explore All Services",
-                "reviews_appeals_title": "Tax Reviews, Objections & Appeals",
+                "reviews_appeals_title": "Tax Reviews, Objections & Appeals Toronto, Canada",
                 "h3_corporate_tax": "Corporate & Business Tax Advisory",
-                "h3_experienced_advisors": "Experienced Tax Consultants & Tax Advisors"
+                "h3_experienced_advisors": "Experienced Tax Consultants & Tax Advisors",
+                "h3_corporate_title": "Corporate & Business Tax Advisory",
+                "h3_advisors_title": "Experienced Tax Consultants & Tax Advisors"
         },
         "accounting": {
-                "seo_title": "Accounting & Bookkeeping | DeFreitas & Associates Canada",
-                "seo_description": "",
+                "seo_title": "Accounting & Bookkeeping Toronto | DeFreitas & Associates",
+                "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
                 "canonical_url": "https://defreitas-consulting.ca/accounting-bookkeeping/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 3,\n\"name\": \"Accounting & Bookkeeping\",\n\"item\": \"https://defreitas-consulting.ca/accounting-bookkeeping/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"Accounting & Bookkeeping\",\n      \"item\": \"https://defreitas-consulting.ca/accounting-bookkeeping/\"\n    }\n  ]\n}\n</script>",
                 "title": "Accounting & Bookkeeping Services in Canada",
                 "hero_eyebrow": "Accounting & Bookkeeping Services",
                 "hero_title": "Professional Accounting & Bookkeeping Services in Canada",
@@ -315,7 +317,7 @@ DEFAULT_SITE_DATA = {
                 "hero_banner_alt": "Accounting & Bookkeeping Services in Canada",
                 "content_image": "/images/658.png",
                 "content_image_alt": "DeFreitas & Associates Accounting & Bookkeeping Services",
-                "bookkeeping_title": "Accounting Services for Businesses",
+                "bookkeeping_title": "Accounting Services for Businesses Toronto, Canada",
                 "bookkeeping_content": "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business.\n\nDeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date.\n\nWhether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.\n\nFor assistance with corporate tax, GST/HST, and other taxation matters, explore our [Tax Advisory Services].",
                 "setup_title": "Bookkeeping Setup & Ongoing Support",
                 "setup_content": "A well-organized bookkeeping process can make it easier to manage financial information as your business operates and grows.\n\nWe provide bookkeeping setup and ongoing consultation to help businesses establish and maintain an appropriate bookkeeping process.\n\nOur support is tailored to your business, allowing you to receive professional guidance when you need it.",
@@ -358,13 +360,13 @@ DEFAULT_SITE_DATA = {
                 "solutions_title": "Accounting & Bookkeeping Solutions"
         },
         "financing": {
-                "seo_title": "Business Financing Solutions Canada | DeFreitas & Associates",
-                "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
+                "seo_title": "Business Financing Solutions Toronto | DeFreitas & Associates",
+                "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides business financing solutions and guidance to help businesses access funding and support their growth.",
                 "canonical_url": "https://defreitas-consulting.ca/business-financing/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 3,\n\"name\": \"Business Financing\",\n\"item\": \"https://defreitas-consulting.ca/business-financing/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"Business Financing\",\n      \"item\": \"https://defreitas-consulting.ca/business-financing/\"\n    }\n  ]\n}\n</script>",
                 "title": "Business Financing Services in Canada",
                 "hero_eyebrow": "Business Financing Services",
-                "hero_title": "Business Financing Solutions in Canada",
+                "hero_title": "Business Financing Solutions in Toronto, Canada",
                 "hero_subtitle": "DeFreitas & Associates, based in Toronto, Canada, provides professional business financing support for companies preparing to pursue commercial lending and other financing opportunities.",
                 "hero_overview": "From financial statements and cash flow projections to lender-focused business plans and financing application packages, we help businesses prepare the financial information and documentation needed to present their financing requirements clearly.",
                 "hero_banner": "/images/business-solution-banner.png",
@@ -448,10 +450,10 @@ DEFAULT_SITE_DATA = {
                 "business_plans_title": "Business Plans for Financing"
         },
         "incorporation": {
-                "seo_title": "Business Incorporation Services | DeFreitas & Associates Canada",
+                "seo_title": "Business Incorporation Services Toronto | DeFreitas & Associates",
                 "seo_description": "Business incorporation and registration services from DeFreitas & Associates Toronto, Canada. Get professional guidance to incorporate and register a business.",
                 "canonical_url": "https://defreitas-consulting.ca/incorporation-business-registration/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Services\",\n\"item\": \"https://defreitas-consulting.ca/services/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 3,\n\"name\": \"Incorporation & Business Registration\",\n\"item\": \"https://defreitas-consulting.ca/incorporation-business-registration/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Services\",\n      \"item\": \"https://defreitas-consulting.ca/services/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 3,\n      \"name\": \"Incorporation & Business Registration\",\n      \"item\": \"https://defreitas-consulting.ca/incorporation-business-registration/\"\n    }\n  ]\n}\n</script>",
                 "title": "Business Incorporation & Registration Services in Canada",
                 "hero_eyebrow": "Business Incorporation & Registration",
                 "hero_title": "Business Incorporation & Registration Services in Canada",
@@ -514,15 +516,15 @@ DEFAULT_SITE_DATA = {
                 "advisory_title": "Business Setup & Advisory Services"
         },
         "about": {
-                "seo_title": "Business & Tax Advisors | DeFreitas & Associates Canada",
-                "seo_description": "About DeFreitas & Associates | Toronto, Canada",
+                "seo_title": "Business & Tax Advisors Toronto | DeFreitas & Associates",
+                "seo_description": "DeFreitas & Associates, based in Toronto, Canada, provides accounting, tax, business advisory and consulting services to clients globally",
                 "canonical_url": "https://defreitas-consulting.ca/about/",
                 "breadcrumb_schema": "",
                 "title": "About DeFreitas & Associates Canada",
-                "hero_title": "About DeFreitas & Associates Canada",
+                "hero_title": "About DeFreitas & Associates Toronto, Canada",
                 "hero_subtitle": "We are a firm of Chartered Professional Accountants providing a wide array of business consulting and tax advisory services to individuals and business enterprises across Canada.",
                 "hero_image": "/images/about-team.jpg",
-                "philosophy_title": "Financial Consultants, Business Advisors & Tax Professionals",
+                "philosophy_title": "Financial Consultants, Business Advisors & Tax Professionals Toronto, Canada",
                 "lead_text": "Tax & Accounting Expertise",
                 "body_text": "We pride ourselves on the extensive experience our team possesses along with a high level of professionalism extended to all of our clients, delivered at rates that are competitive. Whether managing complex corporate restructures, preparing T2 corporate returns, recovering SR&ED research credits, or securing commercial bank loans, our advisors operate with unwavering diligence.",
                 "credentials": [
@@ -531,35 +533,19 @@ DEFAULT_SITE_DATA = {
                         "Decades of CRA audit defense and compilation experience",
                         "Toronto Head Office serving clients across GTA and nationwide"
                 ],
-                "expertise_title": "Tax & Accounting Expertise",
+                "expertise_title": "Tax & Accounting Expertise Toronto, Canada",
                 "about_services": [
-                        {
-                                "title": "Tax Advisory, Preparation & Filing",
-                                "desc": "Professional personal and corporate tax return preparation, strategic planning and CRA audit defense.",
-                                "link": "/tax-advisory"
-                        },
-                        {
-                                "title": "Accounting & Bookkeeping",
-                                "desc": "Comprehensive cloud bookkeeping, monthly financial reporting, and payroll compliance.",
-                                "link": "/accounting-bookkeeping"
-                        },
-                        {
-                                "title": "SR&ED Tax Credits",
-                                "desc": "Scientific Research & Experimental Development tax credit claim scoping and financial filing.",
-                                "link": "/sred-tax-credits"
-                        },
-                        {
-                                "title": "Business Incorporation & Registration",
-                                "desc": "Federal and provincial corporate registration, articles of incorporation and minute books.",
-                                "link": "/incorporation-business-registration"
-                        }
+                        "Tax Advisory, Preparation & Filing",
+                        "Accounting & Bookkeeping",
+                        "SR&ED Tax Credits",
+                        "Business Incorporation & Registration"
                 ]
         },
         "contact": {
                 "seo_title": "Contact DeFreitas & Associates | Toronto, Canada",
                 "seo_description": "Contact DeFreitas & Associates in Toronto, Canada for tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services.",
                 "canonical_url": "https://defreitas-consulting.ca/contact/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Contact\",\n\"item\": \"https://defreitas-consulting.ca/contact/\"\n}\n]\n}\n</script>",
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Contact\",\n      \"item\": \"https://defreitas-consulting.ca/contact/\"\n    }\n  ]\n}\n</script>",
                 "title": "Contact Us \u2014 DeFreitas & Associates CPAs",
                 "hero_title": "Schedule Your Free Initial Consultation",
                 "hero_subtitle": "We look forward to being of service to you. Reach out to our senior management team in Toronto today.",
@@ -576,15 +562,15 @@ DEFAULT_SITE_DATA = {
                 "seo_title": "Business, Tax & Finance Insights | DeFreitas & Associates",
                 "seo_description": "Tax, business, accounting and finance insights from DeFreitas & Associates, providing professional advisory and consulting services| Toronto, Canada.",
                 "canonical_url": "https://defreitas-consulting.ca/blog/",
-                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n},\n{\n\"@type\": \"ListItem\",\n\"position\": 2,\n\"name\": \"Blog\",\n\"item\": \"https://defreitas-consulting.ca/blog/\"\n}\n]\n}\n</script>"
+                "breadcrumb_schema": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"BreadcrumbList\",\n  \"itemListElement\": [\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 1,\n      \"name\": \"Home\",\n      \"item\": \"https://defreitas-consulting.ca/\"\n    },\n    {\n      \"@type\": \"ListItem\",\n      \"position\": 2,\n      \"name\": \"Blog\",\n      \"item\": \"https://defreitas-consulting.ca/blog/\"\n    }\n  ]\n}\n</script>"
         },
         "home": {
-                "seo_title": "Tax & Business Consulting Services Canada | DeFreitas",
+                "seo_title": "Tax & Business Services Toronto | DeFreitas & Associates",
                 "seo_description": "DeFreitas & Associates provides tax, accounting, bookkeeping and business consulting services from Toronto, Canada, serving clients globally.",
                 "canonical_url": "https://defreitas-consulting.ca/",
                 "breadcrumb_schema": "",
                 "hero_eyebrow": "Tax, Accounting & Business Advisory Services",
-                "hero_title": "Tax, Accounting & Business Advisory Services",
+                "hero_title": "Tax, Accounting & Business Advisory Services Toronto, Canada",
                 "hero_description": "DeFreitas & Associates provides professional tax, accounting, financial and business advisory services to individuals and businesses. For more than 30 years, we have helped clients navigate financial, tax and business matters with practical advice and personalized support.",
                 "hero_image": "/images/hero-tax-accountants.jpg",
                 "stat_1_number": "30",
@@ -637,7 +623,7 @@ DEFAULT_SITE_DATA = {
                                 "link": "/services"
                         }
                 ],
-                "why_title": "Experienced Business & Financial Advisors",
+                "why_title": "Experienced Business & Financial Advisors in Toronto, Canada",
                 "why_image": "/images/why-choose-us.jpg",
                 "why_items": [
                         {
@@ -703,7 +689,7 @@ DEFAULT_SITE_DATA = {
                         }
                 ],
                 "how_we_work_eyebrow": "HOW WE WORK",
-                "services_title": "Professional Services for Individuals & Businesses"
+                "services_title": "Professional Services for Individuals & Businesses in Toronto, Canada"
         }
 },
 

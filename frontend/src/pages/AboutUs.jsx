@@ -5,12 +5,12 @@ import SEOHead from '../components/SEOHead';
 
 export default function AboutUs({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Tax & Financial Services Canada | DeFreitas & Associates",
-    seo_description: "About DeFreitas & Associates | Toronto, Canada",
+    seo_title: "Business & Tax Advisors Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting, tax, business advisory and consulting services to clients globally",
     canonical_url: "https://defreitas-consulting.ca/about/",
     breadcrumb_schema: "",
-    title: "About DeFreitas & Associates Canada",
-    hero_title: "About DeFreitas & Associates Canada",
+    title: "About DeFreitas & Associates Toronto, Canada",
+    hero_title: "About DeFreitas & Associates Toronto, Canada",
     hero_subtitle: "We are a firm of Chartered Professional Accountants providing a wide array of business consulting and tax advisory services to individuals and business enterprises across Canada.",
     hero_image: "/images/about-team.jpg",
     philosophy_title: "Financial Consultants, Business Advisors & Tax Professionals Toronto, Canada",

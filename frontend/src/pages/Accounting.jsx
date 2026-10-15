@@ -6,8 +6,8 @@ import FAQSection from '../components/FAQSection';
 
 export default function Accounting({ onOpenStrategy }) {
   const [data, setData] = useState({
-    seo_title: "Accounting & Bookkeeping | DeFreitas & Associates Canada",
-    seo_description: "",
+    seo_title: "Accounting & Bookkeeping Toronto | DeFreitas & Associates",
+    seo_description: "DeFreitas & Associates, based in Toronto, Canada, provides accounting and bookkeeping services, financial statements and financial reporting for businesses.",
     canonical_url: "https://defreitas-consulting.ca/accounting-bookkeeping/",
     breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Accounting & Bookkeeping\",\"item\":\"https://defreitas-consulting.ca/accounting-bookkeeping/\"}]}",
     title: "Professional Accounting & Bookkeeping Services in Canada",
@@ -20,7 +20,7 @@ export default function Accounting({ onOpenStrategy }) {
     content_image: "/images/658.png",
     content_image_alt: "DeFreitas & Associates Accounting & Bookkeeping Services",
     
-    bookkeeping_title: "Accounting Services for Businesses",
+    bookkeeping_title: "Accounting Services for Businesses Toronto, Canada",
     solutions_title: "Accounting & Bookkeeping Solutions",
     bookkeeping_content: "Consistent bookkeeping is an important part of maintaining accurate financial records and understanding the financial position of your business.\n\nDeFreitas & Associates provides comprehensive bookkeeping services to help businesses keep their financial information organized and up to date.\n\nWhether you require assistance establishing your bookkeeping process or ongoing support, our team can work with you based on your business requirements.\n\nFor assistance with corporate tax, GST/HST, and other taxation matters, explore our [Tax Advisory Services].",
     
