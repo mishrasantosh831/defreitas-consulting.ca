@@ -6,13 +6,13 @@ import SEOHead from '../components/SEOHead';
 export default function Services({ onOpenStrategy }) {
   const [filter, setFilter] = useState('all');
   const [data, setData] = useState({
-    seo_title: "Business & Tax Advisors Toronto | DeFreitas & Associates",
+    seo_title: "Tax & Financial Services Canada | DeFreitas & Associates",
     seo_description: "Explore tax advisory, SR&ED tax credits, accounting, bookkeeping, business financing and incorporation services from DeFreitas & Associates in Toronto, Canada.",
     canonical_url: "https://defreitas-consulting.ca/services/",
     breadcrumb_schema: "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://defreitas-consulting.ca/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://defreitas-consulting.ca/services/\"}]}",
-    title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
+    title: "Tax, Accounting, Bookkeeping & Business Financial Services Canada",
     hero_eyebrow: "Services & Pricing",
-    hero_title: "Tax, Accounting, Bookkeeping & Business Services Toronto Canada",
+    hero_title: "Tax, Accounting, Bookkeeping & Business Financial Services Canada",
     hero_subtitle: "Select a service bundle tailored to your corporate stage, or customize a package with our senior CPA team. Every plan includes dedicated advisory and total CRA compliance.",
     catalog_eyebrow: "Full Service Catalog",
     catalog_title: "Pick the exact help you need",
