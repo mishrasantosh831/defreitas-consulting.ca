@@ -241,7 +241,7 @@ export default function Home({ onOpenStrategy }) {
               <div className="hero-frame">
                 <img 
                   src={content.hero_image || '/images/hero-tax-accountants.jpg'} 
-                  alt="DeFreitas CPA Executive Team"
+                  alt="DeFreitas CPA Professional Team"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = '/images/hero-tax-accountants.jpg';

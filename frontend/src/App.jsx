@@ -43,7 +43,7 @@ function MainLayout({ children, onOpenStrategy, siteMeta }) {
 export default function App() {
   const [strategyOpen, setStrategyOpen] = useState(false);
   const [siteMeta, setSiteMeta] = useState({
-    title: "DeFreitas & Associates — Executive Tax Accountants & Management Consultants",
+    title: "DeFreitas & Associates — Professional Tax Accountants & Management Consultants",
     phone: "647-722-5442",
     toll_free: "1-855-227-9136",
     email: "info@defreitas-consulting.com",

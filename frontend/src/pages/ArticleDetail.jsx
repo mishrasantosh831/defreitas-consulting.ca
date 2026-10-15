@@ -336,7 +336,7 @@ export default function ArticleDetail({ onOpenStrategy }) {
             <div>
               <h4 style={{ margin: '0 0 .3rem 0', fontSize: '1.1rem' }}>DeFreitas &amp; Associates CPAs</h4>
               <p style={{ margin: 0, fontSize: '.92rem', color: 'var(--ink-soft)', lineHeight: '1.5' }}>
-                Executive tax accountants, management consultants, and SR&amp;ED practitioners in Toronto, Ontario. Proud member of the Canadian Tax Foundation and EFILE Association of Canada.
+                Professional tax accountants, management consultants, and SR&amp;ED practitioners in Toronto, Ontario. Proud member of the Canadian Tax Foundation and EFILE Association of Canada.
               </p>
             </div>
           </div>

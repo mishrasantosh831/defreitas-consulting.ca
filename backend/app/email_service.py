@@ -128,7 +128,7 @@ def send_inquiry_emails(inquiry: dict):
           <div class="container">
             <div class="header">
               <h1>DeFreitas &amp; Associates</h1>
-              <p>Executive Tax Accountants &amp; Management Consultants</p>
+              <p>Professional Tax Accountants &amp; Management Consultants</p>
             </div>
             <div class="body">
               <p>Dear <strong>{client_name}</strong>,</p>

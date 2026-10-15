@@ -10,7 +10,7 @@ null = None
 
 DEFAULT_SITE_DATA = {
     "site_meta": {
-        "title": "DeFreitas & Associates \u2014 Executive Tax Accountants & Management Consultants",
+        "title": "DeFreitas & Associates \u2014 Professional Tax Accountants & Management Consultants",
         "description": "Management Consultants, Business Advisors and Tax Accountants for over 30 years. Serving corporations and individuals across the GTA and Canada.",
         "phone": "647-722-5442",
         "toll_free": "1-855-227-9136",

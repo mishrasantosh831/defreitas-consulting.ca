@@ -2718,10 +2718,35 @@ export default function AdminDashboard() {
         {/* ================= TAB 5: SITE META & LOGOS ================= */}
         {activeTab === 'meta' && (
           <div className="admin-card">
-            <h3>Company Contact Information &amp; Official Logos</h3>
+            <h3>Company Branding, Website Title &amp; Official Details</h3>
             <p style={{ color: '#64748b', fontSize: '.88rem', marginBottom: '1.5rem' }}>
-              Upload new header and footer logos directly from your computer without needing manual URLs.
+              Configure your primary company title, meta description, contact information, and brand logos.
             </p>
+
+            <div className="admin-field" style={{ marginBottom: '1.2rem' }}>
+              <label style={{ fontWeight: '700' }}>Main Website Title (Browser Tab &amp; Brand Slogan)</label>
+              <input 
+                type="text" 
+                value={siteMeta.title || ''} 
+                onChange={(e) => setSiteMeta({ ...siteMeta, title: e.target.value })}
+                placeholder="e.g. DeFreitas & Associates — Professional Tax Accountants & Management Consultants"
+                style={{ fontSize: '.92rem', padding: '.65rem .9rem' }}
+              />
+              <span style={{ fontSize: '.76rem', color: '#64748b' }}>
+                Default site title used across browser tabs, admin panel, and root brand references.
+              </span>
+            </div>
+
+            <div className="admin-field" style={{ marginBottom: '1.5rem' }}>
+              <label style={{ fontWeight: '700' }}>Main Website Overview / Description</label>
+              <textarea 
+                rows="3"
+                value={siteMeta.description || ''} 
+                onChange={(e) => setSiteMeta({ ...siteMeta, description: e.target.value })}
+                placeholder="Management Consultants, Business Advisors and Tax Accountants for over 30 years..."
+                style={{ fontSize: '.88rem', padding: '.65rem .9rem' }}
+              />
+            </div>
 
             {/* Direct Image Uploads for Branding */}
             <div className="admin-grid-2" style={{ marginBottom: '1.5rem' }}>
