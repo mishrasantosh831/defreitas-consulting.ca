@@ -1433,7 +1433,8 @@ export default function AdminDashboard() {
                       process_eyebrow: { label: 'Methodology Process Eyebrow', tag: null },
                       process_title: { label: 'Methodology Process Heading', tag: '<h2> Section Heading' },
                       process_subtitle: { label: 'Methodology Process Subtitle', tag: null },
-                      process_steps: { label: 'Methodology 6-Step Workflow (Structured JSON)', tag: null }
+                      process_steps: { label: 'Methodology 6-Step Workflow (Structured JSON)', tag: null },
+                      about_services: { label: 'Practice Services (H3 Headings)', tag: '<h3> Service Headings' }
                     };
 
                     const found = custom[key];

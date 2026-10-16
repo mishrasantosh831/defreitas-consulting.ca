@@ -24,11 +24,39 @@ export default function AboutUs({ onOpenStrategy }) {
       "Toronto Head Office serving clients across GTA and nationwide"
     ],
     about_services: [
-      { title: "Tax Advisory, Preparation & Filing", desc: "Professional personal and corporate tax return preparation, strategic planning and CRA audit defense.", link: "/tax-advisory" },
-      { title: "Accounting & Bookkeeping", desc: "Comprehensive cloud bookkeeping, monthly financial reporting, and payroll compliance.", link: "/accounting-bookkeeping" },
-      { title: "SR&ED Tax Credits", desc: "Scientific Research & Experimental Development tax credit claim scoping and financial filing.", link: "/sred-tax-credits" },
-      { title: "Business Incorporation & Registration", desc: "Federal and provincial corporate registration, articles of incorporation and minute books.", link: "/incorporation-business-registration" }
+      "Tax Advisory, Preparation & Filing",
+      "Accounting & Bookkeeping",
+      "SR&ED Tax Credits",
+      "Business Incorporation & Registration"
     ]
+  });
+
+  const defaultServices = [
+    { title: "Tax Advisory, Preparation & Filing", desc: "Professional personal and corporate tax return preparation, strategic planning and CRA audit defense.", link: "/tax-advisory" },
+    { title: "Accounting & Bookkeeping", desc: "Comprehensive cloud bookkeeping, monthly financial reporting, and payroll compliance.", link: "/accounting-bookkeeping" },
+    { title: "SR&ED Tax Credits", desc: "Scientific Research & Experimental Development tax credit claim scoping and financial filing.", link: "/sred-tax-credits" },
+    { title: "Business Incorporation & Registration", desc: "Federal and provincial corporate registration, articles of incorporation and minute books.", link: "/incorporation-business-registration" }
+  ];
+
+  const rawServices = Array.isArray(data.about_services) && data.about_services.length > 0
+    ? data.about_services
+    : defaultServices;
+
+  const servicesList = rawServices.map((s, idx) => {
+    const def = defaultServices[idx] || defaultServices[0];
+    if (typeof s === 'string') {
+      const matched = defaultServices.find(d => d.title.trim().toLowerCase() === s.trim().toLowerCase()) || def;
+      return {
+        title: s.trim(),
+        desc: matched.desc,
+        link: matched.link
+      };
+    }
+    return {
+      title: (s && s.title) ? s.title : def.title,
+      desc: (s && s.desc) ? s.desc : def.desc,
+      link: (s && s.link) ? s.link : def.link
+    };
   });
 
   useEffect(() => {
@@ -115,12 +143,7 @@ export default function AboutUs({ onOpenStrategy }) {
             <h2>Integrated Financial &amp; Tax Solutions</h2>
           </div>
           <div className="svc-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
-            {(data.about_services || [
-              { title: "Tax Advisory, Preparation & Filing", desc: "Professional personal and corporate tax return preparation, strategic planning and CRA audit defense.", link: "/tax-advisory" },
-              { title: "Accounting & Bookkeeping", desc: "Comprehensive cloud bookkeeping, monthly financial reporting, and payroll compliance.", link: "/accounting-bookkeeping" },
-              { title: "SR&ED Tax Credits", desc: "Scientific Research & Experimental Development tax credit claim scoping and financial filing.", link: "/sred-tax-credits" },
-              { title: "Business Incorporation & Registration", desc: "Federal and provincial corporate registration, articles of incorporation and minute books.", link: "/incorporation-business-registration" }
-            ]).map((s, idx) => (
+            {servicesList.map((s, idx) => (
               <article key={idx} className="svc">
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
