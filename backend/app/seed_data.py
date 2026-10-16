@@ -36,7 +36,7 @@ DEFAULT_SITE_DATA = {
                 "catalog_services": [
                         {
                                 "cat": "incorporation",
-                                "title": "Business Incorporation & Registration Toronto, Canada",
+                                "title": "Business Incorporation & Registration",
                                 "meta": "Incorporation & Registration",
                                 "desc": "Professional guidance and support for business incorporation, business registration, and business setup.",
                                 "fee": "From $599 package",

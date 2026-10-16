@@ -19,7 +19,7 @@ export default function Services({ onOpenStrategy }) {
     catalog_services: [
       {
         cat: 'incorporation',
-        title: 'Business Incorporation & Registration Toronto, Canada',
+        title: 'Business Incorporation & Registration',
         meta: 'Incorporation & Registration',
         desc: 'Professional guidance and support for business incorporation, business registration, and business setup.',
         fee: 'From $599 package',
@@ -110,7 +110,14 @@ export default function Services({ onOpenStrategy }) {
     cta_title: "Let's build a customized solution",
     cta_subtitle: "Speak directly with our senior CPA partners in Toronto. We will assess your requirements and tailor an exact service plan.",
     cta_primary_btn: "Book Free Consultation",
-    cta_secondary_btn: "Back to Home"
+    cta_secondary_btn: "Back to Home",
+    h2_services: [
+      "Business Incorporation & Registration",
+      "Professional Tax Advisory & Tax Preparation Services",
+      "Accounting & Bookkeeping Services",
+      "SR&ED Tax Credit Consulting",
+      "Business Financing Solutions"
+    ]
   });
 
   useEffect(() => {
@@ -169,7 +176,15 @@ export default function Services({ onOpenStrategy }) {
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="5" y="3" width="14" height="18" rx="2"/></svg>
                 </span>
                 <div className="meta">{item.meta}</div>
-                <h2 style={{ fontSize: '1.28rem', margin: '.4rem 0 .5rem 0', lineHeight: '1.35', color: 'var(--ink)' }}>{item.title}</h2>
+                <h2 style={{ fontSize: '1.28rem', margin: '.4rem 0 .5rem 0', lineHeight: '1.35', color: 'var(--ink)' }}>
+                  {(() => {
+                    const origIdx = (data.catalog_services || []).indexOf(item);
+                    if (Array.isArray(data.h2_services) && origIdx !== -1 && data.h2_services[origIdx]) {
+                      return data.h2_services[origIdx];
+                    }
+                    return item.title;
+                  })()}
+                </h2>
                 <p>{item.desc}</p>
                 <div className="from">
                   <b>{item.fee}</b>

@@ -1413,6 +1413,7 @@ export default function AdminDashboard() {
                       catalog_eyebrow: { label: 'Service Catalog Section Eyebrow', tag: null },
                       catalog_title: { label: 'Service Catalog Section Heading', tag: '<h2> Section Heading' },
                       catalog_services: { label: 'Service Catalog Cards (5 H2 Services)', tag: '<h2> Service Headings' },
+                      h2_services: { label: 'H2 Services Headings (Card Titles)', tag: '<h2> Card Headings' },
                       pricing_eyebrow: { label: 'Structured Packages Eyebrow', tag: null },
                       pricing_title: { label: 'Structured Packages Heading', tag: '<h2> Section Heading' },
                       pricing_subtitle: { label: 'Structured Packages Subtitle', tag: null },
@@ -1516,7 +1517,15 @@ export default function AdminDashboard() {
                               value={value.join('\n')}
                               onChange={(e) => {
                                 const newArr = e.target.value.split('\n');
-                                setPageData({ ...pageData, [key]: newArr });
+                                if (key === 'h2_services' && Array.isArray(pageData.catalog_services)) {
+                                  const updatedCatalog = pageData.catalog_services.map((cs, cIdx) => ({
+                                    ...cs,
+                                    title: newArr[cIdx] !== undefined && newArr[cIdx].trim() ? newArr[cIdx].trim() : cs.title
+                                  }));
+                                  setPageData({ ...pageData, [key]: newArr, catalog_services: updatedCatalog });
+                                } else {
+                                  setPageData({ ...pageData, [key]: newArr });
+                                }
                               }}
                               placeholder="One item per line"
                             />
@@ -2169,7 +2178,8 @@ export default function AdminDashboard() {
                                         onChange={(e) => {
                                           const next = [...items];
                                           next[sIdx] = { ...next[sIdx], title: e.target.value };
-                                          setPageData({ ...pageData, catalog_services: next });
+                                          const nextH2 = next.map(cs => cs.title);
+                                          setPageData({ ...pageData, catalog_services: next, h2_services: nextH2 });
                                         }}
                                         style={{ width: '100%', fontSize: '.88rem', padding: '.5rem .7rem' }}
                                       />
